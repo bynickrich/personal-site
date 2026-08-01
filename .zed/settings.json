@@ -3,7 +3,7 @@
 		"CSS": {
 			"format_on_save": "on",
 			"formatter": [{ "language_server": { "name": "oxfmt" } }],
-			"language_servers": ["tailwindcss-language-server", "oxfmt", "..."]
+			"language_servers": ["tailwindcss-language-server", "oxfmt", "!vscode-css-language-server"]
 		},
 		"HTML": {
 			"format_on_save": "on",
@@ -11,11 +11,6 @@
 			"language_servers": ["oxfmt", "..."]
 		},
 		"JavaScript": {
-			"format_on_save": "on",
-			"formatter": [{ "language_server": { "name": "oxfmt" } }],
-			"language_servers": ["oxfmt", "!oxlint", "..."]
-		},
-		"JSX": {
 			"format_on_save": "on",
 			"formatter": [{ "language_server": { "name": "oxfmt" } }],
 			"language_servers": ["oxfmt", "!oxlint", "..."]
@@ -36,11 +31,6 @@
 			"language_servers": ["oxfmt", "..."]
 		},
 		"Svelte": {
-			"format_on_save": "on",
-			"formatter": [{ "language_server": { "name": "oxfmt" } }],
-			"language_servers": ["oxfmt", "!oxlint", "..."]
-		},
-		"TSX": {
 			"format_on_save": "on",
 			"formatter": [{ "language_server": { "name": "oxfmt" } }],
 			"language_servers": ["oxfmt", "!oxlint", "..."]
