@@ -15,7 +15,9 @@ To recreate this project with the same configuration:
 
 ```sh
 # recreate this project
-nubx sv@0.17.0 create --template minimal --types ts --add prettier tailwindcss="plugins:none" --install nub personal-site
+nubx sv@0.17.0 create --template minimal --types ts --add tailwindcss="plugins:none" --install nub personal-site
+cd personal-site
+nub add -D oxfmt
 ```
 
 ## Developing

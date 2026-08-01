@@ -1,0 +1,22 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"printWidth": 100,
+	"useTabs": true,
+	"singleQuote": true,
+	"semi": true,
+	"trailingComma": "none",
+	"svelte": true,
+	"sortImports": {},
+	"sortTailwindcss": {
+		"stylesheet": "./src/routes/layout.css"
+	},
+	"ignorePatterns": [
+		"static/**",
+		"package-lock.json",
+		"pnpm-lock.yaml",
+		"yarn.lock",
+		"bun.lock",
+		"bun.lockb",
+		"nub.lock"
+	]
+}
