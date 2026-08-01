@@ -1,14 +1,14 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import logo from '$lib/assets/mark.svg';
 
-	let mobileMenuIsOpen = $state(false);
+	let mobileMenuIsOpen = $state(true);
 
 	// TODO: Animate logo on hover/focus
 	// TODO: Add current focus state
 	// TODO: Hambuger menu for additional links
 
 	const links = [
-		{ name: 'Home', href: '/' },
 		{ name: 'About', href: '/about' },
 		{ name: 'Contact', href: '/contact' },
 		{ name: 'Field Notes', href: '/field-notes' },
@@ -17,7 +17,7 @@
 </script>
 
 <nav
-	class="mb-4 flex h-10 items-center justify-between border border-neutral-300 bg-neutral-100 px-1"
+	class="fixed right-0 bottom-0 left-0 z-20 flex h-10 w-svw items-center justify-between border-t border-neutral-300 bg-neutral-100 px-1"
 >
 	<a
 		href="/"
@@ -28,13 +28,17 @@
 	<button onclick={() => (mobileMenuIsOpen = !mobileMenuIsOpen)}>BUR</button>
 	{#if mobileMenuIsOpen}
 		<div
-			class="fixed top-0 left-0 h-svh w-svw bg-neutral-100 p-3 transition-opacity starting:opacity-0"
+			class="i fixed right-0 bottom-10 left-0 z-10 h-fit w-svw border-t border-neutral-300 bg-neutral-100 p-3 uppercase"
 		>
-			<ul>
+			<ul
+				class="*:border-r *:border-b *:border-l *:border-neutral-300 last:border-t last:border-neutral-300"
+			>
 				{#each links as link}
 					<li>
-						<a href={link.href} onclick={() => (mobileMenuIsOpen = !mobileMenuIsOpen)}
-							>{link.name}</a
+						<a
+							href={link.href}
+							class="grid h-10 place-items-center font-medium"
+							onclick={() => (mobileMenuIsOpen = !mobileMenuIsOpen)}>{link.name}</a
 						>
 					</li>
 				{/each}
