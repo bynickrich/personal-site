@@ -3,9 +3,10 @@
 	import '@fontsource/ibm-plex-mono';
 	import '@fontsource/ibm-plex-sans-condensed/600.css';
 	import '@fontsource/ibm-plex-sans-condensed/700.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/mark.svg';
 
 	import './layout.css';
+	import Navbar from '$lib/components/Navbar.svelte';
 
 	let { children } = $props();
 </script>
@@ -15,4 +16,5 @@
 	<title>Nick Richardson</title>
 </svelte:head>
 
+<Navbar />
 {@render children()}
