@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "prettier.enable": false,
+  "oxc.enable.oxfmt": true,
+  "oxc.useExecPath": true,
+  "oxc.path.oxfmt": "node_modules/oxfmt/bin/oxfmt",
+  "editor.defaultFormatter": "oxc.oxc-vscode"
+}

@@ -6,10 +6,11 @@
 	"semi": true,
 	"trailingComma": "none",
 	"svelte": true,
-	"sortImports": {},
+	"sortImports": true,
 	"sortTailwindcss": {
 		"stylesheet": "./src/routes/layout.css"
 	},
+	"sortPackageJson": true,
 	"ignorePatterns": [
 		"static/**",
 		"package-lock.json",
