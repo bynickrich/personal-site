@@ -11,10 +11,7 @@
 	let { children } = $props();
 </script>
 
-<svelte:head
-	><link rel="icon" href={favicon} />
-	<title>Nick Richardson</title>
-</svelte:head>
+<svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 <Navbar />
 {@render children()}
