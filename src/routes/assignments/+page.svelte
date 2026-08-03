@@ -1,5 +1,11 @@
+<script>
+  import SectionContainer from "$lib/components/SectionContainer.svelte";
+</script>
+
 <svelte:head>
-	<title>Nick Richardson - Assignments</title>
+  <title>Nick Richardson - Assignments</title>
 </svelte:head>
 
-<h1>Assignments overview</h1>
+<SectionContainer>
+  <h1>Assignments overview</h1>
+</SectionContainer>
