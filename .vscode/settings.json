@@ -9,5 +9,9 @@
   "oxc.enable.oxfmt": true,
   "oxc.useExecPath": true,
   "oxc.path.oxfmt": "node_modules/oxfmt/bin/oxfmt",
-  "editor.defaultFormatter": "oxc.oxc-vscode"
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "tailwindCSS.classFunctions": [
+    "tv",
+    "cx"
+  ]
 }
