@@ -9,6 +9,9 @@
   import Navbar from "$lib/components/Navbar.svelte";
 
   let { children } = $props();
+
+  // TODO: Consider moving diagonal lines onto main?
+  // TODO: Footer component
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
