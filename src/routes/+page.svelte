@@ -46,7 +46,7 @@
   </div>
 </section>
 <section
-  class="border border-neutral-300 bg-neutral-100 h-12 grid place-items-center mb-4"
+  class="border border-neutral-300 bg-neutral-100 h-12 grid place-items-center mb-4 font-medium"
 >
   LOGOS HERE
 </section>
