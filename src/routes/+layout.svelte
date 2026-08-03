@@ -7,6 +7,7 @@
 
   import "./layout.css";
   import Navbar from "$lib/components/Navbar.svelte";
+  import Footer from "$lib/components/Footer.svelte";
 
   let { children } = $props();
 
@@ -17,6 +18,7 @@
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 <Navbar />
-<main class="sm:w-full sm:max-w-300 pb-20">
+<main class="sm:w-full sm:max-w-300">
   {@render children()}
 </main>
+<Footer />

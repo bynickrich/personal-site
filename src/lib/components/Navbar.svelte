@@ -125,7 +125,7 @@
   <button
     type="button"
     aria-label="Close navigation menu"
-    class="fixed inset-0 z-0 bg-neutral-800/40"
+    class="fixed inset-0 z-1 bg-neutral-800/40"
     transition:fade={{ duration: 150 }}
     onclick={closeMobileNav}
   ></button>
