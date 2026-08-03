@@ -14,6 +14,6 @@
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 <Navbar />
-<main class="sm:w-full sm:max-w-300">
+<main class="sm:w-full sm:max-w-300 pb-20">
   {@render children()}
 </main>

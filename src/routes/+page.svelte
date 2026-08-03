@@ -8,7 +8,7 @@
 </svelte:head>
 
 <section
-  class="border border-neutral-300 bg-neutral-100 p-3 flex flex-col items-center gap-4"
+  class="border border-neutral-300 bg-neutral-100 p-3 flex flex-col items-center gap-4 mb-4"
 >
   <figure
     class="size-80 border border-neutral-300 grid place-items-center font-medium"
@@ -23,7 +23,7 @@
     </p>
     <div class="flex flex-col gap-1">
       <h1 class="font-display text-3xl">Nick Richardson</h1>
-      <p class="text-neutral-700 leading-5.5">
+      <p class="text-neutral-700 leading-5.5 pl-px">
         Design designer with a decade of product design experience that can also
         code. Operating in React, Next.js, Tailwind, TypeScript, and my personal
         favorite Svelte.
@@ -39,4 +39,9 @@
       class={buttonVariants({ color: "outline", class: "w-full" })}>Contact</a
     >
   </div>
+</section>
+<section
+  class="border border-neutral-300 bg-neutral-100 h-12 grid place-items-center"
+>
+  LOGOS HERE
 </section>
