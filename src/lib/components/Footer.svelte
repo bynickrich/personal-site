@@ -3,7 +3,7 @@
   import src from "$lib/assets/mark.svg";
 </script>
 
-<footer class="mb-20 bg-neutral-100 border border-neutral-300 relative">
+<footer class="bg-neutral-100 border border-neutral-300 relative">
   <!-- Legal Discolsure -->
   <div class="flex gap-2 p-3 border-b border-neutral-300">
     <div class="flex flex-col gap-0.5">
@@ -22,7 +22,7 @@
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
     <a href="/field-notes">Field Notes</a>
-    <a href="/assignemnts">Assignments</a>
+    <a href="/assignments">Assignments</a>
   </div>
   <!-- Social Icons -->
   <div class="flex h-10 gap-2 items-center justify-center">
@@ -72,5 +72,4 @@
       >
     </a>
   </div>
-  <!-- TODO: Overscoll shows a little pom pom -->
 </footer>
