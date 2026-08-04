@@ -1,16 +1,13 @@
 {
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
-  "editor.quickSuggestions": {
-    "strings": "on"
-  },
-  "prettier.enable": false,
-  "oxc.enable.oxfmt": true,
-  "oxc.useExecPath": true,
-  "editor.defaultFormatter": "oxc.oxc-vscode",
-  "tailwindCSS.classFunctions": [
-    "tv",
-    "cx"
-  ]
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"editor.quickSuggestions": {
+		"strings": "on"
+	},
+	"prettier.enable": false,
+	"oxc.enable.oxfmt": true,
+	"oxc.useExecPath": true,
+	"editor.defaultFormatter": "oxc.oxc-vscode",
+	"tailwindCSS.classFunctions": ["tv", "cx"]
 }

@@ -1,11 +1,9 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
+	import type { Snippet } from 'svelte';
 
-  let { children }: { children: Snippet } = $props();
+	let { children }: { children: Snippet } = $props();
 </script>
 
-<section
-  class="bg-neutral-100 border border-neutral-300 p-3 flex flex-col gap-2 mb-4"
->
-  {@render children()}
+<section class="mb-4 flex flex-col gap-2 border border-neutral-300 bg-neutral-100 p-3">
+	{@render children()}
 </section>
