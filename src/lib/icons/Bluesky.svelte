@@ -1,11 +1,7 @@
 <script lang="ts">
-	type Props = {
-		width?: number;
-		height?: number;
-		class?: string;
-	};
+	import type { SVGAttributes } from 'svelte/elements';
 
-	let { width = 24, height = 24, class: className }: Props = $props();
+	let { width = 24, height = 24, ...rest }: SVGAttributes<SVGSVGElement> = $props();
 </script>
 
 <svg
@@ -15,7 +11,7 @@
 	preserveAspectRatio="xMidYMid"
 	viewBox="0 0 256 226"
 	fill="currentColor"
-	class={className}
+	{...rest}
 >
 	<path
 		fill="currentColor"
