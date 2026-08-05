@@ -33,10 +33,10 @@
 
 	const links = [
 		{ name: 'Home', href: '/' },
+		{ name: 'Work', href: '/assignments' },
 		{ name: 'About', href: '/about' },
 		{ name: 'Contact', href: '/contact' },
-		{ name: 'Field Notes', href: '/field-notes' },
-		{ name: 'Assignments', href: '/assignments' }
+		{ name: 'Field Notes', href: '/field-notes' }
 	];
 </script>
 
@@ -49,10 +49,10 @@
 >
 	<a
 		href="/"
-		aria-label="Navigate home"
+		aria-label="Home"
 		onclick={closeMobileNav}
 		class="flex h-8 w-fit items-center gap-1.5 p-1.5 font-display text-lg font-medium transition-colors hover:bg-neutral-200"
-		><img src={logo} alt="Logo" class="size-5" />Nick Richardson</a
+		><img src={logo} alt="" class="size-5" />Nick Richardson</a
 	>
 	<button
 		onclick={() => (isOpen = !isOpen)}

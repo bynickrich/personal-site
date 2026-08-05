@@ -46,7 +46,7 @@
 			style:transform={`scale(${scale})`}
 		/>
 		{#if progress > 0.75}
-			<p class="rounded-full bg-white px-3 py-2 text-sm shadow-md">Hi, my name is Sophie!</p>
+			<p class="rounded-full bg-white px-3 py-2 text-sm shadow-md">Hi, I’m Sophie.</p>
 		{/if}
 	</div>
 </section>
