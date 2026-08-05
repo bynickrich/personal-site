@@ -1,0 +1,123 @@
+# DataPoint
+
+Created: March 10, 2023 11:01 AM
+Status: Completed
+
+## Table of contents
+
+## Metadata
+
+Role: Product Designer
+
+Disciplines: Interface, interaction, and brand design
+
+Project Date Range: Sep 2021 - Jul 2022
+
+## Summary
+
+Quality Counts hired me to redesign and brand an experimental tool and bring it to production status. To accomplish this task, I created a design system called Cardinal. By zooming into individual interface elements and zooming out, as I discuss in my [process page](https://www.notion.so/Process-872b0bcd115e44ee8beca49eff0716ad), I was able to refine both the product's experience and how the interface elements come together. The resulting tool helps citizens and city planners grow their communities.
+
+The team successfully delivered an updated version of DataPoint (2.0), which includes advanced planning features to understand if sections of a road were at, over, or under capacity based on historical traffic data. With the creation of Cardinal, the team was able to experiment with other ideas quickly to find product market fit, such as using computer vision systems to count traffic instead of the tubes traditionally found across roads. It was a pleasure to guide the team in creating a vision for what DataPoint and other software from Quality Counts could look like in the future.
+
+## Problem
+
+Quality Counts (QC) successfully created an experimental self-serve environment for citizens and city planners using their traffic count data via a web-based tool. However, this was their first attempt at creating a production-ready software in terms of performance and user experience. As QC had no experience in software development, they hired me to lead the creative direction and work with internal resources and a contracted development team to create a software division of the company.
+
+The challenge was to create a tool that engineers could use to make informed design decisions, while also being simple enough for citizens to quickly validate assumptions about traffic capacity in their community.
+
+## Goals
+
+1. Create a foundational design system for building DataPoint and other potential software solutions.
+2. Redesign the experience and interface of DataPoint.
+3. Add a module to DataPoint that can determine the traffic capacity of a selected intersection.
+
+## Process
+
+Within the day to day activates I follow the two different process that I outline on my [process page](https://app.notion.com/p/Process-872b0bcd115e44ee8beca49eff0716ad?pvs=21). To give a bit more context of what these processes looked like when working on DataPoint you can break it down into the following:
+
+### **Understand**
+
+When I first joined the DataPoint team, I was faced with a steep learning curve as I had no prior experience in city planning, traffic analysis, or navigating public office constraints and relations. To truly grasp the goals of Quality Counts (QC) and their vision for DataPoint, I dedicated my first month to studying the existing version of the product and engaging in extensive conversations with QC team members. Additionally, I reached out to multiple cities that had previously seen a demo of DataPoint to identify their desired features and functionality that would improve their workflow processes.
+
+Based on my research, I concluded that there was a dual need that had to be addressed. While stakeholders needed to be informed of their cities' traffic conditions, they also craved the capability to analyze and comprehend the root causes of specific traffic issues at intersections or midblocks. I synthesized this data from all stakeholders and collaborated with the core development team of DataPoint and QC members to define the scope of a new and improved version of DataPoint.
+
+Through diligent research and collaboration with key stakeholders, we were able to identify a clear direction for the development of DataPoint, which ultimately led to a more effective and user-friendly version of the product.
+
+### **Explore**
+
+To optimize DataPoint 2.0, I delved into two key areas: refining its visual identity and exploring the diverse mental models of interaction that our customers have. This entailed examining whether our users prefer navigating data via a map, searching for specific stations, or viewing station data before returning to the bigger picture. As I ventured further into these domains, I realized that there were other areas that demanded a more thorough understanding before crafting interfaces. To address this, I collaborated with the team to identify the most critical experiences with the data we had acquired so far, while also compiling an opportunity backlog of items we wanted to process through the entire design process.
+
+### **Materialize**
+
+When we started to move into areas of the project that we could focus on materializing the design system and interface elements we defined some core principles for what we wanted our interface and interactions to follow.
+
+1. Native to the web → During the understanding section of this project, I conducted a competitive analysis of the tools used by city planners and engineers. I also educated myself on the experiences of everyday citizens would have when viewing map information on platforms such as Google and Apple Maps. As we moved away from the consumer demographic, we noticed that the city planners and engineers were using almost exclusively native Windows apps that followed the software design paradigms of Windows XP. A keyword that we kept hearing from stakeholders was "modern". They wanted this information to be available on any computer with an internet connection. With this in mind, we aimed to create an interface and experience that felt like it belonged on the web, rather than a desktop app that was poorly ported to run in the browser.
+2. Minimal → The star of the show was the traffic data. We wanted the interface to melt away, but when displaying data do so in an opinionated way that would make sense for any knowledge level of user.
+3. Progressive Disclosure → We learned that there were two common usage patterns. 1. Quickly check and retrieve information from your stations. 2. Take a deep dive into the traffic data. These means that each experience need to have an escape hatch in mind to allow our city planners/engineers download the data and do some manual crunching within Excel.
+
+## Design
+
+To keep these article as concise as possible I will break apart this section into the “Original” version of DataPoint and a 2.0 section that goes over some of the highlights of the changes we made. If you are curious and want to explore I will provide a link to a collection of screenshots of the original DataPoint and a link to the Figma document. If you would like to ask a specific question about this project please reach out to me using the contact page and I will reply as soon as possible.
+
+### **Original**
+
+Unfortunately, the designer who created the base design for DataPoint left before I joined the team. From what I could gather, the primary interaction model is designed for customers to navigate around the map and change their zoom level to select a specific intersection or midblock. Stations that are close together form a cluster and are displayed with a number. When the customer clicks on the cluster, the map zooms in to show each specific station.
+
+When a customer clicks on a specific station, a panel appears with overview information. The information displayed depends on whether the station is an intersection or midblock. This section will cover intersections. The overview shows the most recent types of data and a dropdown that contains each count file. Counts are broken down by time of day, such as AM, Midday, or PM. After selecting a time period, the count data is displayed based on turning movements (breakdown of traffic through each direction of an intersection), truck percentages, pedestrian volume, and bike movements. Below this diagram, there is additional metadata that comes with the count file. If the customer wants to dive into the details, they can press the “View All Details” button, which opens a breakdown of the information in a new tab.
+
+
+
+**All original screenshots**
+
+If you would like to see what the original DataPoint looked like, check out this repository of screenshots I took while auditing the app.
+
+[Original DataPoint - Google Drive](https://drive.google.com/drive/folders/1uNAblvdgZH9-g5uE1CuAqh2tZn6Tt_Li?usp=share_link)
+
+### **DataPoint 2.0 (Re-design)**
+
+After testing various layouts, our team decided to divide the app into three main sections. Firstly, the top navigation bar would serve as a tool for users to search and filter through items, allowing them to easily locate specific stations. Secondly, the map view would enable both public citizens and authenticated city workers to visually access data related to intersections, midblocks, traffic signals, bus stops, and crash data, using specific iconography. Lastly, the inspector bar would be contextual, changing based on the user's interactions with the first two areas. Without selecting a station, the inspector bar displays a complete report of all visible stations on the selected map. Once a customer chooses a specific station, the inspector area adjusts to show the data of the selected station.
+
+Overall, the app is designed to optimize the initial interaction, where users can quickly browse through data and make informed decisions. For those wanting a more in-depth analysis, we use progressive disclosure by opening a modal on top of the current view.
+
+
+### Intersections
+
+The modal for the intersection is divided into three tabs, each containing valuable information. The first tab, Station Details, presents an overview of the intersection's basic information, alongside all the necessary files and count data pertinent to the station. The second tab, Traffic Counts, is designed to display data commonly used by city planners and engineers. The tab includes filter controls to select specific count dates and times, as well as diagrams that demonstrate turning movements, the number of trucks and pedestrians, and bike movements for each gate. Additionally, we provide a specific readout of all the count data based on the count time, highlighting peak 15 and peak hour to understand and plan for congestion in the road network.
+
+The third tab, Capacity Planner and Simulator, includes a formula based on the "Highway Capacity Manual" from the engineers at Kittelson, to help understand when an intersection is below, near, or over capacity. This tab includes a basic mode for new engineers and an advanced mode that provides extensive control over every part of the formula. Moreover, the top bar of the modal features an affordance to export the data and an icon to open the station information in a new tab, facilitating side-by-side comparisons with other stations.
+
+
+
+### Midblocks
+
+Compared to intersections, midblocks only exhibit traffic flow in two directions, either North and South or East and West. Additionally, midblocks have two tabs. The first tab shares similarities with the intersection, providing information on basic station details and file management. The second tab, on the other hand, offers a more detailed breakdown of the traffic counts, presenting useful charts and filters that enable customers to have a better understanding of the types of vehicles that are passing through the station.
+
+**Midblock overview information**
+
+
+**Midblock details**
+
+
+### Everything else
+
+I poured a lot of effort and attention into every aspect of the DataPoint project. One of my primary focuses was streamlining the upload and management processes, ensuring they were user-friendly and intuitive. In addition, I collaborated with the development team to incorporate Intercom within the app, which helped make the customer support experience seamless, particularly for new users who were onboarding.
+
+## Next steps
+
+The launch of DataPoint 2.0 was a success, although there were some challenges along the way. When I last spoke with Quality Counts, they had a queue of about 30 customers waiting to be onboarded. One area that requires additional work is data management and importing. To simplify the process, Quality Counts offers a data import service, which involves QC employees taking historical data and importing it directly into the DataPoint instance. However, this approach has its challenges, since older data can be very messy. Improving the efficiency of data importing and problem-solving with internal tools could eliminate this issue and allow us to focus our attention on ensuring customer data is clean.
+
+Another area that requires attention is the technical aspect of the platform. Currently, each customer has their own DataPoint instance, which means there is a unique URL for each city. I suggested the idea of creating a unified instance for all customers, which would enable different cities to share traffic data and collaborate effectively. This idea was postponed for the initial release of DataPoint 2.0 but is part of our roadmap for the 3.0 release.
+
+As more customers use DataPoint, we need to re-evaluate whether our current progressive disclosure modal still makes sense. We may need to store a few stations in a minimized state in a bottom interaction bar, or add a windowing feature that enables customers to view multiple stations' data within the same browser window, rather than opening each station in a new tab.
+
+## Takeaways
+
+Designing a tool that caters to both novice and pro users can be a daunting task. However, I discovered that implementing a progressive disclosure approach proved to be effective for this project. It's important to bear in mind that just because the target audience is pro users, it doesn't imply that the tool should be overly intricate or packed with information. Instead, providing on and off ramps within the user's current view or mental modal enables them to access the relevant information they need without getting overwhelmed.
+
+## Contributors
+
+This project contained no outside design assistance
+
+## Links
+
+[https://www.figma.com/file/dtKTGXYU7p3XyAcrLfnrVt/DataPoint?type=design&node-id=770%3A60163&t=3TaDbfS7A0RlaimD-1](https://www.figma.com/file/dtKTGXYU7p3XyAcrLfnrVt/DataPoint?type=design&node-id=770%3A60163&t=3TaDbfS7A0RlaimD-1)

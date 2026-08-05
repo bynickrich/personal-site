@@ -8,4 +8,6 @@
 
 <SectionContainer>
 	<h1>Assignments overview</h1>
+	<a href="/assignments/datapoint">DataPoint</a>
+	<a href="/assignments/zentra">Zentra</a>
 </SectionContainer>

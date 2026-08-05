@@ -1,0 +1,104 @@
+# Zentra
+
+Created: April 14, 2023 11:04 AM
+Status: Completed
+
+## Table of contents
+
+## Metadata
+
+- **Role**: Senior UI Designer
+- **Disciplines**: Interface design & creative direction
+- **Project date range:** 2021 - July 2023
+- **Employment type**: Full-time In-house
+
+## Summary
+
+Allegion is no longer just a traditional manufacturer; they are now focused on software and electrification to differentiate themselves from competitors. I was hired to establish a new multi-family brand that included creating a brand and design system for a web app, as well as a native iOS and Android app. This project has been the toughest challenge I've ever faced. Our team has encountered significant obstacles such as working with Schlage's hardware, dealing with different team dynamics, and constantly shifting product directions. Nevertheless, we've still managed to design a fantastic user experience, and I've added a level of detail and polish that Allegion has never seen before, particularly in the Zentra web app. This project has challenged me to develop my people and mentoring skills, rather than simply honing my design craft. Although this project is still ongoing, I will continue to update this piece with new developments and wins.
+
+## Problem
+
+The multi-family space has been a space that Allegion has placed in as a hardware provider for some time, but has been hesitant to enter the market, fearing to step on the toes of its partners who use the Schlage Control lock. However, this sector is ripe for innovation, and property technology companies are continuously emerging to offer a new spin. These companies have focused on new construction, where their hardware and solutions require an internet infrastructure to provide real-time information. Nevertheless, we interviewed multi-family property portfolio owners and discovered a significant portion of the market is looking for a retrofit solution to offer smarter and cheaper access control without requiring a new infrastructure setup. Many apartment complexes have to deal with two access control systems, one for real-time perimeter security and another for the residences' apartments, which use a traditional lock and key setup. Our primary concern was how to develop a retrofit setup that could provide existing apartment complexes with the benefits of electronic access control while unifying access under a single software solution.
+
+## Goals
+
+1. Establish a new brand and accompanying design system for Zentra
+2. Rework the PureAccess (Isonas was a company that Allegion acquired and the team decided to use PureAccess as a starting point for our new access control solution) web app into a multi-family focused web experience
+3. Create a branded mobile experience for residents, integrators, and property staff to use.
+
+## Process
+
+Throughout the Zentra project, I experimented with various processes to help propel the team forward through its ups and downs. At the start of the project, we had an interesting dynamic where leadership asked us to challenge what access control was. While product pushed for small changes before establishing a clear brand or path forward. The team struggled to define a vision and lacked direction. Legal hurdles cleared, and branding was established, but my focus shifted towards day-to-day execution of building a design system foundation and working with individual developers to move the project forward from 0 to 1. On the web-side, this was easily done, while on mobile, I utilized stock elements from iOS and Android to help the mobile devs meet deadlines. Currently, I continue working with individual developers to add more craft to the product and implement a highly polished package of web components. I have spent considerable time helping team members understand the benefits of utilizing small teams for frontend and interface work, while the rest of the dev team focuses on functionality. Gradually, these ideas are gaining acceptance within the Zentra team.
+
+## Design
+
+To provide a comprehensive overview of our design, I will discuss it in four distinct categories. Firstly, I'll introduce our brand, which represents our values and the emotions that we aim to evoke when customers engage with Zentra. Moving onto the website, I'll share our progress in transforming the existing PureAccess product to cater specifically to multi-family verticals. While our mobile apps require more attention, our team is currently prioritizing the basics. Lastly, I'll delve into the Niwa design system, which is the foundation I use to create all of our designs.
+
+### Brand
+
+The marketing and leadership teams collaborated with Warehouse21 to create a brand for their new venture. My role was to act as a consultant and creative director, guiding the team in developing a brand that aligned with their vision. After some communication between Allegion and Warehouse21, they settled on the name Zentra. Though Warehouse21 presented some logo options, the marketing team also used internal resources to propose alternatives. The team sought a theme of peace, calm, and zen, opting for a green color palette to differentiate Zentra.
+
+Zentra's mission is to provide simple, smart, and secure property access through integrated software, hardware, and services that work together harmoniously. The team aimed to create a more peaceful existence by relieving the frustration of shared property access and offering intuitive and streamlined solutions that delight people. We embraced the concept of Zen by focusing on Simpler, Smarter, and more Secure. I created the color palette by experimenting with colors and using Google's Material You tools. The output was refined to be easily understood by the team. The brand's typescale was based on Tailwind CSS's scale, with [Warehouse21](https://www.warehouse21.com/) selecting the "Outfit" typeface from Google Fonts. Additionally, [Warehouse21](https://www.warehouse21.com/) proposed the Zen garden lines for the brand, which I incorporated for added character.
+
+Working with the marketing team allowed me to establish a clear direction for the web and app design. I aimed to create a soft and approachable design that focused on ease of use, setting Zentra apart from other access control solutions. More details are outlined in the Niwa (design system) section below.
+
+**Brand book**
+
+This project was created in collaboration with Warehouse21. My contributions include creating the color palette, refining the logo concept, mission statement, and focus. I acted as a creative director to guide the overall look and feel of the brand.
+
+
+More of the brand will be displayed from a design system perspective further in this article.
+
+### Mobile
+
+The mobile app has been a real struggle so far. The main purpose of the Zentra mobile app is twofold:
+
+1. To replace the current Allegion Engage app and allow integrators to set up and "commission" the lock to the proper site.
+2. To allow residents and other personas to create a mobile credential that allows them to unlock areas they have access to with just their phone.
+
+When I was first brought on, there was a push to go as fast as possible to give the devs content to work from. The original version of the mobile app used the same blue branding as PureAccess and kept things very basic. The devs were spending more time fighting the lock SDK to the point of reverse-engineering it since it was never documented. As we continued to work with the product, the scope of the app ballooned.
+
+As of right now, I am working with the dev teams to rebrand the app to feel like it's part of Zentra. The app still feels pretty rough, so at this phase, it's time to learn more from customers and focus on polishing each experience. The outstanding question that I have is whether it makes more sense for property managers, maintenance staff, or integrators to bring the management capabilities from the web app into something that can be used while walking around the property.
+
+Through my own experience, I have also seen property management staff using iPads. I believe it makes sense for the team to work on an iPad-specific app that becomes a powerful mobile system for all things access control.
+
+[https://www.figma.com/file/BjKmvjyWBgET6htaUgQqB2/Zentra-_-Living---iOS?type=design&node-id=0%3A1&t=xG3CbprDR75p4NQK-1](https://www.figma.com/file/BjKmvjyWBgET6htaUgQqB2/Zentra-_-Living---iOS?type=design&node-id=0%3A1&t=xG3CbprDR75p4NQK-1)
+
+### Web
+
+The current web app for Isonas's PureAccess brand focuses on commercial access control but lacks a distinct visual identity. The existing team relied on Material Design components from MUI and a pre-defined shade of blue, resulting in a utilitarian and flexible software that can cause confusion. Rather than investing time in creating a comprehensive interface, our goal with Zentra is to streamline functionality and guide users through common workflows, especially given the high turnover rate for property managers who only last three to five months on average.
+
+To achieve this, we aimed to make the interface more approachable and user-friendly. After researching property staff and reviewing footage of them using the current software, we found that language and discoverability were key issues. We decided to re-work PureAccess one section at a time, starting with the side nav. Our research showed that people didn't understand the icons and didn't know how to uncollapse the nav. We opted to use Tailwind CSS for greater flexibility and created a simplified version of the nav. We combined the top nav and its primary actions, such as "Compile" and "Command", into a non-icon button to make these common actions more accessible.
+
+We also added a site switcher for property staff and integrators who manage multiple properties, relocating profile information to the bottom with dedicated info and settings icon-buttons. To ensure accessibility, we developed extensive specifications that account for every possible state, along with keyboard shortcuts and tab order. This approach enables novice users to understand the software easily, while offering power users the tools they need to work efficiently.
+
+**Previous web portal (PureAccess)**
+
+
+**Concepts and select areas being redesigned**
+
+[https://www.figma.com/file/0U2ZetHCXYppukaHsN42lX/Zentra-_-Living---Web?type=design&node-id=204%3A70&t=Hy8KeTco4OiTXrxy-1](https://www.figma.com/file/0U2ZetHCXYppukaHsN42lX/Zentra-_-Living---Web?type=design&node-id=204%3A70&t=Hy8KeTco4OiTXrxy-1)
+
+### Niwa (Design system)
+
+As the team continues to Zentraify all existing PureAccess assets, leadership desires to create designs that feel "native" to each platform that Zentra is running on. This means that the web platform will follow conventional web standards, iOS will be themed Zentra but follow common patterns of a native iOS app, and Android will do the same, potentially switching from the tab bar at the bottom of the screen of iOS to a hamburger menu. To accommodate these requests, I have restructured the design system into six libraries that build off of each other.
+
+- Niwa | Core: Contains all brand assets such as colors, icons, illustrations, and a multitude of other design tokens that will be the same across mediums.
+- Niwa | iOS: Extends the core library and creates assets that are specific to the iOS platform, such as the iOS typescale to accommodate accessibility, system colors, alerts, page-level back buttons, etc.
+- Niwa | Android: Extends the core library and creates assets that are specific to the Android platform, such as the Android typescale to accommodate accessibility, system colors, alerts, fabs for primary actions, and a system back function.
+- Niwa | Marketing: Extends the core library and handles all digital marketing requests and potentially creates a custom website outside of what agencies created for Zentra. Also creates email templates for properties and other resources that Zentra would use internally or to help properties during the transition to Zentra.
+- Niwa | Print: Extends the core library and handles any print assets such as manuals or flyers for residents.
+
+
+## Next steps
+
+As mentioned above there are many steps that need to be taken to get the Zentra product to my standard. We need to continue the work on the design system and building out each platform a component/experience at a time. I am stressing to the team that we should focus and be very intentional with each piece of the interface and how it reacts to add a level of polish that customers feel trust in Zentra.
+
+## Takeaways
+
+As I continue to grow in my career I’m finding the hard part anymore isn’t the design work but the people. To make a world class design you need a team with great communication and prioritization skills. I believe with my experiences on the Zentra team thus far I am much more comfortable providing my opinion on how the team and product should operate to solve the customers need.
+
+## Contributors
+
+- Ginger White - Researcher
+- Dan Hernandez - Interaction designer
