@@ -12,9 +12,7 @@
 </svelte:head>
 
 <SectionContainer>
-	<p class="font-mono text-xs font-medium tracking-wide text-neutral-700 uppercase">
-		Project archive
-	</p>
+	<p class="text-xs font-medium tracking-wide text-neutral-700 uppercase">Project archive</p>
 	<h1>Selected work</h1>
 	<p class="max-w-3xl text-neutral-700">
 		Product, system, and frontend work that shows how I connect customer needs, interface decisions,

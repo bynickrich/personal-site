@@ -9,5 +9,11 @@
 	"oxc.enable.oxfmt": true,
 	"oxc.useExecPath": true,
 	"editor.defaultFormatter": "oxc.oxc-vscode",
-	"tailwindCSS.classFunctions": ["tv", "cx"]
+	"tailwindCSS.classFunctions": [
+		"tv",
+		"cx"
+	],
+	"[svelte]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode"
+	}
 }

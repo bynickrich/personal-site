@@ -11,7 +11,7 @@
 </svelte:head>
 
 <SectionContainer>
-	<p class="font-mono text-xs font-medium tracking-wide text-neutral-700 uppercase">
+	<p class="text-xs font-medium tracking-wide text-neutral-700 uppercase">
 		Case study / In progress
 	</p>
 	<h1>Catalyst</h1>

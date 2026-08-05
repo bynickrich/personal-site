@@ -16,7 +16,7 @@
 <SectionContainer>
 	<figure class="grid size-80 place-items-center border border-neutral-300 p-6 text-center">
 		<img src={logo} alt="" class="size-16" />
-		<figcaption class="font-mono text-sm font-medium tracking-wide uppercase">
+		<figcaption class="text-sm font-medium tracking-wide uppercase">
 			Design / Systems / Code
 		</figcaption>
 	</figure>
@@ -82,7 +82,7 @@
 </SectionContainer>
 
 <SectionContainer>
-	<p class="font-mono text-xs font-medium tracking-wide text-neutral-700 uppercase">Archive</p>
+	<p class=" text-xs font-medium tracking-wide text-neutral-700 uppercase">Archive</p>
 	<h2 class="font-display text-xl font-medium text-neutral-800 uppercase">Field Notes</h2>
 	<p class="max-w-3xl text-neutral-700">
 		Technical notes on design systems, frontend implementation, and the decisions that connect

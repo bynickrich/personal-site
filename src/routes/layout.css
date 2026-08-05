@@ -4,7 +4,6 @@
 @theme inline {
 	--font-sans: 'IBM Plex Sans Variable', ui-sans-serif, system-ui, sans-serif;
 	--font-display: 'IBM Plex Sans Condensed', ui-sans-serif, system-ui, sans-serif;
-	--font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
 	--color-neutral-50: oklch(98.2% 0.01 83);
 	--color-neutral-100: oklch(94.2% 0.032 83);
