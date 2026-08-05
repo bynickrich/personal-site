@@ -1,18 +1,12 @@
-# Zentra
+---
+title: 'Zentra'
+role: 'Senior UI Designer'
+disciplines: 'Interface Design & Creative Direction'
+projectDateRange: '2021 - 2023
+employmentType: 'Full-Time'
+---
 
-Created: April 14, 2023 11:04 AM
-Status: Completed
-
-## Table of contents
-
-## Metadata
-
-- **Role**: Senior UI Designer
-- **Disciplines**: Interface design & creative direction
-- **Project date range:** 2021 - July 2023
-- **Employment type**: Full-time In-house
-
-## Summary
+## Debrief
 
 Allegion is no longer just a traditional manufacturer; they are now focused on software and electrification to differentiate themselves from competitors. I was hired to establish a new multi-family brand that included creating a brand and design system for a web app, as well as a native iOS and Android app. This project has been the toughest challenge I've ever faced. Our team has encountered significant obstacles such as working with Schlage's hardware, dealing with different team dynamics, and constantly shifting product directions. Nevertheless, we've still managed to design a fantastic user experience, and I've added a level of detail and polish that Allegion has never seen before, particularly in the Zentra web app. This project has challenged me to develop my people and mentoring skills, rather than simply honing my design craft. Although this project is still ongoing, I will continue to update this piece with new developments and wins.
 
@@ -62,7 +56,7 @@ As of right now, I am working with the dev teams to rebrand the app to feel like
 
 Through my own experience, I have also seen property management staff using iPads. I believe it makes sense for the team to work on an iPad-specific app that becomes a powerful mobile system for all things access control.
 
-[https://www.figma.com/file/BjKmvjyWBgET6htaUgQqB2/Zentra-_-Living---iOS?type=design&node-id=0%3A1&t=xG3CbprDR75p4NQK-1](https://www.figma.com/file/BjKmvjyWBgET6htaUgQqB2/Zentra-_-Living---iOS?type=design&node-id=0%3A1&t=xG3CbprDR75p4NQK-1)
+[Figma File](https://www.figma.com/file/BjKmvjyWBgET6htaUgQqB2/Zentra-_-Living---iOS?type=design&node-id=0%3A1&t=xG3CbprDR75p4NQK-1)
 
 ### Web
 
@@ -77,7 +71,7 @@ We also added a site switcher for property staff and integrators who manage mult
 
 **Concepts and select areas being redesigned**
 
-[https://www.figma.com/file/0U2ZetHCXYppukaHsN42lX/Zentra-_-Living---Web?type=design&node-id=204%3A70&t=Hy8KeTco4OiTXrxy-1](https://www.figma.com/file/0U2ZetHCXYppukaHsN42lX/Zentra-_-Living---Web?type=design&node-id=204%3A70&t=Hy8KeTco4OiTXrxy-1)
+[Figma File](https://www.figma.com/file/0U2ZetHCXYppukaHsN42lX/Zentra-_-Living---Web?type=design&node-id=204%3A70&t=Hy8KeTco4OiTXrxy-1)
 
 ### Niwa (Design system)
 

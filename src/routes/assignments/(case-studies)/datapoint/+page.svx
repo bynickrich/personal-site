@@ -1,19 +1,11 @@
-# DataPoint
+---
+title: 'Datapoint'
+role: 'Product Designer'
+disciplines: 'Interface, interaction, and brand design'
+projectDateRange: '2021 - 2022'
+---
 
-Created: March 10, 2023 11:01 AM
-Status: Completed
-
-## Table of contents
-
-## Metadata
-
-Role: Product Designer
-
-Disciplines: Interface, interaction, and brand design
-
-Project Date Range: Sep 2021 - Jul 2022
-
-## Summary
+## Debrief
 
 Quality Counts hired me to redesign and brand an experimental tool and bring it to production status. To accomplish this task, I created a design system called Cardinal. By zooming into individual interface elements and zooming out, as I discuss in my [process page](https://www.notion.so/Process-872b0bcd115e44ee8beca49eff0716ad), I was able to refine both the product's experience and how the interface elements come together. The resulting tool helps citizens and city planners grow their communities.
 
@@ -71,7 +63,7 @@ When a customer clicks on a specific station, a panel appears with overview info
 
 If you would like to see what the original DataPoint looked like, check out this repository of screenshots I took while auditing the app.
 
-[Original DataPoint - Google Drive](https://drive.google.com/drive/folders/1uNAblvdgZH9-g5uE1CuAqh2tZn6Tt_Li?usp=share_link)
+[Original DataPoint Interface](https://drive.google.com/drive/folders/1uNAblvdgZH9-g5uE1CuAqh2tZn6Tt_Li?usp=share_link)
 
 ### **DataPoint 2.0 (Re-design)**
 
@@ -120,4 +112,4 @@ This project contained no outside design assistance
 
 ## Links
 
-[https://www.figma.com/file/dtKTGXYU7p3XyAcrLfnrVt/DataPoint?type=design&node-id=770%3A60163&t=3TaDbfS7A0RlaimD-1](https://www.figma.com/file/dtKTGXYU7p3XyAcrLfnrVt/DataPoint?type=design&node-id=770%3A60163&t=3TaDbfS7A0RlaimD-1)
+[Figma File](https://www.figma.com/file/dtKTGXYU7p3XyAcrLfnrVt/DataPoint?type=design&node-id=770%3A60163&t=3TaDbfS7A0RlaimD-1)

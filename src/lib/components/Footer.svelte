@@ -8,7 +8,7 @@
 </script>
 
 <footer
-	class="relative mb-20 border border-neutral-300 bg-neutral-100 sm:grid sm:h-fit sm:grid-cols-2 sm:grid-rows-1"
+	class="relative mt-3 mb-20 max-w-300 border border-neutral-300 bg-neutral-100 sm:grid sm:h-fit sm:grid-cols-2 sm:grid-rows-1"
 >
 	<!-- Legal Disclosure -->
 	<div
@@ -34,10 +34,7 @@
 	</div>
 	<!-- Social Icons -->
 	<div class="flex h-10 justify-center sm:col-span-2 sm:row-start-2">
-		<div class="h-full w-3 border-l border-neutral-300 diagonal-buffer"></div>
-		<div
-			class="flex items-center gap-4 border-r border-l border-neutral-300 px-4 text-neutral-700 sm:w-fit sm:justify-center"
-		>
+		<div class="flex items-center gap-4 px-4 text-neutral-700 sm:w-fit sm:justify-center">
 			<a href="https://x.com/bynickrich" aria-label="Nick's X/Twitter">
 				<Twitter />
 			</a>
@@ -51,6 +48,5 @@
 				<Bluesky />
 			</a>
 		</div>
-		<div class="h-full w-3 border-r border-neutral-300 diagonal-buffer"></div>
 	</div>
 </footer>
