@@ -1,10 +1,10 @@
 ---
-title: "[Project name]"
-summary: "[One-sentence description]"
-role: "[Role]"
-timeline: "[Timeline]"
-status: "[Status]"
-confidentiality: "[Confidentiality level]"
+title: '[Project name]'
+summary: '[One-sentence description]'
+role: '[Role]'
+timeline: '[Timeline]'
+status: '[Status]'
+confidentiality: '[Confidentiality level]'
 ---
 
 # [Project name]

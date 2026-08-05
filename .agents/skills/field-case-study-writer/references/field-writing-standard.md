@@ -111,30 +111,30 @@ When using one, ask whether a more concrete statement is available.
 
 Use selectively for headings, labels, and modules:
 
-| Term | Intended use |
-|---|---|
-| Brief | Concise project summary |
-| Context | Conditions surrounding the work |
-| System | Connected product or technical elements |
-| Field | Bounded area of work or exploration |
-| Artifact | Concrete design or implementation evidence |
-| Constraint | Condition that limited the solution |
-| Decision | Meaningful choice with rationale |
-| Record | Documented decision or observation |
-| Signal | Evidence that informed a choice |
-| Specification | Explicit implementation requirement |
-| Module | Reusable content or interface unit |
-| Interface | Customer-facing or system-facing surface |
+| Term           | Intended use                                |
+| -------------- | ------------------------------------------- |
+| Brief          | Concise project summary                     |
+| Context        | Conditions surrounding the work             |
+| System         | Connected product or technical elements     |
+| Field          | Bounded area of work or exploration         |
+| Artifact       | Concrete design or implementation evidence  |
+| Constraint     | Condition that limited the solution         |
+| Decision       | Meaningful choice with rationale            |
+| Record         | Documented decision or observation          |
+| Signal         | Evidence that informed a choice             |
+| Specification  | Explicit implementation requirement         |
+| Module         | Reusable content or interface unit          |
+| Interface      | Customer-facing or system-facing surface    |
 | Infrastructure | Shared foundation that enables product work |
-| Implementation | How the solution was built |
-| Validation | How a claim or solution was tested |
-| Evidence | Metric, behavior, test, or feedback |
-| Outcome | What changed |
-| Status | Current state |
-| Review | Evaluation of work or quality |
-| Revision | Documented change or future correction |
-| Note | Supporting technical information |
-| Archive | Older or secondary work |
+| Implementation | How the solution was built                  |
+| Validation     | How a claim or solution was tested          |
+| Evidence       | Metric, behavior, test, or feedback         |
+| Outcome        | What changed                                |
+| Status         | Current state                               |
+| Review         | Evaluation of work or quality               |
+| Revision       | Documented change or future correction      |
+| Note           | Supporting technical information            |
+| Archive        | Older or secondary work                     |
 
 ## Vocabulary to avoid as decoration
 
