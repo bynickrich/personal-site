@@ -2,6 +2,7 @@
 	import logo from '$lib/assets/mark.svg';
 	import AssignmentCard from '$lib/components/AssignmentCard.svelte';
 	import { buttonVariants } from '$lib/components/button/Button.variants';
+  import LogoMarquee from '$lib/components/LogoMarquee.svelte';
 	import SectionContainer from '$lib/components/SectionContainer.svelte';
 </script>
 
@@ -14,17 +15,16 @@
 </svelte:head>
 
 <SectionContainer>
-	<figure class="grid size-80 place-items-center border border-neutral-300 p-6 text-center">
-		<img src={logo} alt="" class="size-16" />
+	<figure class="grid size-80 place-items-center p-6 text-center">
 		<figcaption class="text-sm font-medium tracking-wide uppercase">
-			Design / Systems / Code
+			ISOMETRIC ANIMATED ILLUSTRATION
 		</figcaption>
 	</figure>
-	<div class="flex flex-col gap-2">
+	<div class="flex flex-col gap-3">
 		<p class="flex items-center gap-1 text-sm font-medium tracking-wide text-neutral-700 uppercase">
-			<img src={logo} alt="" class="inline size-3" />Frontend-leaning Design Engineer
+			<img src={logo} alt="" class="inline size-3" />Design Engineer
 		</p>
-		<div class="flex flex-col gap-1">
+		<div class="flex flex-col gap-0.5">
 			<h1 class="font-display text-3xl">Nick Richardson</h1>
 			<p class="max-w-3xl pl-px leading-5.5 text-neutral-700">
 				I combine a decade of product-design experience with frontend implementation to build
@@ -32,35 +32,17 @@
 			</p>
 		</div>
 	</div>
-	<div class="flex w-full gap-4">
+	<!-- TODO: Not totally happy with the spacing here -->
+	<div class="flex w-full gap-3">
 		<a href="/assignments" class={buttonVariants({ class: 'w-full' })}>View work</a>
 		<a href="/contact" class={buttonVariants({ color: 'outline', class: 'w-full' })}>Contact</a>
 	</div>
 </SectionContainer>
 
-<SectionContainer>
-	<h2 class="font-display text-xl font-medium text-neutral-800 uppercase">Capability profile</h2>
-	<ul class="grid gap-2 text-sm text-neutral-700 sm:grid-cols-2">
-		<li>Product strategy and interaction design</li>
-		<li>Production frontend implementation</li>
-		<li>Components, tokens, and design systems</li>
-		<li>Accessibility and responsive behavior</li>
-	</ul>
-</SectionContainer>
+<LogoMarquee />
 
 <SectionContainer>
-	<h2 class="text-center font-display text-xl font-medium text-neutral-800 uppercase">
-		Selected work
-	</h2>
-	<AssignmentCard
-		name="Catalyst"
-		href="/assignments/catalyst"
-		projectType="Quality infrastructure"
-		summary="Current design-engineering work on a production design system. The full case study is in progress."
-		role="Design Engineer"
-		year="Current"
-		status="IN PROGRESS"
-	/>
+	<h2 class="font-display text-xl font-medium text-neutral-800 uppercase">Selected work</h2>
 	<AssignmentCard
 		name="DataPoint"
 		href="/assignments/datapoint"
