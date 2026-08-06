@@ -15,7 +15,7 @@
 </svelte:head>
 
 <SectionContainer>
-	<figure class="grid size-80 place-items-center p-6 text-center">
+	<figure class="grid aspect-square place-items-center p-6 text-center md:aspect-video">
 		<figcaption class="text-sm font-medium tracking-wide uppercase">
 			ISOMETRIC ANIMATED ILLUSTRATION
 		</figcaption>
