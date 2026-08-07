@@ -2,10 +2,40 @@ import adapter from '@sveltejs/adapter-auto';
 import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
 import { mdsvex } from 'mdsvex';
-import { defineConfig } from 'vite';
+import { defineConfig, lazyPlugins } from 'vite-plus';
 
 export default defineConfig({
-	plugins: [
+	staged: {
+		'*': 'vp check --fix'
+	},
+	lint: {
+		jsPlugins: [{ name: 'vite-plus', specifier: 'vite-plus/oxlint-plugin' }],
+		rules: { 'vite-plus/prefer-vite-plus-imports': 'error' },
+		options: { typeAware: true, typeCheck: true }
+	},
+	fmt: {
+		printWidth: 100,
+		useTabs: true,
+		singleQuote: true,
+		semi: true,
+		trailingComma: 'none',
+		svelte: true,
+		sortImports: true,
+		sortTailwindcss: {
+			stylesheet: './src/routes/layout.css'
+		},
+		sortPackageJson: true,
+		ignorePatterns: [
+			'static/**',
+			'package-lock.json',
+			'pnpm-lock.yaml',
+			'yarn.lock',
+			'bun.lock',
+			'bun.lockb',
+			'nub.lock'
+		]
+	},
+	plugins: lazyPlugins(() => [
 		tailwindcss(),
 		sveltekit({
 			inspector: true,
@@ -22,5 +52,5 @@ export default defineConfig({
 			extensions: ['.svelte', '.svx'],
 			preprocess: mdsvex()
 		})
-	]
+	])
 });

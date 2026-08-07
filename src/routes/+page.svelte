@@ -2,7 +2,7 @@
 	import logo from '$lib/assets/mark.svg';
 	import AssignmentCard from '$lib/components/AssignmentCard.svelte';
 	import { buttonVariants } from '$lib/components/button/Button.variants';
-  import LogoMarquee from '$lib/components/LogoMarquee.svelte';
+	import LogoMarquee from '$lib/components/LogoMarquee.svelte';
 	import SectionContainer from '$lib/components/SectionContainer.svelte';
 </script>
 
@@ -44,21 +44,23 @@
 <SectionContainer>
 	<h2 class="font-display text-xl font-medium text-neutral-800 uppercase">Selected work</h2>
 	<AssignmentCard
+		meta="01 / Assignment"
 		name="DataPoint"
 		href="/assignments/datapoint"
-		projectType="Product and system design"
+		type="Product + system design"
 		summary="A self-serve traffic-data product for city planners, engineers, and residents."
 		role="Product Designer"
-		year="2021–2022"
+		period="2021–2022"
 		status="PUBLISHED"
 	/>
 	<AssignmentCard
+		meta="02 / Assignment"
 		name="Zentra"
 		href="/assignments/zentra"
-		projectType="Cross-platform product system"
+		type="Cross-platform product system"
 		summary="A retrofit access-control product and design system for multifamily properties."
 		role="Senior UI Designer"
-		year="2021–2023"
+		period="2021–2023"
 		status="PUBLISHED"
 	/>
 </SectionContainer>

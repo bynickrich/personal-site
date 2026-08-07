@@ -1,23 +1,23 @@
 <script lang="ts">
-  interface Props {
-    title: string;
-    description: string;
-    role: string;
-    organization: string;
-    dateRange: string;
-    disciplines: string;
-    status?: string;
-  }
+	interface Props {
+		title: string;
+		description: string;
+		role: string;
+		organization: string;
+		dateRange: string;
+		disciplines: string;
+		status?: string;
+	}
 
-  let {
-    title,
-    description,
-    role,
-    organization,
-    dateRange,
-    disciplines,
-    status = "Published",
-  }: Props = $props();
+	let {
+		title,
+		description,
+		role,
+		organization,
+		dateRange,
+		disciplines,
+		status = 'Published'
+	}: Props = $props();
 </script>
 
 <header class="flex flex-col gap-6 border border-neutral-300 bg-neutral-100 p-3">
