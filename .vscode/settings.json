@@ -1,17 +1,35 @@
 {
-	"files.associations": {
-		"*.css": "tailwindcss"
-	},
 	"editor.quickSuggestions": {
 		"strings": "on"
 	},
 	"prettier.enable": false,
 	"oxc.enable.oxfmt": true,
-	"oxc.useExecPath": true,
+	"oxc.useExecPath": false,
 	"editor.defaultFormatter": "oxc.oxc-vscode",
 	"tailwindCSS.classFunctions": ["tv", "cx"],
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
 	"[svelte]": {
-		"editor.defaultFormatter": "svelte.svelte-vscode"
+		"editor.defaultFormatter": "oxc.oxc-vscode"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode"
+	},
+	"[yaml]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode"
 	},
 	"[javascript]": {
 		"editor.defaultFormatter": "oxc.oxc-vscode"
