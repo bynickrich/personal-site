@@ -20,20 +20,22 @@
 			ISOMETRIC ANIMATED ILLUSTRATION
 		</figcaption>
 	</figure>
-	<div class="flex flex-col gap-3">
-		<p class="flex items-center gap-1 text-sm font-medium tracking-wide text-neutral-700 uppercase">
-			<img src={logo} alt="" class="inline size-3" />Design Engineer
+	<div class="flex flex-col gap-4">
+		<p
+			class="flex items-center gap-1 font-mono text-sm leading-5 font-medium text-neutral-700 uppercase"
+		>
+			<img src={logo} alt="" class="inline size-3 translate-y-[-0.5px]" />Design Engineer
 		</p>
 		<div class="flex flex-col gap-0.5">
-			<h1 class="font-display text-3xl">Nick Richardson</h1>
-			<p class="max-w-3xl pl-px leading-5.5 text-neutral-700">
+			<h1 class="font-display text-3xl leading-8 tracking-tight">Nick Richardson</h1>
+			<p class="max-w-3xl pl-px leading-6 text-neutral-700">
 				I combine a decade of product-design experience with frontend implementation to build
 				polished, accessible, system-driven software.
 			</p>
 		</div>
 	</div>
 	<!-- TODO: Not totally happy with the spacing here -->
-	<div class="flex w-full gap-3">
+	<div class="flex w-full gap-2">
 		<a href="/assignments" class={buttonVariants({ class: 'w-full' })}>View work</a>
 		<a href="/contact" class={buttonVariants({ color: 'outline', class: 'w-full' })}>Contact</a>
 	</div>
@@ -42,7 +44,7 @@
 <LogoMarquee />
 
 <SectionContainer>
-	<h2 class="font-display text-xl font-medium text-neutral-800 uppercase">Selected work</h2>
+	<h2 class="font-display text-xl font-medium uppercase">Selected Work</h2>
 	<AssignmentCard
 		meta="01 / Assignment"
 		name="DataPoint"

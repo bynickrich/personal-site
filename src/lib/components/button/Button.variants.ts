@@ -5,7 +5,7 @@ export const buttonVariants = tv({
 	variants: {
 		color: {
 			default: 'bg-neutral-800 text-neutral-50',
-			outline: 'border-2 border-neutral-800 text-neutral-800'
+			outline: 'ring-2 ring-neutral-800 ring-inset text-neutral-800'
 		}
 	},
 	defaultVariants: {
