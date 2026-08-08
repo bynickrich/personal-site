@@ -6,7 +6,7 @@
 	import favicon from '$lib/assets/mark.svg';
 
 	import './layout.css';
-	import Footer from '$lib/components/Footer.svelte';
+	import Footer from '$lib/components/footer/Footer.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 
 	let { children } = $props();

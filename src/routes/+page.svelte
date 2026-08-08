@@ -1,9 +1,9 @@
 <script lang="ts">
 	import logo from '$lib/assets/mark.svg';
-	import AssignmentCard from '$lib/components/AssignmentCard.svelte';
 	import { buttonVariants } from '$lib/components/button/Button.variants';
 	import LogoMarquee from '$lib/components/LogoMarquee.svelte';
 	import SectionContainer from '$lib/components/SectionContainer.svelte';
+	import AssignmentCard from '$lib/components/workCard/WorkCard.svelte';
 </script>
 
 <svelte:head>
