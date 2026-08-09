@@ -1,5 +1,5 @@
 <script>
-	import SectionContainer from '$lib/components/SectionContainer.svelte';
+	import SectionContainer from '$lib/components/SectionContainer/SectionContainer.svelte';
 </script>
 
 <svelte:head>

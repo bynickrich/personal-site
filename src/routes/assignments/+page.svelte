@@ -1,5 +1,5 @@
 <script>
-	import SectionContainer from '$lib/components/SectionContainer.svelte';
+	import SectionContainer from '$lib/components/SectionContainer/SectionContainer.svelte';
 	import WorkCard from '$lib/components/workCard/WorkCard.svelte';
 </script>
 

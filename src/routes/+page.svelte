@@ -1,8 +1,8 @@
 <script lang="ts">
 	import logo from '$lib/assets/mark.svg';
 	import { buttonVariants } from '$lib/components/button/Button.variants';
-	import LogoMarquee from '$lib/components/LogoMarquee.svelte';
-	import SectionContainer from '$lib/components/SectionContainer.svelte';
+	import LogoMarquee from '$lib/components/logoMarquee/LogoMarquee.svelte';
+	import SectionContainer from '$lib/components/SectionContainer/SectionContainer.svelte';
 	import AssignmentCard from '$lib/components/workCard/WorkCard.svelte';
 </script>
 

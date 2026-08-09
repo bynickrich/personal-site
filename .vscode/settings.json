@@ -3,6 +3,7 @@
 		"strings": "on"
 	},
 	"prettier.enable": false,
+	"oxc.enable.oxlint": false,
 	"oxc.enable.oxfmt": true,
 	"oxc.useExecPath": false,
 	"editor.defaultFormatter": "oxc.oxc-vscode",
@@ -43,10 +44,7 @@
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "oxc.oxc-vscode"
 	},
-	"oxc.fmt.configPath": "./vite.config.ts",
+	"oxc.fmt.configPath": "./.oxfmtrc.json",
 	"editor.formatOnSave": true,
-	"editor.formatOnSaveMode": "file",
-	"editor.codeActionsOnSave": {
-		"source.fixAll.oxc": "explicit"
-	}
+	"editor.formatOnSaveMode": "file"
 }
