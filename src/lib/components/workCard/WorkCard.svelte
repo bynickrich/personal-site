@@ -20,18 +20,20 @@
 	]);
 </script>
 
-<a class="flex flex-col justify-end border border-neutral-300 bg-neutral-100" {href}>
-	<figure class="aspect-square h-full w-full bg-accent-600/30 p-2"></figure>
+<a class="flex flex-col justify-end bg-neutral-100 ring ring-neutral-300 ring-inset" {href}>
+	<!-- Animation -->
+	<figure class="aspect-square h-full w-full bg-accent-300 p-2"></figure>
+	<!-- Title + Description -->
 	<div class="flex flex-col border-t border-neutral-300 p-2">
 		<p class="text-sm font-medium uppercase">{meta}</p>
 		<h3 class="font-display text-lg uppercase">{name}</h3>
 		<p class="leading-5 text-neutral-700">{summary}</p>
 	</div>
+	<!-- Extended Metadata -->
 	<dl
-		class="grid grid-cols-2 gap-px border-t border-neutral-300 bg-neutral-300
-		*:bg-neutral-100 *:p-2
-		[&_dd]:leading-5 [&_dd]:text-neutral-700
-		[&_dt]:font-display [&_dt]:uppercase"
+		class="hidden grid-cols-2 gap-px
+		*:p-2 sm:grid
+		[&_dd]:leading-5 [&_dd]:text-neutral-700 [&_dt]:font-display [&_dt]:uppercase"
 	>
 		{#each details as detail (detail.label)}
 			<div>

@@ -10,7 +10,7 @@
 	<figure
 		class="sm:aspect-unset grid aspect-square place-items-center bg-accent-300 sm:size-80 lg:size-100"
 	></figure>
-	<div class="flex flex-col gap-6 px-2 pt-3.5 pb-2 md:max-w-xl">
+	<div class="flex flex-col gap-4 px-2 pt-3.5 pb-2 md:max-w-xl">
 		<!-- Copy -->
 		<div class="flex flex-col gap-4">
 			<p

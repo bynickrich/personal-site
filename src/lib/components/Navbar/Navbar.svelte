@@ -33,7 +33,7 @@
 
 	const links = [
 		{ name: 'Home', href: '/' },
-		{ name: 'Work', href: '/assignments' },
+		{ name: 'Work', href: '/work' },
 		{ name: 'About', href: '/about' },
 		{ name: 'Contact', href: '/contact' },
 		{ name: 'Field Notes', href: '/field-notes' }
