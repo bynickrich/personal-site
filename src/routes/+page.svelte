@@ -1,6 +1,5 @@
 <script lang="ts">
-	import logo from '$lib/assets/mark.svg';
-	import { buttonVariants } from '$lib/components/button/Button.variants';
+	import Hero from '$lib/components/Hero.svelte';
 	import LogoMarquee from '$lib/components/logoMarquee/LogoMarquee.svelte';
 	import SectionContainer from '$lib/components/SectionContainer/SectionContainer.svelte';
 	import WorkCard from '$lib/components/workCard/WorkCard.svelte';
@@ -14,32 +13,7 @@
 	/>
 </svelte:head>
 
-<SectionContainer>
-	<figure class="grid aspect-square place-items-center p-6 text-center md:aspect-video">
-		<figcaption class="text-sm font-medium tracking-wide uppercase">
-			ISOMETRIC ANIMATED ILLUSTRATION
-		</figcaption>
-	</figure>
-	<div class="flex flex-col gap-4">
-		<p
-			class="flex items-center gap-1 font-mono text-sm leading-5 font-medium text-neutral-700 uppercase"
-		>
-			<img src={logo} alt="" class="inline size-3 translate-y-[-0.5px]" />Design Engineer
-		</p>
-		<div class="flex flex-col gap-0.5">
-			<h1 class="font-display text-3xl leading-8 tracking-tight">Nick Richardson</h1>
-			<p class="max-w-3xl pl-px leading-6 text-neutral-700">
-				I combine a decade of product-design experience with frontend implementation to build
-				polished, accessible, system-driven software.
-			</p>
-		</div>
-	</div>
-	<!-- TODO: Not totally happy with the spacing here -->
-	<div class="flex w-full gap-2">
-		<a href="/work" class={buttonVariants({ class: 'w-full' })}>View work</a>
-		<a href="/contact" class={buttonVariants({ color: 'outline', class: 'w-full' })}>Contact</a>
-	</div>
-</SectionContainer>
+<Hero />
 
 <LogoMarquee />
 

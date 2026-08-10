@@ -60,7 +60,7 @@
 @utility debug-grid-4 {
 	&::before {
 		content: '';
-		position: fixed;
+		position: absolute;
 		inset: 0;
 		z-index: 2147483647;
 		pointer-events: none;
