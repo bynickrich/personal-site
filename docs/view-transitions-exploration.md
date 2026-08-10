@@ -51,7 +51,7 @@ For the first route experiment, decide whether the whole document should transit
 Related references:
 
 - [View Transition API overview](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API)
-- [`Document.startViewTransition()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition)
+- `[Document.startViewTransition()](https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition)`
 - [Using view transition types](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API/Using_types)
 
 ### 4. Dissect working demos

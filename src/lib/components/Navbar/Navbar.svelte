@@ -10,7 +10,7 @@
 	let isOpen = $state(false);
 	let currentPage = $derived(page.url.pathname);
 
-	// Auto close moble extended nav if viewport is larger than sm: variant
+	// Auto close mobile extended nav if viewport is larger than sm: variant
 	onMount(() => {
 		const desktop = window.matchMedia('(min-width: 40rem)');
 

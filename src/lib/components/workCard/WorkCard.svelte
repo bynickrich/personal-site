@@ -15,14 +15,17 @@
 	let details = $derived([
 		{ label: 'Type', value: type },
 		{ label: 'Role', value: role },
-		{ label: 'Peroid', value: period },
+		{ label: 'Period', value: period },
 		{ label: 'Status', value: status }
 	]);
 </script>
 
-<a class="flex flex-col justify-end bg-neutral-100 ring ring-neutral-300 ring-inset" {href}>
+<a
+	class="flex flex-col justify-end bg-neutral-100 ring ring-neutral-300 ring-inset md:flex-row md:gap-6 md:px-6"
+	{href}
+>
 	<!-- Animation -->
-	<figure class="aspect-square h-full w-full bg-accent-300 p-2"></figure>
+	<figure class="aspect-square h-full w-full bg-accent-300 p-2 md:aspect-[unset]"></figure>
 	<!-- Title + Description -->
 	<div class="flex flex-col border-t border-neutral-300 p-2">
 		<p class="text-sm font-medium uppercase">{meta}</p>

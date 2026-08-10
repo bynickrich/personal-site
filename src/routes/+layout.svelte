@@ -18,7 +18,7 @@
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 <Navbar />
-<main class="flex flex-col gap-2 ring-neutral-300 sm:w-full sm:max-w-300">
+<main class="flex flex-col gap-2 ring-neutral-300 sm:w-full sm:max-w-300 sm:gap-4">
 	{@render children()}
 </main>
 <Footer />
