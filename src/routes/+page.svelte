@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
-	import LogoMarquee from '$lib/components/logoMarquee/LogoMarquee.svelte';
-	import SectionContainer from '$lib/components/SectionContainer/SectionContainer.svelte';
+	import LogoMarquee from '$lib/components/LogoMarquee.svelte';
+	import SectionContainer from '$lib/components/SectionContainer.svelte';
 	import SelectedWork from '$lib/components/SelectedWork.svelte';
-	import WorkCard from '$lib/components/workCard/WorkCard.svelte';
+	import WorkCard from '$lib/components/WorkCard.svelte';
 </script>
 
 <svelte:head>

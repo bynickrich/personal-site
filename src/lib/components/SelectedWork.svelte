@@ -1,5 +1,5 @@
 <script lang="ts">
-	import WorkCard from './workCard/WorkCard.svelte';
+	import WorkCard from './WorkCard.svelte';
 </script>
 
 <section class="flex flex-col gap-2 bg-neutral-100 p-2 ring ring-neutral-300 ring-inset sm:p-6">

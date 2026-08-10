@@ -27,7 +27,7 @@
 	<div
 		class="grid h-fit grid-cols-2 gap-1.5 border-b border-neutral-300 p-3 text-sm font-medium text-neutral-700 uppercase sm:col-start-2 sm:h-full"
 	>
-		<a href="/assignments">Work</a>
+		<a href="/work">Work</a>
 		<a href="/about">About</a>
 		<a href="/contact">Contact</a>
 		<a href="/field-notes">Field Notes</a>
