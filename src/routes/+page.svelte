@@ -3,7 +3,7 @@
 	import { buttonVariants } from '$lib/components/button/Button.variants';
 	import LogoMarquee from '$lib/components/logoMarquee/LogoMarquee.svelte';
 	import SectionContainer from '$lib/components/SectionContainer/SectionContainer.svelte';
-	import AssignmentCard from '$lib/components/workCard/WorkCard.svelte';
+	import WorkCard from '$lib/components/workCard/WorkCard.svelte';
 </script>
 
 <svelte:head>
@@ -36,7 +36,7 @@
 	</div>
 	<!-- TODO: Not totally happy with the spacing here -->
 	<div class="flex w-full gap-2">
-		<a href="/assignments" class={buttonVariants({ class: 'w-full' })}>View work</a>
+		<a href="/work" class={buttonVariants({ class: 'w-full' })}>View work</a>
 		<a href="/contact" class={buttonVariants({ color: 'outline', class: 'w-full' })}>Contact</a>
 	</div>
 </SectionContainer>
@@ -45,20 +45,20 @@
 
 <SectionContainer>
 	<h2 class="font-display text-xl font-medium uppercase">Selected Work</h2>
-	<AssignmentCard
+	<WorkCard
 		meta="01 / Assignment"
 		name="DataPoint"
-		href="/assignments/datapoint"
+		href="/work/datapoint"
 		type="Product + system design"
 		summary="A self-serve traffic-data product for city planners, engineers, and residents."
 		role="Product Designer"
 		period="2021–2022"
 		status="PUBLISHED"
 	/>
-	<AssignmentCard
+	<WorkCard
 		meta="02 / Assignment"
 		name="Zentra"
-		href="/assignments/zentra"
+		href="/work/zentra"
 		type="Cross-platform product system"
 		summary="A retrofit access-control product and design system for multifamily properties."
 		role="Senior UI Designer"

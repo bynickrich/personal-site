@@ -31,5 +31,4 @@ This project uses pnpm with upstream Vite, SvelteKit, and Oxfmt.
 - [ ] Run `pnpm install` after pulling dependency changes.
 - [ ] Run `pnpm run lint` and `pnpm run check` after code or configuration changes.
 - [ ] Run `pnpm run build` for production validation.
-- [ ] Run `pnpm run build-storybook` after component or Storybook changes.
 - [ ] If setup or runtime behavior looks wrong, check `node --version`, `pnpm --version`, and `pnpm exec vite --version` before changing configuration.
