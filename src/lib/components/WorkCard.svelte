@@ -20,7 +20,7 @@
 	]);
 </script>
 
-<a class="grid bg-neutral-100 ring ring-neutral-300 ring-inset" {href}>
+<a class="grid" {href}>
 	<!-- Animation -->
 	<figure
 		class="aspect-square h-full w-full p-2 md:col-start-1 md:row-span-3 md:aspect-[unset]"
