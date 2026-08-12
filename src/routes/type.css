@@ -43,9 +43,9 @@
 @utility type-metadata {
 	font-family: var(--font-mono);
 	font-size: 0.875rem;
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 1.25rem;
-	letter-spacing: 0.01em;
+	letter-spacing: -0.01em;
 	text-transform: uppercase;
 }
 

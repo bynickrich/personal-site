@@ -8,13 +8,11 @@
 </script>
 
 <footer
-	class="relative mt-3 mb-20 max-w-300 border border-neutral-300 bg-neutral-100 sm:grid sm:h-fit sm:grid-cols-2 sm:grid-rows-1"
+	class="relative mt-3 mb-20 max-w-300 bg-neutral-100 ring ring-neutral-300 ring-inset sm:grid sm:h-fit sm:grid-cols-2 sm:grid-rows-1"
 >
 	<!-- Legal Disclosure -->
-	<div
-		class="flex gap-2 border-b border-neutral-300 p-3 sm:col-start-1 sm:border-r sm:border-neutral-300"
-	>
-		<div class="flex flex-col gap-0.5">
+	<div class="flex gap-2 p-3 sm:col-start-1">
+		<div class="flex flex-col gap-1">
 			<p class="type-compact font-medium">Nick Richardson ©{year}</p>
 			<p class="type-caption text-neutral-700">
 				Brand names, trademarks, and assets belong to their respective owners. Work is shown for
@@ -25,28 +23,11 @@
 	</div>
 	<!-- Site Links -->
 	<div
-		class="type-label grid h-fit grid-cols-2 gap-1.5 border-b border-neutral-300 p-3 text-neutral-700 uppercase sm:col-start-2 sm:h-full"
+		class="dec-border-t grid h-fit grid-cols-2 gap-1.5 p-3 type-label text-neutral-700 uppercase before:border-t before:border-neutral-300 sm:col-start-2 sm:h-full"
 	>
 		<a href="/work">Work</a>
 		<a href="/about">About</a>
 		<a href="/contact">Contact</a>
 		<a href="/field-notes">Field Notes</a>
-	</div>
-	<!-- Social Icons -->
-	<div class="flex h-10 justify-center sm:col-span-2 sm:row-start-2">
-		<div class="flex items-center gap-4 px-4 text-neutral-700 sm:w-fit sm:justify-center">
-			<a href="https://x.com/bynickrich" aria-label="Nick Richardson on X">
-				<Twitter />
-			</a>
-			<a href="https://github.com/bynickrich" aria-label="Nick Richardson on GitHub">
-				<Github />
-			</a>
-			<a href="https://www.linkedin.com/in/bynickrich/" aria-label="Nick Richardson on LinkedIn">
-				<LinkedIn />
-			</a>
-			<a href="https://bsky.app/profile/bynickrich" aria-label="Nick Richardson on Bluesky">
-				<Bluesky />
-			</a>
-		</div>
 	</div>
 </footer>

@@ -7,7 +7,7 @@ projectDateRange: '2021–2022'
 ---
 
 <script lang="ts">
-  import AssignmentBlock from '$lib/components/AssignmentBlock.svelte'
+  import WorkBlock from '$lib/components/WorkBlock.svelte'
   import Metadata from '$lib/components/Metadata.svelte'
 </script>
 
@@ -29,15 +29,15 @@ projectDateRange: '2021–2022'
   status="Shipped / Retrospective"
 />
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Brief
 
 Quality Counts had an experimental web app for exploring traffic-count data, but the product needed a production-ready experience. I led creative direction, redesigned DataPoint, and created the Cardinal design system while partnering with Quality Counts and a contracted development team. The team shipped DataPoint 2.0 with new tools for understanding whether road sections and intersections were below, near, or over capacity.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Operating context
 
@@ -53,9 +53,9 @@ The original product centered on a map. Customers selected an intersection or mi
 - The product had to work for residents and technical customers with different levels of domain knowledge.
 - Each customer had a separate DataPoint instance and city-specific URL.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Responsibility
 
@@ -63,9 +63,9 @@ I was the sole designer on the project. I owned the product experience, interfac
 
 Quality Counts supplied domain and business context. I partnered with its internal team and the contracted development team as they implemented the product. Decisions about product scope were collaborative; I did not write the production application.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Decision 01 — Design for the web
 
@@ -89,9 +89,9 @@ Some expert workflows could not be copied directly from legacy tools. We had to 
 
 Competitive analysis, an audit of the original product, and conversations with Quality Counts and prospective city customers established “modern” and browser access as recurring needs.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Decision 02 — Separate overview from analysis
 
@@ -115,9 +115,9 @@ The modal worked for one station at a time. Comparing several stations still req
 
 The shipped structure supported browsing visible stations, inspecting one station, and moving into detailed intersection or midblock data without changing the product’s core map model.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Decision 03 — Provide basic and advanced capacity controls
 
@@ -141,9 +141,9 @@ Progressive disclosure reduced the initial density, but it also made the transit
 
 The shipped intersection workflow included both modes and exposed the underlying traffic-count inputs in the advanced view.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Decision 04 — Create a shared product foundation
 
@@ -167,9 +167,9 @@ The system introduced shared patterns that needed maintenance and adoption. The 
 
 The team used Cardinal while exploring related concepts, including computer-vision traffic counting as an alternative to physical road tubes.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## System specification
 
@@ -184,9 +184,9 @@ DataPoint 2.0 used a small set of stable interface regions:
 
 The detailed views retained export paths for customers who needed to continue analysis in tools such as Excel.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Validation
 
@@ -194,9 +194,9 @@ I spent my first month studying the existing product and traffic-planning domain
 
 These inputs shaped the product scope and interaction model. The project did not produce a reliable task-success, support-volume, or implementation-time metric, so those claims are not part of this retrospective.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Outcome
 
@@ -204,9 +204,9 @@ The team shipped DataPoint 2.0 and its new capacity-planning workflow. When I la
 
 Cardinal also gave the team a shared interface foundation for testing adjacent product ideas. We did not measure how much time the system saved or how consistently it was adopted across those concepts.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Revision notes
 
@@ -220,13 +220,13 @@ I would now prioritize three follow-up areas:
 
 I would measure onboarding completion, time to find a station, errors during data import, use of basic versus advanced capacity controls, and the number of stations compared during a planning task.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Artifacts
 
 - [DataPoint 2.0 Figma file](https://www.figma.com/file/dtKTGXYU7p3XyAcrLfnrVt/DataPoint?type=design&node-id=770%3A60163&t=3TaDbfS7A0RlaimD-1)
 - [Original DataPoint interface audit](https://drive.google.com/drive/folders/1uNAblvdgZH9-g5uE1CuAqh2tZn6Tt_Li?usp=share_link)
 
-</AssignmentBlock>
+</WorkBlock>

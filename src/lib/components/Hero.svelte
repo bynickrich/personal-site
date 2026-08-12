@@ -2,6 +2,8 @@
 	import logo from '$lib/assets/mark.svg';
 
 	import { buttonVariants } from './button/Button.variants';
+
+	// TODO: Something feels off with the Design Engineer type
 </script>
 
 <section
@@ -10,13 +12,13 @@
 	<figure
 		class="sm:aspect-unset grid aspect-square place-items-center bg-accent-300 sm:size-80 lg:size-100"
 	></figure>
-	<div class="flex flex-col gap-4 px-2 pt-3.5 pb-2 md:max-w-xl">
+	<div class="flex flex-col gap-4 px-3 pt-3.5 pb-3 md:max-w-xl">
 		<!-- Copy -->
-		<div class="flex flex-col gap-4">
+		<div class="flex flex-col gap-2">
 			<p class="flex items-center gap-1 type-metadata text-neutral-700">
 				<img src={logo} alt="" class="inline size-3 translate-y-[-0.5px]" />Design Engineer
 			</p>
-			<div class="flex flex-col gap-1.5">
+			<div class="flex flex-col">
 				<h1 class="type-page-title">Nick Richardson</h1>
 				<p class="max-w-3xl pl-px type-reading text-neutral-700">
 					I combine a decade of product-design experience with frontend implementation to build
@@ -25,7 +27,7 @@
 			</div>
 		</div>
 		<!-- Actions -->
-		<div class="flex w-full gap-2 sm:max-w-sm">
+		<div class="flex w-full gap-3 sm:max-w-sm">
 			<a href="/work" class={buttonVariants({ class: 'w-full' })}>View work</a>
 			<a href="/contact" class={buttonVariants({ color: 'outline', class: 'w-full' })}>Contact</a>
 		</div>

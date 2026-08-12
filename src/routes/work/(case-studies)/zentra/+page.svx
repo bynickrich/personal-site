@@ -8,7 +8,7 @@ employmentType: 'Full-time'
 ---
 
 <script lang="ts">
-  import AssignmentBlock from '$lib/components/AssignmentBlock.svelte'
+  import WorkBlock from '$lib/components/WorkBlock.svelte'
   import Metadata from '$lib/components/Metadata.svelte'
 </script>
 
@@ -30,15 +30,15 @@ employmentType: 'Full-time'
   status="Ongoing when documented / Retrospective"
 />
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Brief
 
 Allegion was expanding from access-control hardware into software for multifamily properties. I helped establish Zentra’s interface direction and design-system foundation across web, iOS, and Android while supporting the new brand as a creative director. The work focused on making a complex retrofit access-control system easier to understand without ignoring platform conventions or hardware constraints.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Operating context
 
@@ -54,9 +54,9 @@ Zentra started from PureAccess, an Isonas web product built for commercial acces
 - Web, iOS, and Android each needed to feel like Zentra without ignoring platform conventions.
 - The team was modernizing an existing product rather than starting with a clean architecture.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Responsibility
 
@@ -64,9 +64,9 @@ I owned interface design and design-system direction across the Zentra web and m
 
 The marketing and leadership teams partnered with Warehouse21 on the brand. Warehouse21 contributed logo directions, selected the Outfit typeface, and proposed the Zen-garden line motif. I worked with researcher Ginger White, interaction designer Dan Hernandez, product partners, and individual developers. Product and engineering owned product scope and implementation; I influenced those decisions through research, specifications, and design reviews.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Decision 01 — Share the brand, respect each platform
 
@@ -90,9 +90,9 @@ Multiple libraries required more governance than one universal kit. The team had
 
 Niwa documented one Core library plus dedicated iOS, Android, marketing, and print libraries.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Decision 02 — Replace icon knowledge with explicit controls
 
@@ -116,9 +116,9 @@ More explicit labels used additional interface space, but they removed the need 
 
 The redesign addressed the language and discoverability problems found in customer research and product-session review. We did not capture a reliable before-and-after task-completion metric.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Decision 03 — Use native mobile patterns under deadline pressure
 
@@ -142,9 +142,9 @@ The first mobile experience remained visually and behaviorally incomplete. It ne
 
 The mobile design files used stock platform elements for the initial commissioning and credential flows.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Decision 04 — Specify interaction quality, not only appearance
 
@@ -168,9 +168,9 @@ Detailed specifications took more time to maintain as product direction changed,
 
 The design artifacts included the expected states and keyboard behavior. This retrospective does not have production accessibility-test results, so it does not claim verified conformance.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## System specification
 
@@ -184,9 +184,9 @@ Niwa separated shared product identity from platform-specific behavior:
 
 The web work used Tailwind CSS as a flexible implementation vocabulary for the redesigned interface. The mobile libraries retained native platform patterns instead of attempting to make iOS and Android identical.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Validation
 
@@ -194,9 +194,9 @@ The team interviewed multifamily property portfolio owners about retrofit access
 
 The research supported the web navigation changes and the broader retrofit product direction. The available evidence does not include measured task completion, error rates, accessibility results, or adoption for the redesigned product.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Outcome
 
@@ -204,9 +204,9 @@ The team established the Zentra brand direction and began replacing PureAccess w
 
 Zentra was still in progress when this work was documented. Without reliable adoption or quality metrics, the strongest evidence is the system structure, the detailed interaction specifications, and the way research findings changed the navigation model.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Revision notes
 
@@ -216,9 +216,9 @@ I would now test the mobile roles before expanding management features to tablet
 
 I would measure navigation comprehension, time to change properties, commissioning errors, mobile credential setup, keyboard completion of common web tasks, and the adoption of shared Niwa components across platforms.
 
-</AssignmentBlock>
+</WorkBlock>
 
-<AssignmentBlock>
+<WorkBlock>
 
 ## Contributors and artifacts
 
@@ -228,4 +228,4 @@ I would measure navigation comprehension, time to change properties, commissioni
 - [Zentra iOS Figma file](https://www.figma.com/file/BjKmvjyWBgET6htaUgQqB2/Zentra-_-Living---iOS?type=design&node-id=0%3A1&t=xG3CbprDR75p4NQK-1)
 - [Zentra web Figma file](https://www.figma.com/file/0U2ZetHCXYppukaHsN42lX/Zentra-_-Living---Web?type=design&node-id=204%3A70&t=Hy8KeTco4OiTXrxy-1)
 
-</AssignmentBlock>
+</WorkBlock>

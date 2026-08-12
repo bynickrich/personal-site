@@ -1,5 +1,4 @@
 <script>
-	import SectionContainer from '$lib/components/SectionContainer.svelte';
 </script>
 
 <svelte:head>
@@ -10,19 +9,4 @@
 	/>
 </svelte:head>
 
-<SectionContainer>
-	<p class="type-eyebrow text-neutral-700">
-		Case study / In progress
-	</p>
-	<h1>Catalyst</h1>
-	<p>
-		Catalyst is my current design-engineering case study. It will document how I connect Figma,
-		component architecture, accessibility, documentation, and production frontend work inside a
-		shared design system.
-	</p>
-	<p>
-		I’m gathering the artifacts and evidence needed to define ownership, decisions, implementation
-		details, adoption signals, and outcomes without exposing confidential work.
-	</p>
-	<a href="/assignments">Return to selected work</a>
-</SectionContainer>
+<h1>CATALYST</h1>

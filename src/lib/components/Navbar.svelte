@@ -44,14 +44,14 @@
 
 <!-- Navbar -->
 <nav
-	class="fixed right-0 bottom-0 left-0 z-20 flex h-10 w-full items-center justify-between border-t border-neutral-300 bg-neutral-100 px-1 sm:relative sm:inset-auto sm:mb-4 sm:max-w-300 sm:border sm:pr-2 sm:pl-0.5"
+	class="dec-border-t fixed right-0 bottom-0 left-0 z-20 flex h-10 w-full items-center justify-between bg-neutral-100 px-1 before:border-t before:border-neutral-300 sm:relative sm:inset-auto sm:mb-4 sm:max-w-300 sm:border sm:pr-2 sm:pl-0.5"
 	aria-label="Primary"
 >
 	<a
 		href="/"
 		aria-label="Home"
 		onclick={closeMobileNav}
-		class="flex h-8 w-fit items-center gap-1.5 p-1.5 type-brand transition-colors hover:bg-neutral-200"
+		class="flex h-8 w-fit items-center gap-2 p-2 type-brand transition-colors hover:bg-neutral-200"
 		><img src={logo} alt="" class="size-5" />Nick Richardson</a
 	>
 	<button
@@ -62,7 +62,7 @@
 		class="grid size-8 place-items-center sm:hidden"
 		><img src={isOpen ? close : menu} alt={isOpen ? 'Close icon' : 'Menu icon'} /></button
 	>
-	<ul class="hidden type-label uppercase sm:flex sm:gap-2 sm:text-neutral-800">
+	<ul class="hidden type-label uppercase sm:flex sm:gap-2">
 		{#each links as link (link.href)}
 			{#if link.name !== 'Home'}
 				<li>
@@ -70,7 +70,7 @@
 						href={link.href}
 						aria-current={currentPage === link.href ? 'page' : undefined}
 						class={[
-							'relative inline-flex h-5 items-center px-1.5 transition-colors hover:text-accent-600',
+							'relative inline-flex h-5 items-center px-2 transition-colors hover:text-accent-600',
 							currentPage === link.href &&
 								"text-accent-600 before:pointer-events-none before:absolute before:inset-y-0 before:left-0 before:w-1.5 before:border-y before:border-l before:border-accent-600 before:content-[''] after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:w-1.5 after:border-y after:border-r after:border-accent-600 after:content-['']"
 						]}>{link.name}</a
@@ -84,7 +84,7 @@
 <!-- Mobile Nav Popover -->
 {#if isOpen}
 	<div
-		class="fixed inset-x-0 bottom-10 z-10 h-fit border-t border-neutral-300 bg-neutral-100 p-3"
+		class="dec-border-t fixed inset-x-0 bottom-10 z-10 h-fit bg-neutral-100 p-2 before:border-t before:border-neutral-300"
 		id="mobile-nav"
 		transition:fly={{ duration: 150, y: '100%', opacity: 1 }}
 	>
