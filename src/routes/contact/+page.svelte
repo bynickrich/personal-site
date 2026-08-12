@@ -11,13 +11,13 @@
 </svelte:head>
 
 <SectionContainer>
-	<h1>Contact</h1>
-	<p>
+	<h1 class="type-page-title">Contact</h1>
+	<p class="type-reading">
 		For Design Engineer roles, collaborations, or questions about the work, connect with me on
 		LinkedIn. Include the product, team, and problem you are working on so I can respond with useful
 		context.
 	</p>
-	<ul>
+	<ul class="type-compact">
 		<li><a href="https://www.linkedin.com/in/bynickrich/">LinkedIn</a></li>
 		<li><a href="https://github.com/bynickrich">GitHub</a></li>
 		<li><a href="https://bsky.app/profile/bynickrich">Bluesky</a></li>

@@ -11,10 +11,10 @@
 </svelte:head>
 
 <SectionContainer>
-	<h1>Field Notes</h1>
-	<p>
+	<h1 class="type-page-title">Field Notes</h1>
+	<p class="type-reading">
 		Technical notes on design systems, frontend implementation, accessibility, and the decisions
 		that connect design to production.
 	</p>
-	<p>The archive is being prepared. No entries are published yet.</p>
+	<p class="type-reading">The archive is being prepared. No entries are published yet.</p>
 </SectionContainer>

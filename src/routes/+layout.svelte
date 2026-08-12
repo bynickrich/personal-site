@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '@fontsource-variable/ibm-plex-sans/wght.css';
+	import '@fontsource/ibm-plex-sans-condensed/500.css';
 	import '@fontsource/ibm-plex-sans-condensed/600.css';
 	import '@fontsource/ibm-plex-sans-condensed/700.css';
 	import '@fontsource/ibm-plex-mono/500.css';

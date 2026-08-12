@@ -11,4 +11,4 @@
 	/>
 </svelte:head>
 
-<SectionContainer>WORK HERE</SectionContainer>
+<SectionContainer><p class="type-reading">WORK HERE</p></SectionContainer>

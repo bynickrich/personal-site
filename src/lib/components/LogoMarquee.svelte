@@ -7,6 +7,7 @@
 	import WellsFargo from '$lib/icons/WellsFargo.svelte';
 </script>
 
+<!-- TODO: Add progressive blur on the left and right -->
 <div
 	class="h-14 overflow-hidden border border-neutral-300 bg-neutral-100 px-3"
 	role="img"

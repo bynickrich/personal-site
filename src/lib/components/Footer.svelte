@@ -15,8 +15,8 @@
 		class="flex gap-2 border-b border-neutral-300 p-3 sm:col-start-1 sm:border-r sm:border-neutral-300"
 	>
 		<div class="flex flex-col gap-0.5">
-			<p class="font-medium">Nick Richardson ©{year}</p>
-			<p class="text-sm text-neutral-700">
+			<p class="type-compact font-medium">Nick Richardson ©{year}</p>
+			<p class="type-caption text-neutral-700">
 				Brand names, trademarks, and assets belong to their respective owners. Work is shown for
 				portfolio purposes only.
 			</p>
@@ -25,7 +25,7 @@
 	</div>
 	<!-- Site Links -->
 	<div
-		class="grid h-fit grid-cols-2 gap-1.5 border-b border-neutral-300 p-3 text-sm font-medium text-neutral-700 uppercase sm:col-start-2 sm:h-full"
+		class="type-label grid h-fit grid-cols-2 gap-1.5 border-b border-neutral-300 p-3 text-neutral-700 uppercase sm:col-start-2 sm:h-full"
 	>
 		<a href="/work">Work</a>
 		<a href="/about">About</a>

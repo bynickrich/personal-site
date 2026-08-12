@@ -1,12 +1,9 @@
 @import 'tailwindcss';
+@import './type.css';
 @plugin "@tailwindcss/typography";
 
 @theme inline {
 	--color-*: initial;
-
-	--font-sans: 'IBM Plex Sans Variable', ui-sans-serif, system-ui, sans-serif;
-	--font-display: 'IBM Plex Sans Condensed', ui-sans-serif, system-ui, sans-serif;
-	--font-mono: 'IBM Plex Mono', monospace;
 
 	--color-neutral-50: oklch(98.2% 0.01 83);
 	--color-neutral-100: oklch(94.2% 0.032 83);
@@ -82,5 +79,57 @@
 			linear-gradient(to right, rgb(255 0 102 / 18%) 1px, transparent 1px),
 			linear-gradient(to bottom, rgb(255 0 102 / 18%) 1px, transparent 1px);
 		background-size: 8px 8px;
+	}
+}
+
+@utility dec-border-t {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		inset-inline: 0;
+		pointer-events: none;
+		border-top-style: solid;
+	}
+}
+
+@utility dec-border-b {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset-inline: 0;
+		bottom: 0;
+		pointer-events: none;
+		border-bottom-style: solid;
+	}
+}
+
+@utility dec-border-l {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset-block: 0;
+		left: 0;
+		pointer-events: none;
+		border-left-style: solid;
+	}
+}
+
+@utility dec-border-r {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset-block: 0;
+		right: 0;
+		pointer-events: none;
+		border-right-style: solid;
 	}
 }

@@ -51,7 +51,7 @@
 		href="/"
 		aria-label="Home"
 		onclick={closeMobileNav}
-		class="flex h-8 w-fit items-center gap-1.5 p-1.5 font-display text-lg font-medium transition-colors hover:bg-neutral-200"
+		class="flex h-8 w-fit items-center gap-1.5 p-1.5 type-brand transition-colors hover:bg-neutral-200"
 		><img src={logo} alt="" class="size-5" />Nick Richardson</a
 	>
 	<button
@@ -62,7 +62,7 @@
 		class="grid size-8 place-items-center sm:hidden"
 		><img src={isOpen ? close : menu} alt={isOpen ? 'Close icon' : 'Menu icon'} /></button
 	>
-	<ul class="hidden sm:flex sm:gap-2 sm:text-sm sm:font-medium sm:text-neutral-800 sm:uppercase">
+	<ul class="hidden type-label uppercase sm:flex sm:gap-2 sm:text-neutral-800">
 		{#each links as link (link.href)}
 			{#if link.name !== 'Home'}
 				<li>
@@ -95,7 +95,7 @@
 				<li>
 					<a
 						href={link.href}
-						class="flex h-10 items-center justify-center font-medium uppercase"
+						class="flex h-10 items-center justify-center type-button"
 						aria-current={currentPage === link.href ? 'page' : undefined}
 						onclick={closeMobileNav}
 						><span class="relative">

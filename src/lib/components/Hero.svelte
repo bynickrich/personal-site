@@ -13,14 +13,12 @@
 	<div class="flex flex-col gap-4 px-2 pt-3.5 pb-2 md:max-w-xl">
 		<!-- Copy -->
 		<div class="flex flex-col gap-4">
-			<p
-				class="flex items-center gap-1 font-mono text-sm leading-5 font-medium text-neutral-700 uppercase"
-			>
+			<p class="flex items-center gap-1 type-metadata text-neutral-700">
 				<img src={logo} alt="" class="inline size-3 translate-y-[-0.5px]" />Design Engineer
 			</p>
 			<div class="flex flex-col gap-1.5">
-				<h1 class="font-display text-3xl leading-8 tracking-tight">Nick Richardson</h1>
-				<p class="max-w-3xl pl-px leading-5.5 text-neutral-700">
+				<h1 class="type-page-title">Nick Richardson</h1>
+				<p class="max-w-3xl pl-px type-reading text-neutral-700">
 					I combine a decade of product-design experience with frontend implementation to build
 					polished, accessible, system-driven software.
 				</p>

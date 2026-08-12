@@ -3,7 +3,7 @@
 </script>
 
 <section class="flex flex-col gap-2 bg-neutral-100 p-2 ring ring-neutral-300 ring-inset sm:p-6">
-	<h2 class="text-center font-display text-xl">Selected Work</h2>
+	<h2 class="type-section-title text-center">Selected Work</h2>
 	<WorkCard
 		meta="01 / Assignment"
 		name="DataPoint"

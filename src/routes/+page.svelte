@@ -3,7 +3,6 @@
 	import LogoMarquee from '$lib/components/LogoMarquee.svelte';
 	import SectionContainer from '$lib/components/SectionContainer.svelte';
 	import SelectedWork from '$lib/components/SelectedWork.svelte';
-	import WorkCard from '$lib/components/WorkCard.svelte';
 </script>
 
 <svelte:head>
@@ -19,11 +18,13 @@
 <SelectedWork />
 
 <SectionContainer>
-	<p class=" text-xs font-medium tracking-wide text-neutral-700 uppercase">Archive</p>
-	<h2 class="font-display text-xl font-medium text-neutral-800 uppercase">Field Notes</h2>
-	<p class="max-w-3xl text-neutral-700">
+	<p class="type-eyebrow text-neutral-700">Archive</p>
+	<h2 class="type-section-title text-neutral-800 uppercase">Field Notes</h2>
+	<p class="type-reading max-w-3xl text-neutral-700">
 		Technical notes on design systems, frontend implementation, and the decisions that connect
 		design to production. The first entries are in progress.
 	</p>
-	<a class="font-medium text-accent-600 underline" href="/field-notes">View Field Notes</a>
+	<a class="type-compact font-medium text-accent-600 underline" href="/field-notes">
+		View Field Notes
+	</a>
 </SectionContainer>
