@@ -39,7 +39,7 @@
 	<div class="dec-border-t grid grid-cols-2 p-3 before:border-t before:border-neutral-300">
 		<div class="col-span-2 flex justify-between pb-3 type-eyebrow text-neutral-600">
 			<p>[ {status} ]</p>
-			<p>cords | {meta}</p>
+			<p>{meta} ↗</p>
 		</div>
 		<h3 class="col-span-2 type-card-title">{name}</h3>
 		<p class="col-span-2 type-compact text-neutral-700">{shortDescription}</p>
