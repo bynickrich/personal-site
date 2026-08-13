@@ -1,7 +1,7 @@
 ---
 order: 2
 featured: true
-meta: '02 / Assignment'
+meta: '27.9506° N / 82.4572° W'
 href: '/work/datapoint'
 name: 'DataPoint'
 shortDescription: 'A self-serve traffic-data product for city planners, engineers, and residents.'

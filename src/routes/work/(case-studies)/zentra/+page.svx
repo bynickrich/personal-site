@@ -1,15 +1,15 @@
 ---
 order: 3
 featured: true
-meta: '03 / Assignment'
+meta: '39.7555° N / 105.2211° W'
 href: '/work/zentra'
 name: 'Zentra'
 shortDescription: 'A retrofit access-control product and design system for multifamily properties.'
 role: 'Senior UI Designer'
 timeline: '2021–2023'
-platforms: 'Mobile'
-stack: 'Figma and Tailwind CSS'
-status: 'In-Progress'
+platforms: 'Web & Native Mobile'
+stack: 'React, Tailwind CSS, Kotlin, Swift, Figma'
+status: 'Shipped'
 outcome: 'Established the Zentra product direction and Niwa design-system foundation across web, iOS, and Android'
 ---
 
