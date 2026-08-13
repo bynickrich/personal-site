@@ -1,26 +1,31 @@
 <script lang="ts">
-	type Props = {
-		meta: string;
-		href: string;
-		name: string;
-		type: string;
-		summary: string;
-		role: string;
-		period: string;
-		status: 'IN PROGRESS' | 'PUBLISHED';
-	};
+	import type { WorkItem } from '$lib/content/work';
 
-	let { meta, href, name, type, summary, role, period, status }: Props = $props();
+	let {
+		order,
+		featured,
+		meta,
+		href,
+		name,
+		shortDescription,
+		role,
+		timeline,
+		platforms,
+		stack,
+		status,
+		outcome
+	}: WorkItem = $props();
 
 	let details = $derived([
-		{ label: 'Type', value: type },
+		{ label: 'Platforms', value: platforms },
 		{ label: 'Role', value: role },
-		{ label: 'Period', value: period },
+		{ label: 'Timeline', value: timeline },
+		{ label: 'Stack', value: stack },
 		{ label: 'Status', value: status }
 	]);
 </script>
 
-<a class="grid" {href}>
+<a class="grid" {href} data-order={order} data-featured={featured || undefined}>
 	<!-- Animation -->
 	<figure
 		class="aspect-square h-full w-full p-2 md:col-start-1 md:row-span-3 md:aspect-[unset]"
@@ -29,7 +34,8 @@
 	<div class="dec-border-t grid grid-cols-2 p-3 before:border-t before:border-neutral-300">
 		<p class="col-span-2 pt-1 pb-3 type-eyebrow text-neutral-700">{meta}</p>
 		<h3 class="col-span-2 pb-1 type-card-title">{name}</h3>
-		<p class="col-span-2 type-compact text-neutral-700">{summary}</p>
+		<p class="col-span-2 type-compact text-neutral-700">{shortDescription}</p>
+		<p class="col-span-2 type-caption text-neutral-700">{outcome}</p>
 		<!-- Extended Metadata -->
 		<dl
 			class="hidden grid-cols-2

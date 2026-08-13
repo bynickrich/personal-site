@@ -1,17 +1,17 @@
 <script lang="ts">
-	import FieldNotes from '$lib/components/FieldNotes.svelte';
-	import Hero from '$lib/components/Hero.svelte';
-	import LogoMarquee from '$lib/components/LogoMarquee.svelte';
-	import SectionContainer from '$lib/components/SectionContainer.svelte';
-	import SelectedWork from '$lib/components/SelectedWork.svelte';
+  import FieldNotes from "$lib/components/FieldNotes.svelte";
+  import Hero from "$lib/components/Hero.svelte";
+  import LogoMarquee from "$lib/components/LogoMarquee.svelte";
+  import SectionContainer from "$lib/components/SectionContainer.svelte";
+  import SelectedWork from "$lib/components/SelectedWork.svelte";
 </script>
 
 <svelte:head>
-	<title>Nick Richardson — Design Engineer</title>
-	<meta
-		name="description"
-		content="Nick Richardson is a frontend-leaning Design Engineer who combines product judgment, design systems, and production frontend implementation."
-	/>
+  <title>Nick Richardson — Design Engineer</title>
+  <meta
+    name="description"
+    content="Nick Richardson is a frontend-leaning Design Engineer who combines product judgment, design systems, and production frontend implementation."
+  />
 </svelte:head>
 
 <Hero />

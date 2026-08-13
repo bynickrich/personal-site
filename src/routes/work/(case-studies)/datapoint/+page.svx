@@ -1,9 +1,16 @@
 ---
-title: 'DataPoint'
-description: 'A self-serve traffic-data product for city planners, engineers, and residents.'
+order: 2
+featured: true
+meta: '02 / Assignment'
+href: '/work/datapoint'
+name: 'DataPoint'
+shortDescription: 'A self-serve traffic-data product for city planners, engineers, and residents.'
 role: 'Product Designer'
-disciplines: 'Product, interaction, brand, and system design'
-projectDateRange: '2021–2022'
+timeline: '2021–2022'
+platforms: 'Web'
+stack: 'Figma and Intercom'
+status: 'Shipped'
+outcome: 'Shipped DataPoint 2.0, its capacity-planning workflow, and the Cardinal design system'
 ---
 
 <script lang="ts">
@@ -20,7 +27,7 @@ projectDateRange: '2021–2022'
 </svelte:head>
 
 <Metadata
-  title="DataPoint"
+  name="DataPoint"
   description="A self-serve traffic-data product for city planners, engineers, and residents."
   role="Product Designer"
   organization="Quality Counts"

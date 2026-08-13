@@ -44,7 +44,7 @@
 
 <!-- Navbar -->
 <nav
-	class="dec-border-t fixed right-0 bottom-0 left-0 z-20 flex h-10 w-full items-center justify-between bg-neutral-100 px-1 before:border-t before:border-neutral-300 sm:relative sm:inset-auto sm:mb-4 sm:max-w-300 sm:border sm:pr-2 sm:pl-0.5"
+	class="dec-border-t fixed right-0 bottom-0 left-0 z-20 flex h-10 w-full items-center justify-between bg-neutral-100 px-1 before:border-t before:border-neutral-300 sm:relative sm:inset-auto sm:mb-4 sm:max-w-300 sm:pr-2 sm:pl-0.5 sm:ring sm:ring-neutral-300 sm:ring-inset"
 	aria-label="Primary"
 >
 	<a

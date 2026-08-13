@@ -1,6 +1,9 @@
-<script>
-	import SectionContainer from '$lib/components/SectionContainer.svelte';
+<script lang="ts">
 	import WorkCard from '$lib/components/WorkCard.svelte';
+
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
 </script>
 
 <svelte:head>
@@ -11,4 +14,8 @@
 	/>
 </svelte:head>
 
-<SectionContainer><p class="type-reading">WORK HERE</p></SectionContainer>
+<section class="bg-neutral-100 ring ring-neutral-300 ring-inset">
+	{#each data.work as work (work.href)}
+		<WorkCard {...work} />
+	{/each}
+</section>

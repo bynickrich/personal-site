@@ -1,10 +1,16 @@
 ---
-title: 'Zentra'
-description: 'A retrofit access-control product and design system for multifamily properties.'
+order: 3
+featured: true
+meta: '03 / Assignment'
+href: '/work/zentra'
+name: 'Zentra'
+shortDescription: 'A retrofit access-control product and design system for multifamily properties.'
 role: 'Senior UI Designer'
-disciplines: 'Product interface, creative direction, and design systems'
-projectDateRange: '2021–2023'
-employmentType: 'Full-time'
+timeline: '2021–2023'
+platforms: 'Mobile'
+stack: 'Figma and Tailwind CSS'
+status: 'In-Progress'
+outcome: 'Established the Zentra product direction and Niwa design-system foundation across web, iOS, and Android'
 ---
 
 <script lang="ts">

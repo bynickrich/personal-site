@@ -1,0 +1,14 @@
+---
+order: 1
+featured: true
+meta: '01 / Assignment'
+href: '/work/catalyst'
+name: 'Catalyst'
+shortDescription: 'An enterprise-grade design system that adapts to multiple branded verticals while providing escape hatches when needed.'
+role: 'Design Engineer'
+timeline: '2023–Present'
+platforms: 'Web'
+stack: 'Not specified'
+status: 'In-Progress'
+outcome: 'In progress'
+---
