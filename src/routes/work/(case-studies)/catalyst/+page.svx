@@ -1,7 +1,7 @@
 ---
 order: 1
 featured: true
-meta: '39.9862° N / 75.4009° W'
+meta: '39.99 / -75.40'
 href: '/work/catalyst'
 name: 'Catalyst'
 shortDescription: 'An enterprise-grade design system that adapts to multiple branded verticals while providing escape hatches when needed.'

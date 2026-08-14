@@ -1,7 +1,7 @@
 ---
 order: 3
 featured: true
-meta: '39.7555° N / 105.2211° W'
+meta: '39.76 / -105.22'
 href: '/work/zentra'
 name: 'Zentra'
 shortDescription: 'A retrofit access-control product and design system for multifamily properties.'
