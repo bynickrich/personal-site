@@ -25,32 +25,60 @@
 		{ label: 'Status', value: status }
 	]);
 
-	const patterns = ['sphere', 'wave', 'ripple'] as const;
-	const images: Record<string, string> = {
-		'/work/catalyst': '/work/catalyst-test-2.png',
-		'/work/datapoint': '/work/datapoint-test-2.png',
-		'/work/zentra': '/work/zentra-test.png'
+	type DitherPreset = {
+		image: string;
+		imageScale?: number;
+		contrast?: number;
+		brightness?: number;
+		separation?: number;
+		pixelSize?: number;
 	};
+
+	const ditherPresets: Record<string, DitherPreset> = {
+		'/work/catalyst': {
+			image: '/work/catalyst-clean.png',
+			imageScale: 0.86,
+			contrast: 1.45,
+			brightness: -0.15,
+			separation: 0.34,
+			pixelSize: 2
+		},
+		'/work/datapoint': {
+			image: '/work/datapoint-test-2.png',
+			contrast: 1.1,
+			brightness: -0.03,
+			pixelSize: 2
+		},
+		'/work/zentra': {
+			image: '/work/zentra-test.png',
+			contrast: 1.15,
+			brightness: -0.04,
+			pixelSize: 2
+		}
+	};
+
+	let ditherPreset = $derived(ditherPresets[href]);
 </script>
 
 <!-- TODO: Replace with article tag -->
-<a class="grid" {href} data-order={order} data-featured={featured || undefined}>
-	<!-- Animation -->
-	<figure
-		class="relative aspect-square h-full w-full bg-accent-300 md:col-start-1 md:row-span-3 md:aspect-[unset]"
-	>
-		<DitherShader
-			pattern={patterns[(order - 1) % patterns.length]}
-			image={images[href]}
-			seed={order * 2.7}
-		/>
+<a
+	class="grid md:grid-cols-[minmax(0,400px)_minmax(0,1fr)]"
+	{href}
+	data-order={order}
+	data-featured={featured || undefined}
+>
+	<!-- Artwork -->
+	<figure class="relative aspect-square w-full bg-accent-300 md:col-start-1">
+		<DitherShader {...ditherPreset} />
 		<span
 			class="pointer-events-none absolute inset-0 ring ring-neutral-300 ring-inset"
 			aria-hidden="true"
 		></span>
 	</figure>
 	<!-- Title + Description -->
-	<div class="dec-border-t grid grid-cols-2 p-3 before:border-t before:border-neutral-300">
+	<div
+		class="dec-border-t grid grid-cols-2 p-3 before:border-t before:border-neutral-300 md:col-start-2"
+	>
 		<div class="col-span-2 flex justify-between pb-3 type-eyebrow text-neutral-600">
 			<p>[ {status} ]</p>
 			<p>{meta} ↗</p>

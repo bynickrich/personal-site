@@ -1,32 +1,30 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	type Pattern = 'sphere' | 'wave' | 'ripple' | 'warp';
-
 	type Props = {
-		pattern?: Pattern;
 		image?: string;
 		imageScale?: number;
-		imageInfluence?: number;
+		contrast?: number;
+		brightness?: number;
+		separation?: number;
+		motion?: number;
 		front?: string;
 		back?: string;
 		pixelSize?: number;
-		speed?: number;
-		seed?: number;
 		label?: string;
 		class?: string;
 	};
 
 	let {
-		pattern = 'sphere',
 		image,
 		imageScale = 0.9,
-		imageInfluence = 1,
+		contrast = 1.35,
+		brightness = 0,
+		separation = 0,
+		motion = 0.035,
 		front = 'var(--color-accent-500)',
 		back = 'var(--color-neutral-100)',
 		pixelSize = 3,
-		speed = 0.18,
-		seed = 0,
 		label = '',
 		class: className = ''
 	}: Props = $props();
@@ -36,10 +34,8 @@
 
 	const vertexShader = `#version 300 es
 		in vec2 a_position;
-		out vec2 v_uv;
 
 		void main() {
-			v_uv = a_position * 0.5 + 0.5;
 			gl_Position = vec4(a_position, 0.0, 1.0);
 		}
 	`;
@@ -47,52 +43,20 @@
 	const fragmentShader = `#version 300 es
 		precision highp float;
 
-		in vec2 v_uv;
 		out vec4 fragColor;
 
 		uniform vec2 u_resolution;
 		uniform float u_time;
 		uniform float u_pixelSize;
-		uniform float u_seed;
-		uniform int u_pattern;
 		uniform sampler2D u_image;
-		uniform float u_hasImage;
 		uniform float u_imageAspect;
 		uniform float u_imageScale;
-		uniform float u_imageInfluence;
+		uniform float u_contrast;
+		uniform float u_brightness;
+		uniform float u_separation;
+		uniform float u_motion;
 		uniform vec3 u_front;
 		uniform vec3 u_back;
-
-		float hash(vec2 p) {
-			p = fract(p * vec2(123.34, 456.21));
-			p += dot(p, p + 45.32 + u_seed);
-			return fract(p.x * p.y);
-		}
-
-		float noise(vec2 p) {
-			vec2 cell = floor(p);
-			vec2 local = fract(p);
-			local = local * local * (3.0 - 2.0 * local);
-
-			return mix(
-				mix(hash(cell), hash(cell + vec2(1.0, 0.0)), local.x),
-				mix(hash(cell + vec2(0.0, 1.0)), hash(cell + 1.0), local.x),
-				local.y
-			);
-		}
-
-		float fbm(vec2 p) {
-			float value = 0.0;
-			float amplitude = 0.5;
-
-			for (int octave = 0; octave < 4; octave++) {
-				value += amplitude * noise(p);
-				p = mat2(1.6, 1.2, -1.2, 1.6) * p;
-				amplitude *= 0.5;
-			}
-
-			return value;
-		}
 
 		float bayer4(vec2 pixel) {
 			int x = int(mod(pixel.x, 4.0));
@@ -106,41 +70,6 @@
 			);
 
 			return (matrix[index] + 0.5) / 16.0;
-		}
-
-		float sphere(vec2 p, float time) {
-			p *= 1.12;
-			p.x += sin(time * 0.7 + u_seed) * 0.12;
-			float radiusSquared = dot(p, p);
-
-			if (radiusSquared > 1.0) return 0.0;
-
-			vec3 normal = vec3(p, sqrt(1.0 - radiusSquared));
-			vec3 light = normalize(vec3(cos(time), sin(time * 0.8), 0.8));
-			float lighting = dot(normal, light) * 0.5 + 0.5;
-			float texture = noise(p * 3.0 + vec2(time * 0.12, -time * 0.08));
-
-			return smoothstep(0.0, 0.12, 1.0 - radiusSquared) * mix(lighting, texture, 0.18);
-		}
-
-		float field(vec2 p, float time) {
-			if (u_pattern == 0) return sphere(p, time);
-
-			if (u_pattern == 1) {
-				float bend = sin(p.y * 2.6 - time * 0.7) * 0.28;
-				return sin((p.x + bend) * 6.0 + time) * 0.5 + 0.5;
-			}
-
-			if (u_pattern == 2) {
-				float distanceFromCenter = length(p + vec2(0.18, -0.1));
-				return sin(distanceFromCenter * 11.0 - time * 1.4) * 0.5 + 0.5;
-			}
-
-			vec2 warp = vec2(
-				fbm(p * 1.8 + time * 0.08),
-				fbm(p * 1.8 - time * 0.06 + 8.3)
-			);
-			return fbm(p * 2.2 + warp * 2.1);
 		}
 
 		vec4 sampleImage(vec2 uv) {
@@ -162,19 +91,19 @@
 		void main() {
 			vec2 grid = floor(gl_FragCoord.xy / u_pixelSize);
 			vec2 samplePosition = (grid * u_pixelSize + u_pixelSize * 0.5) / u_resolution;
-			vec2 p = (samplePosition * 2.0 - 1.0) * u_resolution / min(u_resolution.x, u_resolution.y);
-			float animatedField = clamp(field(p, u_time), 0.0, 1.0);
-			float value = animatedField;
-
-			if (u_hasImage > 0.5) {
-				vec4 imageSample = sampleImage(v_uv);
-				float luminance = dot(imageSample.rgb, vec3(0.299, 0.587, 0.114));
-				float faceTone = mix(0.28, 1.0, luminance);
-				float movingLight = mix(0.62, 1.0, animatedField);
-				float logoField = imageSample.a * faceTone * movingLight;
-
-				value = mix(animatedField, logoField, u_imageInfluence);
-			}
+			vec4 imageSample = sampleImage(samplePosition);
+			float luminance = dot(imageSample.rgb, vec3(0.299, 0.587, 0.114));
+			float tone = clamp((luminance - 0.5) * u_contrast + 0.5 + u_brightness, 0.0, 1.0);
+			vec2 sampleStep = vec2(u_pixelSize) / u_resolution;
+			float left = dot(sampleImage(samplePosition - vec2(sampleStep.x, 0.0)).rgb, vec3(0.299, 0.587, 0.114));
+			float right = dot(sampleImage(samplePosition + vec2(sampleStep.x, 0.0)).rgb, vec3(0.299, 0.587, 0.114));
+			float down = dot(sampleImage(samplePosition - vec2(0.0, sampleStep.y)).rgb, vec3(0.299, 0.587, 0.114));
+			float up = dot(sampleImage(samplePosition + vec2(0.0, sampleStep.y)).rgb, vec3(0.299, 0.587, 0.114));
+			float edge = length(vec2(right - left, up - down));
+			tone -= smoothstep(0.015, 0.18, edge) * u_separation;
+			tone = mix(0.08, 0.9, tone);
+			float drift = sin((samplePosition.x * 0.85 + samplePosition.y * 1.15) * 6.283185 + u_time);
+			float value = imageSample.a * clamp(tone + drift * u_motion, 0.0, 1.0);
 
 			float ink = step(bayer4(grid), value);
 
@@ -296,7 +225,6 @@
 		let frame = 0;
 		let visible = true;
 		let disposed = false;
-		let hasImage = 0;
 		let imageAspect = 1;
 		const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -334,16 +262,15 @@
 		const resolutionLocation = gl.getUniformLocation(program, 'u_resolution');
 		const timeLocation = gl.getUniformLocation(program, 'u_time');
 		const pixelSizeLocation = gl.getUniformLocation(program, 'u_pixelSize');
-		const seedLocation = gl.getUniformLocation(program, 'u_seed');
-		const patternLocation = gl.getUniformLocation(program, 'u_pattern');
 		const imageLocation = gl.getUniformLocation(program, 'u_image');
-		const hasImageLocation = gl.getUniformLocation(program, 'u_hasImage');
 		const imageAspectLocation = gl.getUniformLocation(program, 'u_imageAspect');
 		const imageScaleLocation = gl.getUniformLocation(program, 'u_imageScale');
-		const imageInfluenceLocation = gl.getUniformLocation(program, 'u_imageInfluence');
+		const contrastLocation = gl.getUniformLocation(program, 'u_contrast');
+		const brightnessLocation = gl.getUniformLocation(program, 'u_brightness');
+		const separationLocation = gl.getUniformLocation(program, 'u_separation');
+		const motionLocation = gl.getUniformLocation(program, 'u_motion');
 		const frontLocation = gl.getUniformLocation(program, 'u_front');
 		const backLocation = gl.getUniformLocation(program, 'u_back');
-		const patternIndex: Record<Pattern, number> = { sphere: 0, wave: 1, ripple: 2, warp: 3 };
 		const frontColor = resolveCssColor(front);
 		const backColor = resolveCssColor(back);
 		const imageTexture = gl.createTexture();
@@ -382,7 +309,6 @@
 					Math.min(2048, gl.getParameter(gl.MAX_TEXTURE_SIZE))
 				);
 				imageAspect = cropped.width / cropped.height;
-				hasImage = 1;
 				gl.activeTexture(gl.TEXTURE0);
 				gl.bindTexture(gl.TEXTURE_2D, imageTexture);
 				gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
@@ -411,20 +337,20 @@
 
 			gl.useProgram(program);
 			gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
-			gl.uniform1f(timeLocation, time * 0.001 * speed);
+			gl.uniform1f(timeLocation, time * 0.00025);
 			gl.uniform1f(pixelSizeLocation, Math.max(1, pixelSize * Math.min(devicePixelRatio, 2)));
-			gl.uniform1f(seedLocation, seed);
-			gl.uniform1i(patternLocation, patternIndex[pattern]);
 			gl.uniform1i(imageLocation, 0);
-			gl.uniform1f(hasImageLocation, hasImage);
 			gl.uniform1f(imageAspectLocation, imageAspect);
 			gl.uniform1f(imageScaleLocation, imageScale);
-			gl.uniform1f(imageInfluenceLocation, imageInfluence);
+			gl.uniform1f(contrastLocation, contrast);
+			gl.uniform1f(brightnessLocation, brightness);
+			gl.uniform1f(separationLocation, separation);
+			gl.uniform1f(motionLocation, motion);
 			gl.uniform3fv(frontLocation, frontColor);
 			gl.uniform3fv(backLocation, backColor);
 			gl.drawArrays(gl.TRIANGLES, 0, 3);
 
-			if (visible && !reducedMotion.matches && !document.hidden && speed !== 0) {
+			if (visible && !reducedMotion.matches && !document.hidden && motion !== 0) {
 				frame = requestAnimationFrame(render);
 			}
 		}
