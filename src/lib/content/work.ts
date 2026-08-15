@@ -1,6 +1,9 @@
 export type WorkItem = {
 	order: number;
 	featured: boolean;
+	cardImage: string;
+	cardImageHover: string;
+	separation: number;
 	meta: string;
 	href: string;
 	name: string;
@@ -29,6 +32,9 @@ export const work: WorkItem[] = Object.entries(frontmatter)
 		return {
 			order: metadata.order,
 			featured: metadata.featured ?? false,
+			cardImage: metadata.cardImage,
+			cardImageHover: metadata.cardImageHover,
+			separation: metadata.separation,
 			meta: metadata.meta,
 			href: `/work/${slug}`,
 			name: metadata.name,

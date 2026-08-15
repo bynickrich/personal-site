@@ -1,6 +1,9 @@
 ---
 order: 1
 featured: true
+cardImage: '/work/Catalyst-Mask.png'
+cardImageHover: '/work/Catalyst-Mask-Hover.png'
+separation: 0.18
 meta: '39.99 / -75.40'
 href: '/work/catalyst'
 name: 'Catalyst'
@@ -12,3 +15,5 @@ stack: 'React, Tailwind, Radix UI, CVA, Figma'
 status: 'In-Progress'
 outcome: 'Over 90% adoption for all frontend projects at PMI'
 ---
+
+Catalyst case study here.

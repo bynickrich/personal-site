@@ -12,7 +12,6 @@
 		shadowFloor?: number;
 		motion?: number;
 		front?: string;
-		back?: string;
 		pixelSize?: number;
 		label?: string;
 		class?: string;
@@ -22,15 +21,14 @@
 		image,
 		hoverImage,
 		active = false,
-		imageScale = 0.9,
-		contrast = 1.35,
-		brightness = 0,
+		imageScale = 0.88,
+		contrast = 1.3,
+		brightness = 0.15,
 		separation = 0,
-		shadowFloor = 0.08,
+		shadowFloor = 0.15,
 		motion = 0.035,
 		front = 'var(--color-accent-500)',
-		back = 'var(--color-neutral-100)',
-		pixelSize = 3,
+		pixelSize = 2,
 		label = '',
 		class: className = ''
 	}: Props = $props();
@@ -72,7 +70,6 @@
 		uniform float u_shadowFloor;
 		uniform float u_motion;
 		uniform vec3 u_front;
-		uniform vec3 u_back;
 
 		float bayer4(vec2 pixel) {
 			int x = int(mod(pixel.x, 4.0));
@@ -131,7 +128,7 @@
 
 			float ink = step(bayer4(grid), value);
 
-			fragColor = vec4(mix(u_back, u_front, ink), 1.0);
+			fragColor = vec4(u_front * ink, ink);
 		}
 	`;
 
@@ -232,9 +229,10 @@
 
 	onMount(() => {
 		const context = canvas.getContext('webgl2', {
-			alpha: false,
+			alpha: true,
 			antialias: false,
 			depth: false,
+			premultipliedAlpha: true,
 			powerPreference: 'low-power'
 		});
 
@@ -302,9 +300,7 @@
 		const shadowFloorLocation = gl.getUniformLocation(program, 'u_shadowFloor');
 		const motionLocation = gl.getUniformLocation(program, 'u_motion');
 		const frontLocation = gl.getUniformLocation(program, 'u_front');
-		const backLocation = gl.getUniformLocation(program, 'u_back');
 		const frontColor = resolveCssColor(front);
-		const backColor = resolveCssColor(back);
 		function createImageTexture(textureUnit: number) {
 			const texture = gl.createTexture();
 			gl.activeTexture(textureUnit);
@@ -400,7 +396,6 @@
 			gl.uniform1f(shadowFloorLocation, shadowFloor);
 			gl.uniform1f(motionLocation, motion);
 			gl.uniform3fv(frontLocation, frontColor);
-			gl.uniform3fv(backLocation, backColor);
 			gl.drawArrays(gl.TRIANGLES, 0, 3);
 
 			const transitioning = Math.abs(hoverTarget - hoverMix) > 0.001;
@@ -460,7 +455,6 @@
 	class="dither-shell {className}"
 	class:dither-fallback={!supported}
 	style:--dither-front={front}
-	style:--dither-back={back}
 >
 	<canvas
 		bind:this={canvas}
@@ -475,7 +469,7 @@
 	.dither-shell {
 		width: 100%;
 		height: 100%;
-		background: var(--dither-back);
+		background: transparent;
 		overflow: hidden;
 	}
 

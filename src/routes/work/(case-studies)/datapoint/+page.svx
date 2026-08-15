@@ -1,6 +1,9 @@
 ---
 order: 2
 featured: true
+cardImage: '/work/DataPoint-Mask.png'
+cardImageHover: '/work/DataPoint-Mask-Hover.png'
+separation: 0.1
 meta: '27.95 / -82.46'
 href: '/work/datapoint'
 name: 'DataPoint'

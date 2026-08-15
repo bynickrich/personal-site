@@ -1,6 +1,9 @@
 ---
 order: 3
 featured: true
+cardImage: '/work/Zentra-Mask.png'
+cardImageHover: '/work/Zentra-Mask-Hover.png'
+separation: 0.14
 meta: '39.76 / -105.22'
 href: '/work/zentra'
 name: 'Zentra'
