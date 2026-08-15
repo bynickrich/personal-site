@@ -28,6 +28,7 @@
 
 	type DitherPreset = {
 		image: string;
+		hoverImage?: string;
 		imageScale?: number;
 		contrast?: number;
 		brightness?: number;
@@ -48,21 +49,25 @@
 		'/work/catalyst': {
 			...sharedDitherPreset,
 			image: '/work/Catalyst-Mask.png',
+			hoverImage: '/work/Catalyst-Mask-Hover.png',
 			separation: 0.18
 		},
 		'/work/datapoint': {
 			...sharedDitherPreset,
 			image: '/work/DataPoint-Mask.png',
+			hoverImage: '/work/DataPoint-Mask-Hover.png',
 			separation: 0.1
 		},
 		'/work/zentra': {
 			...sharedDitherPreset,
 			image: '/work/Zentra-Mask.png',
+			hoverImage: '/work/Zentra-Mask-Hover.png',
 			separation: 0.14
 		}
 	};
 
 	let ditherPreset = $derived(ditherPresets[href]);
+	let artworkActive = $state(false);
 </script>
 
 <!-- TODO: Replace with article tag -->
@@ -71,10 +76,15 @@
 	{href}
 	data-order={order}
 	data-featured={featured || undefined}
+	onpointerenter={() => (artworkActive = true)}
+	onpointerleave={() => (artworkActive = false)}
+	onpointercancel={() => (artworkActive = false)}
+	onfocus={() => (artworkActive = true)}
+	onblur={() => (artworkActive = false)}
 >
 	<!-- Artwork -->
 	<figure class="relative aspect-square w-full md:col-start-1">
-		<DitherShader {...ditherPreset} />
+		<DitherShader {...ditherPreset} active={artworkActive} />
 		<span
 			class="pointer-events-none absolute inset-0 ring ring-neutral-300 ring-inset"
 			aria-hidden="true"

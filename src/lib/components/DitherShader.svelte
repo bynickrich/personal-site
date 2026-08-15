@@ -3,6 +3,8 @@
 
 	type Props = {
 		image?: string;
+		hoverImage?: string;
+		active?: boolean;
 		imageScale?: number;
 		contrast?: number;
 		brightness?: number;
@@ -18,6 +20,8 @@
 
 	let {
 		image,
+		hoverImage,
+		active = false,
 		imageScale = 0.9,
 		contrast = 1.35,
 		brightness = 0,
@@ -33,6 +37,12 @@
 
 	let canvas: HTMLCanvasElement;
 	let supported = $state(true);
+	let restartRenderer = () => {};
+
+	$effect(() => {
+		active;
+		restartRenderer();
+	});
 
 	const vertexShader = `#version 300 es
 		in vec2 a_position;
@@ -51,7 +61,10 @@
 		uniform float u_time;
 		uniform float u_pixelSize;
 		uniform sampler2D u_image;
+		uniform sampler2D u_hoverImage;
 		uniform float u_imageAspect;
+		uniform float u_hoverImageAspect;
+		uniform float u_hoverMix;
 		uniform float u_imageScale;
 		uniform float u_contrast;
 		uniform float u_brightness;
@@ -75,11 +88,11 @@
 			return (matrix[index] + 0.5) / 16.0;
 		}
 
-		vec4 sampleImage(vec2 uv) {
+		vec4 sampleTexture(sampler2D sourceTexture, vec2 uv, float imageAspect) {
 			vec2 imageUv = uv - 0.5;
 			float canvasAspect = u_resolution.x / u_resolution.y;
-			float containScale = min(1.0, canvasAspect / u_imageAspect);
-			imageUv.x *= canvasAspect / u_imageAspect;
+			float containScale = min(1.0, canvasAspect / imageAspect);
+			imageUv.x *= canvasAspect / imageAspect;
 			imageUv /= u_imageScale * containScale;
 			imageUv += 0.5;
 
@@ -88,7 +101,15 @@
 				imageUv.y < 0.0 || imageUv.y > 1.0
 			) return vec4(0.0);
 
-			return texture(u_image, imageUv);
+			return texture(sourceTexture, imageUv);
+		}
+
+		vec4 sampleImage(vec2 uv) {
+			return mix(
+				sampleTexture(u_image, uv, u_imageAspect),
+				sampleTexture(u_hoverImage, uv, u_hoverImageAspect),
+				u_hoverMix
+			);
 		}
 
 		void main() {
@@ -229,6 +250,10 @@
 		let visible = true;
 		let disposed = false;
 		let imageAspect = 1;
+		let hoverImageAspect = 1;
+		let hoverReady = false;
+		let hoverMix = 0;
+		let previousTime = 0;
 		const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
 		try {
@@ -266,7 +291,10 @@
 		const timeLocation = gl.getUniformLocation(program, 'u_time');
 		const pixelSizeLocation = gl.getUniformLocation(program, 'u_pixelSize');
 		const imageLocation = gl.getUniformLocation(program, 'u_image');
+		const hoverImageLocation = gl.getUniformLocation(program, 'u_hoverImage');
 		const imageAspectLocation = gl.getUniformLocation(program, 'u_imageAspect');
+		const hoverImageAspectLocation = gl.getUniformLocation(program, 'u_hoverImageAspect');
+		const hoverMixLocation = gl.getUniformLocation(program, 'u_hoverMix');
 		const imageScaleLocation = gl.getUniformLocation(program, 'u_imageScale');
 		const contrastLocation = gl.getUniformLocation(program, 'u_contrast');
 		const brightnessLocation = gl.getUniformLocation(program, 'u_brightness');
@@ -277,33 +305,44 @@
 		const backLocation = gl.getUniformLocation(program, 'u_back');
 		const frontColor = resolveCssColor(front);
 		const backColor = resolveCssColor(back);
-		const imageTexture = gl.createTexture();
+		function createImageTexture(textureUnit: number) {
+			const texture = gl.createTexture();
+			gl.activeTexture(textureUnit);
+			gl.bindTexture(gl.TEXTURE_2D, texture);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+			gl.texImage2D(
+				gl.TEXTURE_2D,
+				0,
+				gl.RGBA,
+				1,
+				1,
+				0,
+				gl.RGBA,
+				gl.UNSIGNED_BYTE,
+				new Uint8Array([0, 0, 0, 0])
+			);
 
-		gl.activeTexture(gl.TEXTURE0);
-		gl.bindTexture(gl.TEXTURE_2D, imageTexture);
-		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-		gl.texImage2D(
-			gl.TEXTURE_2D,
-			0,
-			gl.RGBA,
-			1,
-			1,
-			0,
-			gl.RGBA,
-			gl.UNSIGNED_BYTE,
-			new Uint8Array([0, 0, 0, 0])
-		);
+			return texture;
+		}
 
-		async function loadImageTexture() {
-			if (!image) return;
+		const imageTexture = createImageTexture(gl.TEXTURE0);
+		const hoverImageTexture = createImageTexture(gl.TEXTURE1);
+
+		async function loadImageTexture(
+			sourceUrl: string | undefined,
+			texture: WebGLTexture | null,
+			textureUnit: number,
+			onLoad: (aspect: number) => void
+		) {
+			if (!sourceUrl || !texture) return;
 
 			try {
 				const source = new Image();
 				source.decoding = 'async';
-				source.src = image;
+				source.src = sourceUrl;
 				await source.decode();
 
 				if (disposed) return;
@@ -312,14 +351,14 @@
 					source,
 					Math.min(2048, gl.getParameter(gl.MAX_TEXTURE_SIZE))
 				);
-				imageAspect = cropped.width / cropped.height;
-				gl.activeTexture(gl.TEXTURE0);
-				gl.bindTexture(gl.TEXTURE_2D, imageTexture);
+				onLoad(cropped.width / cropped.height);
+				gl.activeTexture(textureUnit);
+				gl.bindTexture(gl.TEXTURE_2D, texture);
 				gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
 				gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, cropped);
 				restart();
 			} catch (error) {
-				console.error(`Could not load dither image: ${image}`, error);
+				console.error(`Could not load dither image: ${sourceUrl}`, error);
 			}
 		}
 
@@ -338,13 +377,22 @@
 
 		function render(time: number) {
 			resize();
+			const elapsed = previousTime === 0 ? 16 : Math.min(time - previousTime, 50);
+			const hoverTarget = active && hoverReady ? 1 : 0;
+			previousTime = time;
+
+			if (reducedMotion.matches) hoverMix = hoverTarget;
+			else hoverMix += (hoverTarget - hoverMix) * Math.min(1, elapsed / 90);
 
 			gl.useProgram(program);
 			gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
-			gl.uniform1f(timeLocation, time * 0.0001);
+			gl.uniform1f(timeLocation, time * 0.001);
 			gl.uniform1f(pixelSizeLocation, Math.max(1, pixelSize * Math.min(devicePixelRatio, 2)));
 			gl.uniform1i(imageLocation, 0);
+			gl.uniform1i(hoverImageLocation, 1);
 			gl.uniform1f(imageAspectLocation, imageAspect);
+			gl.uniform1f(hoverImageAspectLocation, hoverImageAspect);
+			gl.uniform1f(hoverMixLocation, hoverMix);
 			gl.uniform1f(imageScaleLocation, imageScale);
 			gl.uniform1f(contrastLocation, contrast);
 			gl.uniform1f(brightnessLocation, brightness);
@@ -355,7 +403,12 @@
 			gl.uniform3fv(backLocation, backColor);
 			gl.drawArrays(gl.TRIANGLES, 0, 3);
 
-			if (visible && !reducedMotion.matches && !document.hidden && motion !== 0) {
+			const transitioning = Math.abs(hoverTarget - hoverMix) > 0.001;
+			if (
+				visible &&
+				!document.hidden &&
+				((!reducedMotion.matches && motion !== 0) || transitioning)
+			) {
 				frame = requestAnimationFrame(render);
 			}
 		}
@@ -364,6 +417,8 @@
 			cancelAnimationFrame(frame);
 			frame = requestAnimationFrame(render);
 		}
+
+		restartRenderer = restart;
 
 		const resizeObserver = new ResizeObserver(restart);
 		const intersectionObserver = new IntersectionObserver(([entry]) => {
@@ -376,7 +431,13 @@
 		intersectionObserver.observe(canvas);
 		reducedMotion.addEventListener('change', restart);
 		document.addEventListener('visibilitychange', restart);
-		void loadImageTexture();
+		void loadImageTexture(image, imageTexture, gl.TEXTURE0, (aspect) => {
+			imageAspect = aspect;
+		});
+		void loadImageTexture(hoverImage, hoverImageTexture, gl.TEXTURE1, (aspect) => {
+			hoverImageAspect = aspect;
+			hoverReady = true;
+		});
 		restart();
 
 		return () => {
@@ -386,8 +447,10 @@
 			intersectionObserver.disconnect();
 			reducedMotion.removeEventListener('change', restart);
 			document.removeEventListener('visibilitychange', restart);
+			restartRenderer = () => {};
 			gl.deleteBuffer(position);
 			gl.deleteTexture(imageTexture);
+			gl.deleteTexture(hoverImageTexture);
 			gl.deleteProgram(program);
 		};
 	});
