@@ -17,6 +17,7 @@
 		status
 	}: WorkItem = $props();
 
+	// TODO: Revisist this derived.
 	let details = $derived([
 		{ label: 'Platforms', value: platforms },
 		{ label: 'Role', value: role },
@@ -31,29 +32,33 @@
 		contrast?: number;
 		brightness?: number;
 		separation?: number;
+		shadowFloor?: number;
 		pixelSize?: number;
 	};
 
+	const sharedDitherPreset = {
+		imageScale: 0.88,
+		contrast: 1.3,
+		brightness: 0.03,
+		shadowFloor: 0.15,
+		pixelSize: 2
+	} satisfies Omit<DitherPreset, 'image'>;
+
 	const ditherPresets: Record<string, DitherPreset> = {
 		'/work/catalyst': {
-			image: '/work/catalyst-clean.png',
-			imageScale: 0.86,
-			contrast: 1.45,
-			brightness: -0.15,
-			separation: 0.34,
-			pixelSize: 2
+			...sharedDitherPreset,
+			image: '/work/Catalyst-Mask.png',
+			separation: 0.18
 		},
 		'/work/datapoint': {
-			image: '/work/datapoint-test-2.png',
-			contrast: 1.1,
-			brightness: -0.03,
-			pixelSize: 2
+			...sharedDitherPreset,
+			image: '/work/DataPoint-Mask.png',
+			separation: 0.1
 		},
 		'/work/zentra': {
-			image: '/work/zentra-test.png',
-			contrast: 1.15,
-			brightness: -0.04,
-			pixelSize: 2
+			...sharedDitherPreset,
+			image: '/work/Zentra-Mask.png',
+			separation: 0.14
 		}
 	};
 
@@ -68,7 +73,7 @@
 	data-featured={featured || undefined}
 >
 	<!-- Artwork -->
-	<figure class="relative aspect-square w-full bg-accent-300 md:col-start-1">
+	<figure class="relative aspect-square w-full md:col-start-1">
 		<DitherShader {...ditherPreset} />
 		<span
 			class="pointer-events-none absolute inset-0 ring ring-neutral-300 ring-inset"

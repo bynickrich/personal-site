@@ -7,6 +7,7 @@
 		contrast?: number;
 		brightness?: number;
 		separation?: number;
+		shadowFloor?: number;
 		motion?: number;
 		front?: string;
 		back?: string;
@@ -21,6 +22,7 @@
 		contrast = 1.35,
 		brightness = 0,
 		separation = 0,
+		shadowFloor = 0.08,
 		motion = 0.035,
 		front = 'var(--color-accent-500)',
 		back = 'var(--color-neutral-100)',
@@ -54,6 +56,7 @@
 		uniform float u_contrast;
 		uniform float u_brightness;
 		uniform float u_separation;
+		uniform float u_shadowFloor;
 		uniform float u_motion;
 		uniform vec3 u_front;
 		uniform vec3 u_back;
@@ -101,7 +104,7 @@
 			float up = dot(sampleImage(samplePosition + vec2(0.0, sampleStep.y)).rgb, vec3(0.299, 0.587, 0.114));
 			float edge = length(vec2(right - left, up - down));
 			tone -= smoothstep(0.015, 0.18, edge) * u_separation;
-			tone = mix(0.08, 0.9, tone);
+			tone = mix(u_shadowFloor, 0.9, tone);
 			float drift = sin((samplePosition.x * 0.85 + samplePosition.y * 1.15) * 6.283185 + u_time);
 			float value = imageSample.a * clamp(tone + drift * u_motion, 0.0, 1.0);
 
@@ -268,6 +271,7 @@
 		const contrastLocation = gl.getUniformLocation(program, 'u_contrast');
 		const brightnessLocation = gl.getUniformLocation(program, 'u_brightness');
 		const separationLocation = gl.getUniformLocation(program, 'u_separation');
+		const shadowFloorLocation = gl.getUniformLocation(program, 'u_shadowFloor');
 		const motionLocation = gl.getUniformLocation(program, 'u_motion');
 		const frontLocation = gl.getUniformLocation(program, 'u_front');
 		const backLocation = gl.getUniformLocation(program, 'u_back');
@@ -337,7 +341,7 @@
 
 			gl.useProgram(program);
 			gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
-			gl.uniform1f(timeLocation, time * 0.00025);
+			gl.uniform1f(timeLocation, time * 0.0001);
 			gl.uniform1f(pixelSizeLocation, Math.max(1, pixelSize * Math.min(devicePixelRatio, 2)));
 			gl.uniform1i(imageLocation, 0);
 			gl.uniform1f(imageAspectLocation, imageAspect);
@@ -345,6 +349,7 @@
 			gl.uniform1f(contrastLocation, contrast);
 			gl.uniform1f(brightnessLocation, brightness);
 			gl.uniform1f(separationLocation, separation);
+			gl.uniform1f(shadowFloorLocation, shadowFloor);
 			gl.uniform1f(motionLocation, motion);
 			gl.uniform3fv(frontLocation, frontColor);
 			gl.uniform3fv(backLocation, backColor);
