@@ -26,20 +26,28 @@
 	]);
 
 	const patterns = ['sphere', 'wave', 'ripple'] as const;
+	const images: Record<string, string> = {
+		'/work/catalyst': '/work/catalyst-test-2.png',
+		'/work/datapoint': '/work/datapoint-test-2.png',
+		'/work/zentra': '/work/zentra-test.png'
+	};
 </script>
 
 <!-- TODO: Replace with article tag -->
-<a
-	class="grid before:border-t before:border-neutral-300"
-	{href}
-	data-order={order}
-	data-featured={featured || undefined}
->
+<a class="grid" {href} data-order={order} data-featured={featured || undefined}>
 	<!-- Animation -->
 	<figure
-		class="aspect-square h-full w-full bg-accent-300 md:col-start-1 md:row-span-3 md:aspect-[unset]"
+		class="relative aspect-square h-full w-full bg-accent-300 md:col-start-1 md:row-span-3 md:aspect-[unset]"
 	>
-		<DitherShader pattern={patterns[(order - 1) % patterns.length]} seed={order * 2.7} />
+		<DitherShader
+			pattern={patterns[(order - 1) % patterns.length]}
+			image={images[href]}
+			seed={order * 2.7}
+		/>
+		<span
+			class="pointer-events-none absolute inset-0 ring ring-neutral-300 ring-inset"
+			aria-hidden="true"
+		></span>
 	</figure>
 	<!-- Title + Description -->
 	<div class="dec-border-t grid grid-cols-2 p-3 before:border-t before:border-neutral-300">

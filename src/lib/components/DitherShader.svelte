@@ -5,6 +5,9 @@
 
 	type Props = {
 		pattern?: Pattern;
+		image?: string;
+		imageScale?: number;
+		imageInfluence?: number;
 		front?: string;
 		back?: string;
 		pixelSize?: number;
@@ -16,7 +19,10 @@
 
 	let {
 		pattern = 'sphere',
-		front = 'var(--color-accent-700)',
+		image,
+		imageScale = 0.9,
+		imageInfluence = 1,
+		front = 'var(--color-accent-500)',
 		back = 'var(--color-neutral-100)',
 		pixelSize = 3,
 		speed = 0.18,
@@ -49,6 +55,11 @@
 		uniform float u_pixelSize;
 		uniform float u_seed;
 		uniform int u_pattern;
+		uniform sampler2D u_image;
+		uniform float u_hasImage;
+		uniform float u_imageAspect;
+		uniform float u_imageScale;
+		uniform float u_imageInfluence;
 		uniform vec3 u_front;
 		uniform vec3 u_back;
 
@@ -132,11 +143,39 @@
 			return fbm(p * 2.2 + warp * 2.1);
 		}
 
+		vec4 sampleImage(vec2 uv) {
+			vec2 imageUv = uv - 0.5;
+			float canvasAspect = u_resolution.x / u_resolution.y;
+			float containScale = min(1.0, canvasAspect / u_imageAspect);
+			imageUv.x *= canvasAspect / u_imageAspect;
+			imageUv /= u_imageScale * containScale;
+			imageUv += 0.5;
+
+			if (
+				imageUv.x < 0.0 || imageUv.x > 1.0 ||
+				imageUv.y < 0.0 || imageUv.y > 1.0
+			) return vec4(0.0);
+
+			return texture(u_image, imageUv);
+		}
+
 		void main() {
 			vec2 grid = floor(gl_FragCoord.xy / u_pixelSize);
 			vec2 samplePosition = (grid * u_pixelSize + u_pixelSize * 0.5) / u_resolution;
 			vec2 p = (samplePosition * 2.0 - 1.0) * u_resolution / min(u_resolution.x, u_resolution.y);
-			float value = clamp(field(p, u_time), 0.0, 1.0);
+			float animatedField = clamp(field(p, u_time), 0.0, 1.0);
+			float value = animatedField;
+
+			if (u_hasImage > 0.5) {
+				vec4 imageSample = sampleImage(v_uv);
+				float luminance = dot(imageSample.rgb, vec3(0.299, 0.587, 0.114));
+				float faceTone = mix(0.28, 1.0, luminance);
+				float movingLight = mix(0.62, 1.0, animatedField);
+				float logoField = imageSample.a * faceTone * movingLight;
+
+				value = mix(animatedField, logoField, u_imageInfluence);
+			}
+
 			float ink = step(bayer4(grid), value);
 
 			fragColor = vec4(mix(u_back, u_front, ink), 1.0);
@@ -184,6 +223,60 @@
 		return [red / 255, green / 255, blue / 255] as const;
 	}
 
+	function cropTransparentImage(source: HTMLImageElement, maxSize: number) {
+		const sourceCanvas = document.createElement('canvas');
+		sourceCanvas.width = source.naturalWidth;
+		sourceCanvas.height = source.naturalHeight;
+		const sourceContext = sourceCanvas.getContext('2d', { willReadFrequently: true });
+
+		if (!sourceContext) return sourceCanvas;
+
+		sourceContext.drawImage(source, 0, 0);
+		const pixels = sourceContext.getImageData(0, 0, sourceCanvas.width, sourceCanvas.height).data;
+		let minX = sourceCanvas.width;
+		let minY = sourceCanvas.height;
+		let maxX = -1;
+		let maxY = -1;
+
+		for (let y = 0; y < sourceCanvas.height; y += 1) {
+			for (let x = 0; x < sourceCanvas.width; x += 1) {
+				if (pixels[(y * sourceCanvas.width + x) * 4 + 3] < 4) continue;
+
+				minX = Math.min(minX, x);
+				minY = Math.min(minY, y);
+				maxX = Math.max(maxX, x);
+				maxY = Math.max(maxY, y);
+			}
+		}
+
+		if (maxX < minX || maxY < minY) return sourceCanvas;
+
+		const padding = Math.ceil(Math.max(maxX - minX, maxY - minY) * 0.06);
+		const cropX = Math.max(0, minX - padding);
+		const cropY = Math.max(0, minY - padding);
+		const cropWidth = Math.min(sourceCanvas.width - cropX, maxX - minX + 1 + padding * 2);
+		const cropHeight = Math.min(sourceCanvas.height - cropY, maxY - minY + 1 + padding * 2);
+		const scale = Math.min(1, maxSize / Math.max(cropWidth, cropHeight));
+		const output = document.createElement('canvas');
+		output.width = Math.max(1, Math.round(cropWidth * scale));
+		output.height = Math.max(1, Math.round(cropHeight * scale));
+		const outputContext = output.getContext('2d');
+
+		outputContext?.drawImage(
+			source,
+			cropX,
+			cropY,
+			cropWidth,
+			cropHeight,
+			0,
+			0,
+			output.width,
+			output.height
+		);
+
+		return output;
+	}
+
 	onMount(() => {
 		const context = canvas.getContext('webgl2', {
 			alpha: false,
@@ -202,6 +295,9 @@
 		let program: WebGLProgram | null = null;
 		let frame = 0;
 		let visible = true;
+		let disposed = false;
+		let hasImage = 0;
+		let imageAspect = 1;
 		const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
 		try {
@@ -240,11 +336,62 @@
 		const pixelSizeLocation = gl.getUniformLocation(program, 'u_pixelSize');
 		const seedLocation = gl.getUniformLocation(program, 'u_seed');
 		const patternLocation = gl.getUniformLocation(program, 'u_pattern');
+		const imageLocation = gl.getUniformLocation(program, 'u_image');
+		const hasImageLocation = gl.getUniformLocation(program, 'u_hasImage');
+		const imageAspectLocation = gl.getUniformLocation(program, 'u_imageAspect');
+		const imageScaleLocation = gl.getUniformLocation(program, 'u_imageScale');
+		const imageInfluenceLocation = gl.getUniformLocation(program, 'u_imageInfluence');
 		const frontLocation = gl.getUniformLocation(program, 'u_front');
 		const backLocation = gl.getUniformLocation(program, 'u_back');
 		const patternIndex: Record<Pattern, number> = { sphere: 0, wave: 1, ripple: 2, warp: 3 };
 		const frontColor = resolveCssColor(front);
 		const backColor = resolveCssColor(back);
+		const imageTexture = gl.createTexture();
+
+		gl.activeTexture(gl.TEXTURE0);
+		gl.bindTexture(gl.TEXTURE_2D, imageTexture);
+		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+		gl.texImage2D(
+			gl.TEXTURE_2D,
+			0,
+			gl.RGBA,
+			1,
+			1,
+			0,
+			gl.RGBA,
+			gl.UNSIGNED_BYTE,
+			new Uint8Array([0, 0, 0, 0])
+		);
+
+		async function loadImageTexture() {
+			if (!image) return;
+
+			try {
+				const source = new Image();
+				source.decoding = 'async';
+				source.src = image;
+				await source.decode();
+
+				if (disposed) return;
+
+				const cropped = cropTransparentImage(
+					source,
+					Math.min(2048, gl.getParameter(gl.MAX_TEXTURE_SIZE))
+				);
+				imageAspect = cropped.width / cropped.height;
+				hasImage = 1;
+				gl.activeTexture(gl.TEXTURE0);
+				gl.bindTexture(gl.TEXTURE_2D, imageTexture);
+				gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+				gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, cropped);
+				restart();
+			} catch (error) {
+				console.error(`Could not load dither image: ${image}`, error);
+			}
+		}
 
 		function resize() {
 			const bounds = canvas.getBoundingClientRect();
@@ -268,6 +415,11 @@
 			gl.uniform1f(pixelSizeLocation, Math.max(1, pixelSize * Math.min(devicePixelRatio, 2)));
 			gl.uniform1f(seedLocation, seed);
 			gl.uniform1i(patternLocation, patternIndex[pattern]);
+			gl.uniform1i(imageLocation, 0);
+			gl.uniform1f(hasImageLocation, hasImage);
+			gl.uniform1f(imageAspectLocation, imageAspect);
+			gl.uniform1f(imageScaleLocation, imageScale);
+			gl.uniform1f(imageInfluenceLocation, imageInfluence);
 			gl.uniform3fv(frontLocation, frontColor);
 			gl.uniform3fv(backLocation, backColor);
 			gl.drawArrays(gl.TRIANGLES, 0, 3);
@@ -293,15 +445,18 @@
 		intersectionObserver.observe(canvas);
 		reducedMotion.addEventListener('change', restart);
 		document.addEventListener('visibilitychange', restart);
+		void loadImageTexture();
 		restart();
 
 		return () => {
+			disposed = true;
 			cancelAnimationFrame(frame);
 			resizeObserver.disconnect();
 			intersectionObserver.disconnect();
 			reducedMotion.removeEventListener('change', restart);
 			document.removeEventListener('visibilitychange', restart);
 			gl.deleteBuffer(position);
+			gl.deleteTexture(imageTexture);
 			gl.deleteProgram(program);
 		};
 	});
