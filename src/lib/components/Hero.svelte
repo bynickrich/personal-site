@@ -2,8 +2,6 @@
 	import logo from '$lib/assets/mark.svg';
 
 	import { buttonVariants } from './button/Button.variants';
-
-	// TODO: Something feels off with the Design Engineer type
 </script>
 
 <section
