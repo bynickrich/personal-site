@@ -12,15 +12,15 @@
 	<figure
 		class="sm:aspect-unset grid aspect-square place-items-center bg-accent-300 sm:size-80 lg:size-100"
 	></figure>
-	<div class="flex flex-col gap-4 px-3 pt-3.5 pb-3 md:max-w-xl">
+	<div class="flex flex-col gap-4 px-3 pt-4 pb-3 md:max-w-xl">
 		<!-- Copy -->
-		<div class="flex flex-col gap-2">
+		<div class="flex flex-col gap-2 md:gap-6">
 			<p class="flex items-center gap-1 type-metadata text-neutral-700">
 				<img src={logo} alt="" class="inline size-3 translate-y-[-0.5px]" />Design Engineer
 			</p>
-			<div class="flex flex-col">
+			<div class="flex flex-col md:gap-1">
 				<h1 class="type-page-title">Nick Richardson</h1>
-				<p class="max-w-3xl pl-px type-reading text-neutral-700">
+				<p class="max-w-3xl pl-px type-reading text-neutral-700 md:type-intro md:text-balance">
 					I combine a decade of product-design experience with frontend implementation to build
 					polished, accessible, system-driven software.
 				</p>
