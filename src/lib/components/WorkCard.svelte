@@ -36,6 +36,7 @@
 	onblur={() => (hoverActive = false)}
 >
 	<!-- Artwork -->
+	<!-- TODO: Add FIG elements within the figure -->
 	<figure
 		class="relative aspect-square w-full md:col-start-1 md:aspect-auto md:border-r md:border-neutral-300"
 	>
@@ -58,7 +59,7 @@
 		</div>
 
 		<!-- Project narrative -->
-		<div class="px-3 pt-3 pb-3 md:mt-auto md:flex md:flex-col md:gap-2 md:py-12">
+		<div class="px-3 pt-3 pb-3 md:mt-auto md:flex md:flex-col md:gap-1 md:py-12">
 			<h3 class="type-card-title md:type-section-title">{name}</h3>
 			<p class="type-compact text-neutral-700 md:type-intro">{shortDescription}</p>
 		</div>

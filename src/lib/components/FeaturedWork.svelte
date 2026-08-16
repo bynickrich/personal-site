@@ -6,7 +6,7 @@
 	const selectedWork = work.filter((item) => item.featured);
 </script>
 
-<section class="flex flex-col gap-3">
+<section class="flex flex-col gap-3 sm:gap-4">
 	<h2
 		class="grid h-12 place-items-center bg-neutral-100 type-section-title ring ring-neutral-300 ring-inset"
 	>

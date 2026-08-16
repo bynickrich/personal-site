@@ -28,7 +28,7 @@
 			</div>
 		{/each}
 	</div>
-	<div class="hidden h-14 items-center justify-center gap-6 md:flex" aria-hidden="true">
+	<div class="hidden h-14 items-center justify-center gap-8 md:flex" aria-hidden="true">
 		<Allegion />
 		<Amazon />
 		<WellsFargo />
