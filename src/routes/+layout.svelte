@@ -5,6 +5,7 @@
 	import favicon from '$lib/assets/mark.svg';
 
 	import './layout.css';
+	import DevelopmentBanner from '$lib/components/DevelopmentBanner.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 
@@ -16,6 +17,7 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
+<DevelopmentBanner />
 <Navbar />
 <main class="flex flex-col gap-3 ring-neutral-300 sm:w-full sm:max-w-300 sm:gap-4">
 	{@render children()}
