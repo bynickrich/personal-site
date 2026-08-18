@@ -131,7 +131,7 @@ The registry should:
 5. Set `href` to `null` for locked studies.
 6. Sort summaries by `order`.
 7. Export all reports as `afterActionReports` so locked reports remain visible.
-8. Export `loadAfterActionReport(slug)` that returns the stored component only when its state is `published`; otherwise return `null`.
+8. Export the synchronous `getAfterActionReport(slug)` lookup that returns the stored component only when its state is `published`; otherwise return `null`.
 
 Re-export the registry and types from `src/lib/content/index.ts`.
 
@@ -151,7 +151,7 @@ src/routes/work/(after-action-reports)/
 
 The universal `[slug]/+page.ts` should:
 
-- Call `loadAfterActionReport(params.slug)`.
+- Call `getAfterActionReport(params.slug)`.
 - Throw SvelteKit `error(404, 'After action report not found')` when it returns `null`.
 - Return the MDsveX component constructor and metadata.
 
@@ -195,7 +195,7 @@ The registry should:
 - Validate `publicationState`.
 - Export only published summaries.
 - Sort by `updated ?? issued`, newest first.
-- Export `loadFieldNote(slug)` that returns `null` for drafts and unknown slugs.
+- Export the synchronous `getFieldNote(slug)` lookup that returns `null` for drafts and unknown slugs.
 
 Drafts must not affect Field Notes counts, listings, or related navigation.
 

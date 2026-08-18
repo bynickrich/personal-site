@@ -1,5 +1,5 @@
 ---
-id: CS-02
+id: ARR-02
 title: DataPoint
 summary: A self-serve traffic-data product for city planners, engineers, and residents.
 role: Product Designer
@@ -10,7 +10,7 @@ scope:
   - Interaction design
   - Design systems
 outcome: Shipped DataPoint 2.0, its capacity-planning workflow, and the Cardinal design system.
-projectStatus: shipped
+projectStatus: archived
 publicationState: published
 featured: true
 order: 2
