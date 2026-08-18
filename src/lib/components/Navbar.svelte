@@ -33,10 +33,8 @@
 
 	const links = [
 		{ name: 'Home', href: '/' },
-		{ name: 'Work', href: '/work' },
 		{ name: 'About', href: '/about' },
-		{ name: 'Contact', href: '/contact' },
-		{ name: 'Field Notes', href: '/field-notes' }
+		{ name: 'Contact', href: '/contact' }
 	];
 </script>
 

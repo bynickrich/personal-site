@@ -26,8 +26,8 @@
 		</div>
 		<!-- Actions -->
 		<div class="flex w-full gap-3 sm:max-w-sm">
-			<a href="/work" class={buttonVariants({ class: 'w-full' })}>View work</a>
-			<a href="/contact" class={buttonVariants({ color: 'outline', class: 'w-full' })}>Contact</a>
+			<a href="/work/datapoint" class={buttonVariants({ class: 'w-full' })}>View Datapoint</a>
+			<a href="/about" class={buttonVariants({ color: 'outline', class: 'w-full' })}>About</a>
 		</div>
 	</div>
 </section>

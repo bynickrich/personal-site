@@ -1,43 +1,28 @@
 ---
-order: 2
+id: CS-02
+title: DataPoint
+summary: A self-serve traffic-data product for city planners, engineers, and residents.
+role: Product Designer
+organization: Quality Counts
+period: 2021–2022
+scope:
+  - Product design
+  - Interaction design
+  - Design systems
+outcome: Shipped DataPoint 2.0, its capacity-planning workflow, and the Cardinal design system.
+projectStatus: shipped
+publicationState: published
 featured: true
-cardImage: '/work/DataPoint-Mask.png'
-cardImageHover: '/work/DataPoint-Mask-Hover.png'
-separation: 0.1
-meta: '27.95 / -82.46'
-href: '/work/datapoint'
-name: 'DataPoint'
-shortDescription: 'A self-serve traffic-data product for city planners, engineers, and residents.'
-role: 'Product Designer'
-timeline: '2021–2022'
-platforms: 'Web'
-stack: 'Figma and Intercom'
-status: 'Shipped'
-outcome: 'Shipped DataPoint 2.0, its capacity-planning workflow, and the Cardinal design system'
+order: 2
+cover:
+  src: /work/DataPoint-Mask.png
+  hoverSrc: /work/DataPoint-Mask-Hover.png
+  separation: 0.1
 ---
 
 <script lang="ts">
   import WorkBlock from '$lib/components/WorkBlock.svelte'
-  import Metadata from '$lib/components/Metadata.svelte'
 </script>
-
-<svelte:head>
-  <title>DataPoint — Nick Richardson</title>
-  <meta
-    name="description"
-    content="How Nick Richardson redesigned DataPoint and created the Cardinal design system for a production traffic-data product."
-  />
-</svelte:head>
-
-<Metadata
-  name="DataPoint"
-  description="A self-serve traffic-data product for city planners, engineers, and residents."
-  role="Product Designer"
-  organization="Quality Counts"
-  dateRange="2021–2022"
-  disciplines="Product, interaction, brand, and system design"
-  status="Shipped / Retrospective"
-/>
 
 <WorkBlock>
 

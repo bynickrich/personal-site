@@ -1,43 +1,28 @@
 ---
-order: 3
+id: CS-03
+title: Zentra
+summary: A retrofit access-control product and design system for multifamily properties.
+role: Senior UI Designer
+organization: Allegion
+period: 2021–2023
+scope:
+  - Product design
+  - Design systems
+  - Cross-platform interfaces
+outcome: Established the product direction and Niwa design-system foundation across web, iOS, and Android.
+projectStatus: shipped
+publicationState: locked
 featured: true
-cardImage: '/work/Zentra-Mask.png'
-cardImageHover: '/work/Zentra-Mask-Hover.png'
-separation: 0.14
-meta: '39.76 / -105.22'
-href: '/work/zentra'
-name: 'Zentra'
-shortDescription: 'A retrofit access-control product and design system for multifamily properties.'
-role: 'Senior UI Designer'
-timeline: '2021–2023'
-platforms: 'Web & Native Mobile'
-stack: 'React, Tailwind CSS, Kotlin, Swift, Figma'
-status: 'Shipped'
-outcome: 'Established the Zentra product direction and Niwa design-system foundation across web, iOS, and Android'
+order: 3
+cover:
+  src: /work/Zentra-Mask.png
+  hoverSrc: /work/Zentra-Mask-Hover.png
+  separation: 0.14
 ---
 
 <script lang="ts">
   import WorkBlock from '$lib/components/WorkBlock.svelte'
-  import Metadata from '$lib/components/Metadata.svelte'
 </script>
-
-<svelte:head>
-  <title>Zentra — Nick Richardson</title>
-  <meta
-    name="description"
-    content="How Nick Richardson shaped Zentra's brand, product interfaces, and cross-platform Niwa design system for multifamily access control."
-  />
-</svelte:head>
-
-<Metadata
-  title="Zentra"
-  description="A retrofit access-control product and design system for multifamily properties."
-  role="Senior UI Designer"
-  organization="Allegion"
-  dateRange="2021–2023"
-  disciplines="Product interface, creative direction, and design systems"
-  status="Ongoing when documented / Retrospective"
-/>
 
 <WorkBlock>
 

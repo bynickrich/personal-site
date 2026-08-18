@@ -1,44 +1,31 @@
-# sv
+# Nick Richardson — Personal Site
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+My personal site and portfolio. It is where I document selected product-design and design-engineering work, and where I experiment with the site itself.
 
-## Creating a project
+Built with SvelteKit, Svelte 5, TypeScript, Tailwind CSS, and MDsveX. The project uses pnpm and Oxfmt.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Local development
 
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
+Install dependencies and start the development server:
 
 ```sh
-# recreate this project
-pnpm dlx sv@0.17.0 create --template minimal --types ts --add tailwindcss="plugins:none" --install pnpm personal-site
-cd personal-site
-pnpm add -D oxfmt
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `pnpm install`, start a development server:
-
-```sh
+pnpm install
 pnpm run dev
+```
 
-# or start the server and open the app in a new browser tab
+The local URL will be printed in the terminal. Pass `--open` if you want Vite to open it automatically:
+
+```sh
 pnpm run dev --open
 ```
 
-## Building
-
-To create a production version of your app:
+## Checks
 
 ```sh
+pnpm run lint
+pnpm run check
 pnpm run build
 ```
 
-You can preview the production build with `pnpm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+After Action Reports live in `src/lib/content/case-studies`, Field Notes live in
+`src/lib/content/field-notes`, and their public routes live under `src/routes`.

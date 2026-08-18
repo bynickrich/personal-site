@@ -1,6 +1,5 @@
 <script lang="ts">
 	import FeaturedWork from '$lib/components/FeaturedWork.svelte';
-	import FieldNotes from '$lib/components/FieldNotes.svelte';
 	import Hero from '$lib/components/Hero.svelte';
 	import LogoMarquee from '$lib/components/LogoMarquee.svelte';
 </script>
@@ -16,4 +15,3 @@
 <Hero />
 <LogoMarquee />
 <FeaturedWork />
-<FieldNotes />

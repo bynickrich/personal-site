@@ -1,0 +1,23 @@
+---
+id: CS-01
+title: Catalyst
+summary: An enterprise design system supporting multiple branded product lines.
+role: Design Engineer
+organization: PMI
+period: 2023–Present
+scope:
+  - Design systems
+  - Frontend engineering
+  - Component architecture
+outcome: Adopted by more than 90% of frontend projects at PMI.
+projectStatus: active
+publicationState: locked
+featured: true
+order: 1
+cover:
+  src: /work/Catalyst-Mask.png
+  hoverSrc: /work/Catalyst-Mask-Hover.png
+  separation: 0.18
+---
+
+Catalyst After Action Report in preparation.

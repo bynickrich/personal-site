@@ -7,15 +7,26 @@
 </script>
 
 <svelte:head>
-	<title>Work — Nick Richardson</title>
+	<title>After Action Reports — Nick Richardson</title>
 	<meta
 		name="description"
-		content="Selected product, design-system, and frontend work by Design Engineer Nick Richardson."
+		content="Product design and design engineering case studies by Nick Richardson."
 	/>
 </svelte:head>
 
-<section class="bg-neutral-100 ring ring-neutral-300 ring-inset">
-	{#each data.work as work (work.href)}
-		<WorkCard {...work} />
+<section class="flex flex-col gap-3 sm:gap-4">
+	<header class="bg-neutral-100 p-3 ring ring-neutral-300 ring-inset">
+		<p class="type-eyebrow text-neutral-700">02 //// Work Index</p>
+		<div class="mt-3 flex flex-col gap-1">
+			<h1 class="type-page-title">After Action Reports</h1>
+			<p class="max-w-3xl type-reading text-neutral-700">
+				Product design and design engineering case studies focused on responsibility, decisions,
+				evidence, and outcomes.
+			</p>
+		</div>
+	</header>
+
+	{#each data.reports as report (report.slug)}
+		<WorkCard {...report} />
 	{/each}
 </section>
