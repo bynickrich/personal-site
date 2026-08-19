@@ -1,8 +1,9 @@
 <script lang="ts">
-	import sophie from '$lib/assets/sophie.webp';
 	import type { Attachment } from 'svelte/attachments';
 	import { prefersReducedMotion } from 'svelte/motion';
 	import { innerHeight, scrollY } from 'svelte/reactivity/window';
+
+	import sophie from '#lib/assets/sophie.webp';
 
 	let sectionElement = $state<HTMLElement>();
 
@@ -46,7 +47,7 @@
 			style:transform={`scale(${scale})`}
 		/>
 		{#if progress > 0.75}
-			<p class="type-caption rounded-full bg-white px-3 py-2 shadow-md">Hi, I’m Sophie.</p>
+			<p class="bg-white rounded-full px-3 py-2 type-caption shadow-md">Hi, I’m Sophie.</p>
 		{/if}
 	</div>
 </section>

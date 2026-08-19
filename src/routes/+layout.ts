@@ -1,4 +1,4 @@
-import { dev } from '$app/environment';
-import { injectAnalytics } from '@vercel/analytics/sveltekit';
+import { dev } from '$app/env';
+import { inject } from '@vercel/analytics';
 
-injectAnalytics({ mode: dev ? 'development' : 'production' });
+inject({ mode: dev ? 'development' : 'production' });

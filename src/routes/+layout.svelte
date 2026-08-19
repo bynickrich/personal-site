@@ -2,12 +2,12 @@
 	import '@fontsource-variable/ibm-plex-sans/wght.css';
 	import '@fontsource/ibm-plex-sans-condensed/500.css';
 	import '@fontsource/ibm-plex-sans-condensed/600.css';
-	import favicon from '$lib/assets/mark.svg';
+	import favicon from '#lib/assets/mark.svg';
 
 	import './layout.css';
-	import DevelopmentBanner from '$lib/components/DevelopmentBanner.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import Navbar from '$lib/components/Navbar.svelte';
+	import DevelopmentBanner from '#lib/components/DevelopmentBanner.svelte';
+	import Footer from '#lib/components/Footer.svelte';
+	import Navbar from '#lib/components/Navbar.svelte';
 
 	let { children } = $props();
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { AfterActionReportMetadata } from '$lib/content/case-studies';
+	import type { AfterActionReportMetadata } from '#lib/content/case-studies.js';
 
 	let { report }: { report: AfterActionReportMetadata } = $props();
 </script>

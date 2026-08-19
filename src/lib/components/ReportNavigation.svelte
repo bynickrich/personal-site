@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ReportNavigationItem } from '$lib/content/case-studies';
+	import type { ReportNavigationItem } from '#lib/content/case-studies.js';
 
 	let {
 		reportId,

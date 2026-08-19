@@ -46,9 +46,9 @@ figma:
 ---
 
 <script lang="ts">
-  import CaseStudyMedia from '$lib/components/CaseStudyMedia.svelte'
-  import CaseStudySnapshot from '$lib/components/CaseStudySnapshot.svelte'
-  import WorkBlock from '$lib/components/WorkBlock.svelte'
+  import CaseStudyMedia from '#lib/components/CaseStudyMedia.svelte'
+  import CaseStudySnapshot from '#lib/components/CaseStudySnapshot.svelte'
+  import WorkBlock from '#lib/components/WorkBlock.svelte'
 
   const snapshot = [
     {

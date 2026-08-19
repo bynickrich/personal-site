@@ -1,4 +1,4 @@
-import { afterActionReports } from '$lib/content/case-studies';
+import { afterActionReports } from '#lib/content/case-studies.js';
 
 import type { PageLoad } from './$types';
 

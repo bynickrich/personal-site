@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { buttonVariants } from '$lib/components/button/Button.variants';
-	import LinkedIn from '$lib/icons/LinkedIn.svelte';
+	import { buttonVariants } from '#lib/components/button/Button.variants.js';
+	import LinkedIn from '#lib/icons/LinkedIn.svelte';
 
 	const linkedInUrl = 'https://www.linkedin.com/in/bynickrich/';
 </script>

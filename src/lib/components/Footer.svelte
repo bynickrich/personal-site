@@ -1,9 +1,9 @@
 <script lang="ts">
-	import src from '$lib/assets/mark.svg';
-	import Bluesky from '$lib/icons/Bluesky.svelte';
-	import Github from '$lib/icons/Github.svelte';
-	import LinkedIn from '$lib/icons/LinkedIn.svelte';
-	import Twitter from '$lib/icons/Twitter.svelte';
+	import src from '#lib/assets/mark.svg';
+	import Bluesky from '#lib/icons/Bluesky.svelte';
+	import Github from '#lib/icons/Github.svelte';
+	import LinkedIn from '#lib/icons/LinkedIn.svelte';
+	import Twitter from '#lib/icons/Twitter.svelte';
 
 	const year = new Date().getFullYear();
 </script>
