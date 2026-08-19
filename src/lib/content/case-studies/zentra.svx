@@ -15,8 +15,8 @@ publicationState: locked
 featured: true
 order: 3
 cover:
-  src: /work/Zentra-Mask.png
-  hoverSrc: /work/Zentra-Mask-Hover.png
+  src: /work/Zentra-Mask.webp
+  hoverSrc: /work/Zentra-Mask-Hover.webp
   separation: 0.14
 ---
 

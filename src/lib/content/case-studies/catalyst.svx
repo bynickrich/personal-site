@@ -1,5 +1,5 @@
 ---
-id: ARR-01
+id: ARR-02
 title: Catalyst
 summary: An enterprise design system supporting multiple branded product lines.
 role: Design Engineer
@@ -13,10 +13,10 @@ outcome: Adopted by more than 90% of frontend projects at PMI.
 projectStatus: active
 publicationState: locked
 featured: true
-order: 1
+order: 2
 cover:
-  src: /work/Catalyst-Mask.png
-  hoverSrc: /work/Catalyst-Mask-Hover.png
+  src: /work/Catalyst-Mask.webp
+  hoverSrc: /work/Catalyst-Mask-Hover.webp
   separation: 0.18
 ---
 

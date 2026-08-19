@@ -22,7 +22,7 @@
 					href={item.href}
 					class="grid min-h-10 grid-cols-[1.5rem_auto] items-center border border-neutral-300 px-2 type-caption text-neutral-700 hover:bg-neutral-200 lg:border-0 lg:border-t lg:px-0"
 				>
-					<span class="text-xs font-mono text-neutral-500 tabular-nums">
+					<span class="text-xs font-mono font-medium text-neutral-500 tabular-nums">
 						{String(index + 1).padStart(2, '0')}
 					</span>
 					<span>{item.label}</span>

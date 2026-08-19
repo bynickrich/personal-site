@@ -1,5 +1,5 @@
 ---
-id: ARR-02
+id: ARR-01
 title: DataPoint
 summary: A self-serve traffic-data product for city planners, engineers, and residents.
 role: Product Designer
@@ -13,10 +13,10 @@ outcome: Shipped DataPoint 2.0, its capacity-planning workflow, and the Cardinal
 projectStatus: archived
 publicationState: published
 featured: true
-order: 2
+order: 1
 cover:
-  src: /work/DataPoint-Mask.png
-  hoverSrc: /work/DataPoint-Mask-Hover.png
+  src: /work/DataPoint-Mask.webp
+  hoverSrc: /work/DataPoint-Mask-Hover.webp
   separation: 0.1
 navigation:
   - label: Overview
@@ -69,7 +69,7 @@ figma:
 <CaseStudySnapshot id="overview" title="The short version" items={snapshot} />
 
 <CaseStudyMedia
-  src="/work/datapoint/base-view.png"
+  src="/work/datapoint/base-view.webp"
   alt="DataPoint 2.0 map showing intersection and midblock markers, search and filter controls, and a contextual station-results inspector"
   width={2880}
   height={1800}
@@ -151,7 +151,7 @@ Quality Counts supplied domain and business context. I partnered with its intern
 
 <div class="grid min-w-0 gap-3 sm:gap-4 md:grid-cols-2 md:items-start">
   <CaseStudyMedia
-    src="/work/datapoint/intersection-turning-movements.png"
+    src="/work/datapoint/intersection-turning-movements.webp"
     alt="DataPoint 2.0 intersection inspector showing peak-hour filters, a turning-movement diagram, station metadata, and attached files"
     width={828}
     height={2400}
@@ -159,7 +159,7 @@ Quality Counts supplied domain and business context. I partnered with its intern
     caption="The station inspector provided a readable peak-hour summary before offering the full traffic-count workspace."
   />
   <CaseStudyMedia
-    src="/work/datapoint/midblock-classification.png"
+    src="/work/datapoint/midblock-classification.webp"
     alt="DataPoint 2.0 midblock analysis showing vehicle-classification charts and a detailed count table"
     width={1304}
     height={2155}
@@ -218,7 +218,7 @@ Detailed views retained export paths for customers who needed to continue analys
 </WorkBlock>
 
 <CaseStudyMedia
-  src="/work/datapoint/traffic-count-analysis.png"
+  src="/work/datapoint/traffic-count-analysis.webp"
   alt="DataPoint 2.0 detailed intersection traffic-count workspace with turning movements, truck percentages, pedestrian volumes, bike movements, a peak-hour chart, and a data table"
   width={2608}
   height={6186}
