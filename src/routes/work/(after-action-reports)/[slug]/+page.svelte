@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.metadata.title} — After Action Report — Nick Richardson</title>
+	<title>{data.metadata.title} | After Action Report | Nick Richardson</title>
 	<meta name="description" content={data.metadata.summary} />
 </svelte:head>
 

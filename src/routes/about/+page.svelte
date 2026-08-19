@@ -6,19 +6,19 @@
 			id: '01',
 			title: 'Product judgment',
 			description:
-				'I help teams frame the problem, clarify the experience, and make decisions that connect customer needs to product direction.'
+				'I figure out what needs to be built, who it needs to work for, and which decisions matter most.'
 		},
 		{
 			id: '02',
-			title: 'Systems leverage',
+			title: 'Systems thinking',
 			description:
-				'I turn recurring decisions into reusable language, components, and workflows that help design and engineering move together.'
+				'When the same problem keeps coming up, I turn the answer into shared patterns, components, and documentation.'
 		},
 		{
 			id: '03',
-			title: 'Frontend finish',
+			title: 'Frontend craft',
 			description:
-				'I work in production code to carry interaction quality, accessibility, responsive behavior, and visual detail through the last mile.'
+				'I work in production code, where I can sweat the interaction details, accessibility, and responsive behavior.'
 		}
 	];
 
@@ -28,7 +28,7 @@
 			role: 'Design Engineer',
 			organization: 'Project Management Institute',
 			description:
-				'Building polished interactive experiences and closing the gap between product designers and frontend developers.'
+				'Designing and building interactive product experiences alongside product designers and frontend developers.'
 		},
 		{
 			period: '2023–2024',
@@ -42,28 +42,28 @@
 			role: 'Senior UI Designer',
 			organization: 'Allegion',
 			description:
-				'Shaped the Zentra brand, web, and mobile platform while leading visual design and company-wide system work.'
+				'Set the visual direction for the Zentra brand, web app, mobile apps, and design system.'
 		},
 		{
 			period: '2021–2022',
 			role: 'UI/UX Designer',
 			organization: 'Quality Counts',
 			description:
-				'Rebuilt DataPoint around a new brand and design system, supported its go-to-market, and helped establish a software team.'
+				'Redesigned DataPoint, created its design system, supported its launch, and helped establish a software team.'
 		},
 		{
 			period: '2020–2021',
 			role: 'Selected product engagements',
 			organization: 'Thermo Fisher / Amazon AWS / Wells Fargo / OKCoin',
 			description:
-				'Designed systems and complex product experiences across biotech, cloud finance, commercial banking, and crypto.'
+				'Designed products and systems across biotech, cloud finance, commercial banking, and crypto.'
 		},
 		{
 			period: '2016–2020',
 			role: 'Product Designer',
 			organization: 'Allegion',
 			description:
-				'Co-founded the digital product design team, created its first design system and web standards, and supported digital transformation.'
+				'Co-founded the digital product design team and created its first design system and web standards.'
 		}
 	];
 
@@ -78,10 +78,10 @@
 </script>
 
 <svelte:head>
-	<title>About — Nick Richardson</title>
+	<title>About | Nick Richardson</title>
 	<meta
 		name="description"
-		content="Nick Richardson is a Design Engineer with a decade of product-design experience spanning product strategy, design systems, and frontend implementation."
+		content="Nick Richardson is a design engineer with a decade of experience in product design, design systems, and frontend development."
 	/>
 </svelte:head>
 
@@ -97,11 +97,12 @@
 		<div class="p-3 sm:p-6">
 			<div class="max-w-4xl">
 				<h1 class="type-page-title text-balance text-neutral-800">
-					Design engineer with product-design depth.
+					A design engineer with a product designer’s background.
 				</h1>
 				<p class="mt-2 max-w-3xl type-intro text-pretty text-neutral-700">
-					I work from early product direction through design systems and production frontend—closing
-					the gaps where intent, interaction quality, and implementation tend to drift.
+					I’ve spent the past decade designing software. These days, I also build it. That lets me
+					stay with an idea from early product decisions through the details that make it feel right
+					in the browser.
 				</p>
 			</div>
 		</div>
@@ -216,11 +217,9 @@
 	>
 		<div>
 			<p class="type-eyebrow text-neutral-300">Next Step</p>
-			<h2 id="next-step" class="mt-2 type-section-title text-balance">
-				See how the work holds together.
-			</h2>
+			<h2 id="next-step" class="mt-2 type-section-title text-balance">Take a look at the work.</h2>
 			<p class="mt-1 max-w-xl type-caption text-pretty text-neutral-300">
-				The case studies cover the decisions, systems, and implementation behind selected projects.
+				The case studies show what I was responsible for, the tradeoffs we made, and what shipped.
 			</p>
 		</div>
 		<div class="flex w-full gap-3 md:w-auto">

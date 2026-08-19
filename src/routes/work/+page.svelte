@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>After Action Reports — Nick Richardson</title>
+	<title>After Action Reports | Nick Richardson</title>
 	<meta
 		name="description"
 		content="Product design and design engineering case studies by Nick Richardson."
@@ -27,8 +27,7 @@
 		<div class="flex flex-col gap-1 p-3 sm:p-6">
 			<h1 class="type-page-title">After Action Reports</h1>
 			<p class="max-w-3xl type-intro text-pretty text-neutral-700">
-				Product design and design engineering case studies focused on responsibility, decisions,
-				evidence, and outcomes.
+				A closer look at what I owned, the choices I made, and what the team shipped.
 			</p>
 		</div>
 	</header>

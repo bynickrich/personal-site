@@ -42,7 +42,7 @@ navigation:
 figma:
   title: DataPoint 2.0 product design
   url: "https://www.figma.com/file/dtKTGXYU7p3XyAcrLfnrVt/DataPoint?type=design&node-id=770%3A60163&t=3TaDbfS7A0RlaimD-1"
-  description: Explore the product flows, detailed traffic-count views, and interaction states behind the selected screens in this report.
+  description: Explore the product flows, detailed traffic-count views, and interaction states shown in this report.
 ---
 
 <script lang="ts">
@@ -53,20 +53,20 @@ figma:
   const snapshot = [
     {
       label: 'Challenge',
-      value: 'Turn an experimental traffic-data tool into Quality Counts’ first production software product without losing novice residents or expert planners.'
+      value: 'Turn an experimental traffic-data tool into Quality Counts’ first production software product without leaving residents or expert planners behind.'
     },
     {
       label: 'My contribution',
-      value: 'As the sole designer, I led product structure, research synthesis, interface and interaction design, creative direction, and the Cardinal design system.'
+      value: 'I was the only designer, so I handled the product structure, research synthesis, interface design, creative direction, and the Cardinal design system.'
     },
     {
       label: 'Result',
-      value: 'The team shipped DataPoint 2.0 and capacity planning. About 30 customers were waiting to onboard when I last spoke with Quality Counts.'
+      value: 'We shipped DataPoint 2.0 and its capacity-planning tools. About 30 customers were waiting to onboard when I last spoke with Quality Counts.'
     }
   ]
 </script>
 
-<CaseStudySnapshot id="overview" title="What changed, what I owned, and what shipped" items={snapshot} />
+<CaseStudySnapshot id="overview" title="The short version" items={snapshot} />
 
 <CaseStudyMedia
   src="/work/datapoint/base-view.png"
@@ -86,11 +86,11 @@ Quality Counts had an experimental web app for exploring traffic-count data, but
 
 City planners and traffic engineers needed enough detail to analyze intersections and midblocks. Residents needed a faster way to check traffic conditions and test assumptions about their communities. The same product had to support both groups without turning every view into an expert-only interface.
 
-The original product centered on a full-screen map. Customers selected an intersection or midblock, reviewed an overview panel, and opened a separate view for detailed count data. It exposed useful information, but it did not provide a clear structure for search, comparison, deeper analysis, or future modules.
+The original product centered on a full-screen map. Customers selected an intersection or midblock, reviewed an overview panel, and opened a separate view for detailed count data. The information was there, but the path from search to comparison and deeper analysis was hard to follow.
 
 ### Constraints
 
-- I entered the project without prior traffic-planning or city-government experience.
+- I did not have a background in traffic planning or city government.
 - Quality Counts was building its first production software product.
 - Historical traffic data varied in structure and quality.
 - Residents and technical customers brought very different domain knowledge.
@@ -104,7 +104,7 @@ The original product centered on a full-screen map. Customers selected an inters
   width={1800}
   height={1013}
   label="Baseline / Original product"
-  caption="The original interface provided map access to a large station inventory, but search, hierarchy, and the path from overview to analysis were not organized into a coherent product model."
+  caption="The original interface put a large station inventory on the map, but it did not give people a clear path from search to overview and deeper analysis."
 />
 
 <WorkBlock id="responsibility">
@@ -119,33 +119,33 @@ Quality Counts supplied domain and business context. I partnered with its intern
 
 <WorkBlock id="decision-01">
 
-## Decision 01 — Make the product native to the web
+## Decision 01: Make the product native to the web
 
-**Condition:** Traffic engineers often used desktop software built around older Windows interaction patterns, while residents arrived with expectations shaped by modern map products.
+**The problem:** Traffic engineers often used desktop software built around older Windows interaction patterns, while residents expected something closer to the map products they already knew.
 
-**Decision:** Define DataPoint as a web-native product instead of reproducing a desktop application in the browser.
+**What I chose:** Treat DataPoint as a web product instead of recreating a desktop application in the browser.
 
-**Rationale:** The interface could remain available from any connected computer while using familiar web navigation, search, filtering, and progressive disclosure.
+**Why:** It would work from any connected computer and could use familiar web patterns for navigation, search, filtering, and progressive disclosure.
 
-**Tradeoff:** Expert workflows could not be copied directly from legacy tools. We had to decide which controls belonged in the default interface and which required a deeper analysis view.
+**The tradeoff:** We could not copy expert workflows directly from legacy tools. We had to decide which controls belonged in the default interface and which could wait until a deeper analysis view.
 
-**Evidence:** Competitive analysis, the original-product audit, and conversations with Quality Counts and prospective city customers established “modern” and browser access as recurring needs.
+**What informed it:** Competitive analysis, an audit of the original product, and conversations with Quality Counts and prospective city customers. “Modern” and browser-based access came up repeatedly.
 
 </WorkBlock>
 
 <WorkBlock id="decision-02">
 
-## Decision 02 — Separate overview from analysis
+## Decision 02: Separate overview from analysis
 
-**Condition:** Some customers wanted a quick status check. Others needed count files, turning movements, peak periods, vehicle types, and capacity controls.
+**The problem:** Some customers wanted a quick status check. Others needed count files, turning movements, peak periods, vehicle types, and capacity controls.
 
-**Decision:** Organize DataPoint 2.0 around a search and filter bar, the map, and a contextual inspector. Selecting a station opened deeper analysis in a modal, with an option to move it into a separate browser tab for comparison.
+**What I chose:** Organize DataPoint 2.0 around a search and filter bar, the map, and a contextual inspector. Selecting a station opened deeper analysis in a modal, which could move to a separate browser tab for comparison.
 
-**Rationale:** The map and inspector kept common information close to the current task. The modal created room for detailed analysis without loading every control into the default view.
+**Why:** The map and inspector kept the most common information close at hand. The modal made room for detailed analysis without crowding the default view with every control.
 
-**Tradeoff:** The modal worked for one station at a time. Comparing several stations still required separate tabs, which became a clear follow-up problem.
+**The tradeoff:** The modal only worked with one station at a time. People still needed separate tabs to compare several stations.
 
-**Evidence:** The shipped structure supported browsing visible stations, inspecting one station, and moving into intersection or midblock analysis without abandoning the map model.
+**What shipped:** People could browse visible stations, inspect one, and move into intersection or midblock analysis without losing the map as their starting point.
 
 </WorkBlock>
 
@@ -170,33 +170,33 @@ Quality Counts supplied domain and business context. I partnered with its intern
 
 <WorkBlock id="decision-03">
 
-## Decision 03 — Support basic and advanced capacity planning
+## Decision 03: Support basic and advanced capacity planning
 
-**Condition:** Newer engineers needed a readable starting point, while experienced customers needed control over the inputs behind intersection-capacity analysis.
+**The problem:** Newer engineers needed a clear starting point, while experienced customers needed control over the inputs behind intersection-capacity analysis.
 
-**Decision:** Give the Capacity Planner and Simulator a basic mode for common decisions and an advanced mode for direct control. The calculation used a formula supplied by engineers at Kittelson and based on the Highway Capacity Manual.
+**What I chose:** Give the Capacity Planner and Simulator a basic mode for common decisions and an advanced mode for direct control. The calculation used a formula supplied by engineers at Kittelson and based on the Highway Capacity Manual.
 
-**Rationale:** One module could support different levels of expertise without forcing every customer through its most complex workflow.
+**Why:** One module could work for different levels of expertise without forcing every customer through its most complex workflow.
 
-**Tradeoff:** Progressive disclosure reduced initial density, but the transition between quick review and detailed analysis still required continued validation.
+**The tradeoff:** Hiding the advanced controls made the first view easier to read, but we still needed to test how people moved between a quick review and detailed analysis.
 
-**Evidence:** The shipped intersection workflow included both modes and exposed the underlying traffic-count inputs in the advanced view.
+**What shipped:** The intersection workflow included both modes, with the underlying traffic-count inputs available in the advanced view.
 
 </WorkBlock>
 
 <WorkBlock id="decision-04">
 
-## Decision 04 — Build a shared product foundation
+## Decision 04: Build a shared product foundation
 
-**Condition:** Quality Counts needed to improve DataPoint while testing adjacent software ideas.
+**The problem:** Quality Counts needed to improve DataPoint while testing related software ideas.
 
-**Decision:** Create Cardinal as a shared design system for DataPoint and related concepts.
+**What I chose:** Create Cardinal as a shared design system for DataPoint and related concepts.
 
-**Rationale:** Reusable patterns gave the team a consistent base for product work instead of treating every experiment as a separate visual system.
+**Why:** Reusable patterns gave the team a consistent starting point instead of treating every experiment as a separate visual system.
 
-**Tradeoff:** The system introduced shared patterns that needed maintenance and adoption. The project did not measure either cost.
+**The tradeoff:** Shared patterns only help when a team maintains and uses them. We did not measure either part.
 
-**Evidence:** The team used Cardinal while exploring related concepts, including computer-vision traffic counting as an alternative to physical road tubes.
+**What we saw:** The team used Cardinal while exploring related concepts, including computer-vision traffic counting as an alternative to physical road tubes.
 
 </WorkBlock>
 
@@ -233,7 +233,7 @@ Detailed views retained export paths for customers who needed to continue analys
 
 I studied the existing product and traffic-planning domain, interviewed Quality Counts staff, contacted cities that had seen a product demonstration, and compared the tools used by engineers with map products familiar to residents.
 
-Those inputs shaped the scope, three-surface product model, and progressive-disclosure strategy. The project did not produce reliable task-success, support-volume, or implementation-time metrics, so this retrospective does not claim them.
+That work shaped the scope, the three-part layout, and the way we revealed advanced controls. We did not collect reliable metrics for task success, support volume, or implementation time, so I cannot make claims about them.
 
 </WorkBlock>
 
@@ -241,9 +241,9 @@ Those inputs shaped the scope, three-surface product model, and progressive-disc
 
 ## Outcome
 
-The team shipped DataPoint 2.0, its capacity-planning workflow, and the Cardinal design system. When I last spoke with Quality Counts, about 30 customers were waiting to be onboarded. That queue was a demand signal—not evidence of adoption, retention, or task efficiency.
+The team shipped DataPoint 2.0, its capacity-planning workflow, and the Cardinal design system. When I last spoke with Quality Counts, about 30 customers were waiting to be onboarded. That showed demand, but it did not tell us anything about adoption, retention, or task efficiency.
 
-Cardinal also gave the team a shared interface foundation for testing adjacent product ideas. We did not measure how much time the system saved or how consistently it was adopted across those concepts.
+Cardinal also gave the team a shared starting point for testing other product ideas. We did not measure how much time it saved or how consistently the team used it.
 
 </WorkBlock>
 
@@ -251,7 +251,7 @@ Cardinal also gave the team a shared interface foundation for testing adjacent p
 
 ## What I would do next
 
-The most durable decision was separating quick checks from detailed analysis. Expert users still benefit from a clear default view when the product provides deliberate paths into advanced controls.
+The decision that held up best was separating quick checks from detailed analysis. Even expert users benefit from a clear default view when advanced controls are easy to find.
 
 I would now prioritize three follow-up areas:
 

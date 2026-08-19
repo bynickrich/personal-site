@@ -19,14 +19,14 @@
 			<div class="flex flex-col md:gap-1">
 				<h1 class="type-page-title">Nick Richardson</h1>
 				<p class="max-w-3xl pl-px type-reading text-neutral-700 md:type-intro md:text-balance">
-					I combine a decade of product-design experience with frontend implementation to build
-					polished, accessible, system-driven software.
+					I’m a product designer who works in code. For the past decade, I’ve helped teams turn
+					complicated workflows into clear, accessible software.
 				</p>
 			</div>
 		</div>
 		<!-- Actions -->
 		<div class="flex w-full gap-3 sm:max-w-sm">
-			<a href="/work/datapoint" class={buttonVariants({ class: 'w-full' })}>View Datapoint</a>
+			<a href="/work/datapoint" class={buttonVariants({ class: 'w-full' })}>View DataPoint</a>
 			<a href="/about" class={buttonVariants({ color: 'outline', class: 'w-full' })}>About</a>
 		</div>
 	</div>

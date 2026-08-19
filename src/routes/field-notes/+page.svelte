@@ -5,10 +5,10 @@
 </script>
 
 <svelte:head>
-	<title>Field Notes — Nick Richardson</title>
+	<title>Field Notes | Nick Richardson</title>
 	<meta
 		name="description"
-		content="Field Notes by Nick Richardson on design systems, frontend implementation, accessibility, and interface quality."
+		content="Notes from Nick Richardson on design systems, frontend work, accessibility, and interface details."
 	/>
 </svelte:head>
 
@@ -19,7 +19,8 @@
 			<div class="mt-3 flex flex-col gap-1">
 				<h1 class="type-page-title">Field Notes</h1>
 				<p class="max-w-3xl type-reading text-neutral-700">
-					Writing on design systems, frontend implementation, accessibility, and interface quality.
+					Notes on design systems, frontend work, accessibility, and the small details that make
+					interfaces feel right.
 				</p>
 			</div>
 		</div>

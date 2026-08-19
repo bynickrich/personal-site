@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.metadata.title} — Field Notes — Nick Richardson</title>
+	<title>{data.metadata.title} | Field Notes | Nick Richardson</title>
 	<meta name="description" content={data.metadata.summary} />
 </svelte:head>
 

@@ -5,10 +5,10 @@
 </script>
 
 <svelte:head>
-	<title>Nick Richardson — Design Engineer</title>
+	<title>Nick Richardson | Design Engineer</title>
 	<meta
 		name="description"
-		content="Nick Richardson is a frontend-leaning Design Engineer who combines product judgment, design systems, and production frontend implementation."
+		content="Nick Richardson is a design engineer who brings product design and frontend development together."
 	/>
 </svelte:head>
 

@@ -6,10 +6,10 @@
 </script>
 
 <svelte:head>
-	<title>Contact — Nick Richardson</title>
+	<title>Contact | Nick Richardson</title>
 	<meta
 		name="description"
-		content="Connect with Nick Richardson on LinkedIn about design engineering roles, product collaborations, and design systems."
+		content="Get in touch with Nick Richardson about design engineering roles, product work, or design systems."
 	/>
 </svelte:head>
 
@@ -29,8 +29,8 @@
 					Let’s talk about what you’re building.
 				</h1>
 				<p class="mt-2 max-w-2xl type-intro text-pretty text-neutral-700">
-					For design engineering roles, product collaborations, or questions about the work,
-					LinkedIn is the best place to reach me.
+					If you’re hiring for a design engineering role, have a product project in mind, or want to
+					ask about the work, LinkedIn is the easiest way to reach me.
 				</p>
 			</div>
 

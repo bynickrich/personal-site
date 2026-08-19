@@ -5,7 +5,8 @@
 			<div class="flex flex-col gap-1 px-3 pt-3 pb-3 md:mt-auto md:py-12">
 				<h2 class="type-section-title">Field Notes</h2>
 				<p class="max-w-3xl type-reading text-neutral-700">
-					Writing on design systems, frontend implementation, accessibility, and interface quality.
+					Notes on design systems, frontend work, accessibility, and the small details that make
+					interfaces feel right.
 				</p>
 			</div>
 		</div>
