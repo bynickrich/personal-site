@@ -27,7 +27,7 @@
 	let presented = $state(false);
 	let supported = $state(true);
 
-	const sceneUrl = '/mark-3d/mark-3d.splinecode';
+	const sceneUrl = '/mark-3d/mark-3d.glb';
 
 	const postVertexShader = `
 		void main() {
@@ -144,6 +144,9 @@
 		const scene = new THREE.Scene();
 		const assetRoot = new THREE.Group();
 		const camera = new THREE.OrthographicCamera(-2.25, 2.25, 2.25, -2.25, 0.1, 100);
+		const ambientLight = new THREE.HemisphereLight(0xffffff, 0x332a24, 0.55);
+		const keyLight = new THREE.DirectionalLight(0xffffff, 1.35);
+		const fillLight = new THREE.DirectionalLight(0xffffff, 0.45);
 		const renderTarget = new THREE.WebGLRenderTarget(1, 1, {
 			format: THREE.RGBAFormat,
 			depthBuffer: true,
@@ -172,7 +175,9 @@
 
 		camera.position.set(5, 5, 5);
 		camera.lookAt(0, 0, 0);
-		scene.add(assetRoot);
+		keyLight.position.set(4, 6, 5);
+		fillLight.position.set(-4, 2, -5);
+		scene.add(assetRoot, ambientLight, keyLight, fillLight);
 		postScene.add(new THREE.Mesh(postGeometry, postMaterial));
 
 		renderer.setClearColor(0x000000, 0);
@@ -248,37 +253,61 @@
 		function handleLoadError(error: unknown) {
 			if (disposed) return;
 
-			console.error('Could not load the mark-3d Spline scene.', error);
+			console.error('Could not load the mark-3d GLB.', error);
 			supported = false;
 			cancelAnimationFrame(frame);
 		}
 
-		void import('@splinetool/loader')
-			.then(({ default: SplineLoader }) => {
+		void import('three/examples/jsm/loaders/GLTFLoader.js')
+			.then(({ GLTFLoader }) => {
 				if (disposed) return;
 
-				const loader = new SplineLoader();
+				const loader = new GLTFLoader();
 				loader.load(
 					sceneUrl,
-					(splineScene) => {
+					({ scene: model }) => {
 						if (disposed) {
-							disposeObject(splineScene);
+							disposeObject(model);
 							return;
 						}
 
-						loadedScene = splineScene;
-						const bounds = new THREE.Box3().setFromObject(splineScene);
+						loadedScene = model;
+						model.traverse((child) => {
+							if (child instanceof THREE.Light) {
+								child.visible = false;
+								return;
+							}
+
+							if (!(child instanceof THREE.Mesh)) return;
+
+							child.castShadow = true;
+							const materials = Array.isArray(child.material) ? child.material : [child.material];
+
+							for (const material of materials) {
+								material.transparent = false;
+								material.opacity = 1;
+								material.depthWrite = true;
+
+								if (material instanceof THREE.MeshStandardMaterial) {
+									material.metalness = 0;
+									material.roughness = 0.95;
+								}
+
+								material.needsUpdate = true;
+							}
+						});
+						const bounds = new THREE.Box3().setFromObject(model);
 						const size = bounds.getSize(new THREE.Vector3());
 						const largestDimension = Math.max(size.x, size.y, size.z);
 
-						if (largestDimension > 0) splineScene.scale.setScalar(3.2 / largestDimension);
-						splineScene.updateMatrixWorld(true);
+						if (largestDimension > 0) model.scale.setScalar(3.2 / largestDimension);
+						model.updateMatrixWorld(true);
 						const scaledCenter = new THREE.Box3()
-							.setFromObject(splineScene)
+							.setFromObject(model)
 							.getCenter(new THREE.Vector3());
-						splineScene.position.sub(scaledCenter);
+						model.position.sub(scaledCenter);
 						assetRoot.rotation.set(0, 0, 0);
-						assetRoot.add(splineScene);
+						assetRoot.add(model);
 						ready = true;
 						restart();
 					},

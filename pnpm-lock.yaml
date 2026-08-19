@@ -14,9 +14,6 @@ importers:
       '@fontsource/ibm-plex-sans-condensed':
         specifier: ^5.3.0
         version: 5.3.0
-      '@splinetool/loader':
-        specifier: 1.12.98
-        version: 1.12.98(three@0.149.0)
       tailwind-variants:
         specifier: ^3.3.1
         version: 3.3.1(tailwindcss@4.3.3)
@@ -311,11 +308,6 @@ packages:
 
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
-
-  '@splinetool/loader@1.12.98':
-    resolution: {integrity: sha512-OJfKhK4o4/LnnpMSAplmBlba3gsefQ29mFPf0Gok38AvWlOYKiSWuyM7eNDJGtuf3/ApAdPw1gW40spgfmFKEA==}
-    peerDependencies:
-      three: '>=0.133.0'
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
@@ -794,9 +786,6 @@ packages:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
 
-  semver-compare@1.0.0:
-    resolution: {integrity: sha512-YM3/ITh2MJ5MtzaM429anh+x2jiLVjqILF4m4oyQB18W7Ggea7BfqdH/wGMK7dDiMghv/6WG7znWMwUDzJiXow==}
-
   set-cookie-parser@3.1.2:
     resolution: {integrity: sha512-5/r/lTwbJ3zQ+qwdUFZYeRNqda7P5HD8zQKqlSjdGt1/S0cjLAphHusj4Y58ahDtWn/g32xrIS58/ikOvwl0Lw==}
 
@@ -1063,11 +1052,6 @@ snapshots:
     optional: true
 
   '@rolldown/pluginutils@1.0.1': {}
-
-  '@splinetool/loader@1.12.98(three@0.149.0)':
-    dependencies:
-      semver-compare: 1.0.0
-      three: 0.149.0
 
   '@standard-schema/spec@1.1.0': {}
 
@@ -1452,8 +1436,6 @@ snapshots:
   sade@1.8.1:
     dependencies:
       mri: 1.2.0
-
-  semver-compare@1.0.0: {}
 
   set-cookie-parser@3.1.2: {}
 
