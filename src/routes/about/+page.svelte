@@ -87,15 +87,15 @@
 
 <div class="flex flex-col gap-3 sm:gap-4">
 	<header class="bg-neutral-100 ring ring-neutral-300 ring-inset">
-		<div class="p-3 sm:p-6">
-			<div
-				class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 type-eyebrow text-neutral-700"
-			>
-				<p class="whitespace-nowrap">01 //// Profile Record</p>
-				<p class="ms-auto whitespace-nowrap">Status / Active</p>
-			</div>
+		<div
+			class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b border-neutral-300 p-3 type-eyebrow text-neutral-700"
+		>
+			<p class="whitespace-nowrap">02 //// Service Record</p>
+			<p class="ms-auto whitespace-nowrap">Status / Active</p>
+		</div>
 
-			<div class="mt-8 max-w-4xl sm:mt-12">
+		<div class="p-3 sm:p-6">
+			<div class="max-w-4xl">
 				<h1 class="type-display leading-[1.1] text-balance">
 					Design engineer with product-design depth.
 				</h1>
