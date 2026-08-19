@@ -21,6 +21,17 @@ export type AfterActionReportMetadata = {
 		hoverSrc?: string;
 		separation?: number;
 	};
+	navigation?: ReportNavigationItem[];
+	figma?: {
+		title: string;
+		url: string;
+		description?: string;
+	};
+};
+
+export type ReportNavigationItem = {
+	label: string;
+	href: string;
 };
 
 /** Metadata prepared for report cards, including the filename-derived slug and public URL. */
