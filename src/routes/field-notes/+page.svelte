@@ -15,7 +15,7 @@
 <section class="bg-neutral-100 ring ring-neutral-300 ring-inset">
 	<header class="grid md:grid-cols-[minmax(0,1fr)_18rem]">
 		<div class="p-3">
-			<p class="type-eyebrow text-neutral-700">03 //// Field Notes</p>
+			<p class="type-eyebrow text-neutral-700">04 //// Field Notes</p>
 			<div class="mt-3 flex flex-col gap-1">
 				<h1 class="type-page-title">Field Notes</h1>
 				<p class="max-w-3xl type-reading text-neutral-700">

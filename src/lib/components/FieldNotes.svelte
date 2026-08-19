@@ -1,7 +1,7 @@
 <section class="bg-neutral-100 ring ring-neutral-300 ring-inset">
 	<div class="grid md:grid-cols-[minmax(0,1fr)_18rem]">
 		<div class="flex flex-col">
-			<p class="px-3 pt-3 type-eyebrow text-neutral-700">03 //// Field Notes</p>
+			<p class="px-3 pt-3 type-eyebrow text-neutral-700">04 //// Field Notes</p>
 			<div class="flex flex-col gap-1 px-3 pt-3 pb-3 md:mt-auto md:py-12">
 				<h2 class="type-section-title">Field Notes</h2>
 				<p class="max-w-3xl type-reading text-neutral-700">

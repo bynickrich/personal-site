@@ -33,8 +33,8 @@
 					index < items.length - 1 && 'border-b border-neutral-300 md:border-r md:border-b-0'
 				]}
 			>
-				<dt class="type-eyebrow text-neutral-700">{item.label}</dt>
-				<dd class="mt-2 max-w-[40ch] type-reading text-pretty text-neutral-800">{item.value}</dd>
+				<dt class="type-eyebrow">{item.label}</dt>
+				<dd class="mt-2 max-w-[40ch] type-reading text-pretty text-neutral-700">{item.value}</dd>
 			</div>
 		{/each}
 	</dl>

@@ -31,26 +31,26 @@
 		<div
 			class="grid grid-cols-[6.5rem_minmax(0,1fr)] items-baseline gap-2 border-b border-neutral-300 p-3 sm:col-span-3 sm:block sm:border-r sm:border-b-0"
 		>
-			<dt class="type-eyebrow text-neutral-700">Role</dt>
-			<dd class="type-metadata text-neutral-800 sm:mt-1">{report.role}</dd>
+			<dt class="type-eyebrow">Role</dt>
+			<dd class="type-caption text-neutral-700 sm:mt-1">{report.role}</dd>
 		</div>
 		<div
 			class="grid grid-cols-[6.5rem_minmax(0,1fr)] items-baseline gap-2 border-b border-neutral-300 p-3 sm:col-span-3 sm:block sm:border-r sm:border-b-0"
 		>
-			<dt class="type-eyebrow text-neutral-700">Organization</dt>
-			<dd class="type-metadata text-neutral-800 sm:mt-1">{report.organization}</dd>
+			<dt class="type-eyebrow">Organization</dt>
+			<dd class="type-caption text-neutral-700 sm:mt-1">{report.organization}</dd>
 		</div>
 		<div
 			class="grid grid-cols-[6.5rem_minmax(0,1fr)] items-baseline gap-2 border-b border-neutral-300 p-3 sm:col-span-2 sm:block sm:border-r sm:border-b-0"
 		>
-			<dt class="type-eyebrow text-neutral-700">Period</dt>
-			<dd class="type-metadata text-neutral-800 tabular-nums sm:mt-1">{report.period}</dd>
+			<dt class="type-eyebrow">Period</dt>
+			<dd class="type-caption text-neutral-700 tabular-nums sm:mt-1">{report.period}</dd>
 		</div>
 		<div
 			class="grid grid-cols-[6.5rem_minmax(0,1fr)] items-baseline gap-2 p-3 sm:col-span-4 sm:block"
 		>
-			<dt class="type-eyebrow text-neutral-700">Scope</dt>
-			<dd class="type-metadata text-neutral-800 sm:mt-1">{report.scope.join(' / ')}</dd>
+			<dt class="type-eyebrow">Scope</dt>
+			<dd class="type-caption text-neutral-700 sm:mt-1">{report.scope.join(' / ')}</dd>
 		</div>
 	</dl>
 </header>

@@ -25,17 +25,17 @@
 		<div>
 			<div class="max-w-3xl p-3 sm:p-6">
 				<p class="type-eyebrow text-accent-700">Open to a good conversation</p>
-				<h1 id="contact-title" class="mt-3 type-display leading-[1.1] text-balance">
+				<h1 id="contact-title" class="mt-2 type-page-title text-balance text-neutral-800">
 					Let’s talk about what you’re building.
 				</h1>
-				<p class="mt-3 max-w-2xl type-intro leading-normal text-pretty text-neutral-700 sm:mt-4">
+				<p class="mt-2 max-w-2xl type-intro text-pretty text-neutral-700">
 					For design engineering roles, product collaborations, or questions about the work,
 					LinkedIn is the best place to reach me.
 				</p>
 			</div>
 
 			<div class="border-t border-neutral-300 p-3 sm:px-6">
-				<p class="max-w-2xl type-eyebrow text-neutral-600">A useful first message</p>
+				<p class="max-w-2xl type-eyebrow text-neutral-700">A useful first message</p>
 				<p class="mt-1 max-w-2xl type-caption text-pretty text-neutral-700">
 					Include the product, team, and problem you’re working on. That gives me enough context to
 					respond thoughtfully.

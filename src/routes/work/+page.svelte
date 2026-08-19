@@ -15,11 +15,18 @@
 </svelte:head>
 
 <section class="flex flex-col gap-3 sm:gap-4">
-	<header class="bg-neutral-100 p-3 ring ring-neutral-300 ring-inset">
-		<p class="type-eyebrow text-neutral-700">02 //// Work Index</p>
-		<div class="mt-3 flex flex-col gap-1">
+	<header class="bg-neutral-100 ring ring-neutral-300 ring-inset">
+		<div
+			class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b border-neutral-300 p-3 type-eyebrow text-neutral-700"
+		>
+			<p class="whitespace-nowrap">01 //// Work Index</p>
+			<p class="ms-auto whitespace-nowrap">
+				Records / {String(data.reports.length).padStart(2, '0')}
+			</p>
+		</div>
+		<div class="flex flex-col gap-1 p-3 sm:p-6">
 			<h1 class="type-page-title">After Action Reports</h1>
-			<p class="max-w-3xl type-reading text-neutral-700">
+			<p class="max-w-3xl type-intro text-pretty text-neutral-700">
 				Product design and design engineering case studies focused on responsibility, decisions,
 				evidence, and outcomes.
 			</p>
