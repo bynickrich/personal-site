@@ -1,5 +1,6 @@
-import { getAfterActionReport } from '$lib/content/case-studies';
 import { error } from '@sveltejs/kit';
+
+import { getAfterActionReport } from '#lib/content/case-studies.js';
 
 import type { PageLoad } from './$types';
 

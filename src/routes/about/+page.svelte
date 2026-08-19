@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { buttonVariants } from '$lib/components/button/Button.variants';
+	import { buttonVariants } from '#lib/components/button/Button.variants.js';
 
 	const strengths = [
 		{

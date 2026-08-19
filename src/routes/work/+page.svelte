@@ -1,5 +1,5 @@
 <script lang="ts">
-	import WorkCard from '$lib/components/WorkCard.svelte';
+	import WorkCard from '#lib/components/WorkCard.svelte';
 
 	import type { PageProps } from './$types';
 

@@ -1,4 +1,4 @@
-import { fieldNotes } from '$lib/content/field-notes';
+import { fieldNotes } from '#lib/content/field-notes.js';
 
 import type { PageLoad } from './$types';
 

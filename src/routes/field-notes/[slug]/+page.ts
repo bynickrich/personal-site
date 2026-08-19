@@ -1,5 +1,6 @@
-import { getFieldNote } from '$lib/content/field-notes';
 import { error } from '@sveltejs/kit';
+
+import { getFieldNote } from '#lib/content/field-notes.js';
 
 import type { PageLoad } from './$types';
 

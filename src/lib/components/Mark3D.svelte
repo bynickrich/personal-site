@@ -1,7 +1,8 @@
 <script lang="ts">
-	import mark from '$lib/assets/mark.svg';
 	import type { Attachment } from 'svelte/attachments';
 	import * as THREE from 'three';
+
+	import mark from '#lib/assets/mark.svg';
 
 	type Props = {
 		class?: string;

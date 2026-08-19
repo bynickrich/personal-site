@@ -21,7 +21,7 @@ cover:
 ---
 
 <script lang="ts">
-  import WorkBlock from '$lib/components/WorkBlock.svelte'
+  import WorkBlock from '#lib/components/WorkBlock.svelte'
 </script>
 
 <WorkBlock>

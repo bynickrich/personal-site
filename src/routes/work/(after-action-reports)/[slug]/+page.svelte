@@ -1,7 +1,7 @@
 <script lang="ts">
-	import AfterActionReportHeader from '$lib/components/AfterActionReportHeader.svelte';
-	import FigmaEmbed from '$lib/components/FigmaEmbed.svelte';
-	import ReportNavigation from '$lib/components/ReportNavigation.svelte';
+	import AfterActionReportHeader from '#lib/components/AfterActionReportHeader.svelte';
+	import FigmaEmbed from '#lib/components/FigmaEmbed.svelte';
+	import ReportNavigation from '#lib/components/ReportNavigation.svelte';
 
 	import type { PageProps } from './$types';
 

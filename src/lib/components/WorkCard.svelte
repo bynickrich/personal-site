@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { AfterActionReport } from '$lib/content/case-studies';
+	import type { AfterActionReport } from '#lib/content/case-studies.js';
 
 	import DitherShader from './DitherShader.svelte';
 

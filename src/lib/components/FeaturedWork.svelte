@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { afterActionReports } from '$lib/content/case-studies';
+	import { afterActionReports } from '#lib/content/case-studies.js';
 
 	import WorkCard from './WorkCard.svelte';
 

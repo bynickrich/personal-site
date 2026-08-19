@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Allegion from '$lib/icons/Allegion.svelte';
-	import Amazon from '$lib/icons/Amazon.svelte';
-	import OkCoin from '$lib/icons/OkCoin.svelte';
-	import PMI from '$lib/icons/PMI.svelte';
-	import ThermoFisher from '$lib/icons/ThermoFisher.svelte';
-	import WellsFargo from '$lib/icons/WellsFargo.svelte';
+	import Allegion from '#lib/icons/Allegion.svelte';
+	import Amazon from '#lib/icons/Amazon.svelte';
+	import OkCoin from '#lib/icons/OkCoin.svelte';
+	import PMI from '#lib/icons/PMI.svelte';
+	import ThermoFisher from '#lib/icons/ThermoFisher.svelte';
+	import WellsFargo from '#lib/icons/WellsFargo.svelte';
 </script>
 
 <!-- TODO: Add progressive blur on the left and right -->

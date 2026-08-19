@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import logo from '$lib/assets/mark.svg';
-	import menu from '$lib/assets/menu.svg';
-	import close from '$lib/assets/x.svg';
 	import { onMount } from 'svelte';
 	import { on } from 'svelte/events';
 	import { fly, fade } from 'svelte/transition';
+
+	import logo from '#lib/assets/mark.svg';
+	import menu from '#lib/assets/menu.svg';
+	import close from '#lib/assets/x.svg';
 
 	let isOpen = $state(false);
 	let currentPage = $derived(page.url.pathname);
