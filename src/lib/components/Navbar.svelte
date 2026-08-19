@@ -30,7 +30,6 @@
 	}
 
 	// TODO: Animate logo on hover/focus
-
 	const links = [
 		{ name: 'Home', href: '/' },
 		{ name: 'About', href: '/about' },
