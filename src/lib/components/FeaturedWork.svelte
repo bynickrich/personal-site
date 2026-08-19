@@ -10,7 +10,7 @@
 	<h2
 		class="grid h-12 place-items-center bg-neutral-100 type-section-title ring ring-neutral-300 ring-inset"
 	>
-		Featured After Action Reports
+		Featured Work
 	</h2>
 	{#each selectedReports as report (report.slug)}
 		<WorkCard {...report} />
